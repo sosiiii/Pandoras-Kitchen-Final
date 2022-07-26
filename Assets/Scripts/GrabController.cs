@@ -56,6 +56,5 @@ public class GrabController : MonoBehaviour
                 grabbedObject = null;
             }
         }
-        Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
     }
 }

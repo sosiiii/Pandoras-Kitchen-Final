@@ -23,7 +23,7 @@ public class EnemyBase : MonoBehaviour
         state.Enter();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         state.Process();
     }
