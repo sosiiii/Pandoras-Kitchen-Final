@@ -17,13 +17,43 @@ public class GrabController : MonoBehaviour
 
         GetComponent<Rigidbody2D>().Cast(transform.right, filter, hit, rayDistance);
 
+        /*RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
+
+        if (hitInfo.collider != null && hitInfo.collider.gameObject.tag == "Holdable")
+        {
+            //grab object
+            if (Input.GetKeyDown(KeyCode.G) && grabbedObject == null)
+            {
+                grabbedObject = hitInfo.collider.gameObject;
+                grabbedObject.GetComponent<Rigidbody2D>().simulated = false;
+                grabbedObject.transform.position = grabPoint.position;
+                grabbedObject.transform.SetParent(transform);
+            }
+
+            //release object
+            else if (Input.GetKeyDown(KeyCode.G))
+            {
+                if (GetComponent<Player>().playerIsFlipped == false)
+                {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * throwForce;
+                }
+
+                else
+                {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * throwForce;
+                }
+
+                grabbedObject.GetComponent<Rigidbody2D>().simulated = true;
+                grabbedObject.transform.SetParent(null);
+                grabbedObject = null;
+            }
+        }*/
         if (hit.Count != 0)
         {
             if (Input.GetKeyDown(KeyCode.G) && grabbedObject == null)
             {
                 grabbedObject = hit[0].collider.gameObject;
-                grabbedObject.GetComponent<PolygonCollider2D>().enabled = false;
-                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                grabbedObject.GetComponent<Rigidbody2D>().simulated = false;
                 grabbedObject.transform.position = grabPoint.position;
                 grabbedObject.transform.SetParent(transform);
             }
@@ -33,9 +63,17 @@ public class GrabController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.G))
             {
-                Debug.Log("Player dropped game object ");
-                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-                grabbedObject.GetComponent<PolygonCollider2D>().enabled = true;
+                if (GetComponent<Player>().playerIsFlipped == false)
+                {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * throwForce;
+                }
+
+                else
+                {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * throwForce;
+                }
+
+                grabbedObject.GetComponent<Rigidbody2D>().simulated = true;
                 grabbedObject.transform.SetParent(null);
                 grabbedObject = null;
             }

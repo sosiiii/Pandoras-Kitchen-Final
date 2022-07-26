@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private float _horizontalMove;
     [SerializeField] private float horizontalSpeed;
 
+    public bool playerIsFlipped;
+
     //Jump
     [Header("Jump")]
     [SerializeField] private float jumpPower;
@@ -27,7 +29,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
-    private SpriteRenderer _spriteRend;
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
 
@@ -43,7 +44,6 @@ public class Player : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _spriteRend = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -86,12 +86,14 @@ public class Player : MonoBehaviour
     {
         if (_horizontalMove > 0f)
         {
-            transform.eulerAngles = new Vector2(0, 0); 
+            transform.eulerAngles = new Vector2(0, 0);
+            playerIsFlipped = false;
         }
 
         else if (_horizontalMove < 0f)
         {
             transform.eulerAngles = new Vector2(0, 180);
+            playerIsFlipped = true;
         }
     }
 
