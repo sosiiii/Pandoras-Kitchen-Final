@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public Transform player;
+
     public Animator animator;
 
     public Transform attackPoint;
     public float attackRange;
+    public int attackDemage;
     public LayerMask enemyLayer;
+
+    void Start()
+    {
+        player = this.transform;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
+            EnemyDetection();
         }
     }
 
@@ -24,6 +34,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
+            enemy.GetComponent<TemporaryEnemy>().Demaged(attackDemage, player);
         }
     }
 
