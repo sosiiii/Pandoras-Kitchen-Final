@@ -1336,7 +1336,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  throwForce: 40
+  putForce: 0
+  throwForce: 60
 --- !u!95 &1039340782
 Animator:
   serializedVersion: 3

@@ -9,6 +9,7 @@ public class GrabController : MonoBehaviour
     [SerializeField] private float rayDistance;
     [SerializeField] private ContactFilter2D filter;
     private GameObject grabbedObject;
+    public float putForce;
     public float throwForce;
 
     void Update()
@@ -50,7 +51,15 @@ public class GrabController : MonoBehaviour
         }*/
         if (hit.Count != 0)
         {
-            if (Input.GetKeyDown(KeyCode.G) && grabbedObject == null)
+            if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null)
+            {
+                grabbedObject = hit[0].collider.gameObject;
+                grabbedObject.GetComponent<Rigidbody2D>().simulated = false;
+                grabbedObject.transform.position = grabPoint.position;
+                grabbedObject.transform.SetParent(transform);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.G) && grabbedObject == null)
             {
                 grabbedObject = hit[0].collider.gameObject;
                 grabbedObject.GetComponent<Rigidbody2D>().simulated = false;
@@ -61,14 +70,31 @@ public class GrabController : MonoBehaviour
 
         else if (hit.Count == 0)
         {
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (GetComponent<Player>().playerIsFlipped == false)
+                {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * putForce;
+                }
+
+                else if (GetComponent<Player>().playerIsFlipped == true)
+                {
+                    grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * putForce;
+                }
+
+                grabbedObject.GetComponent<Rigidbody2D>().simulated = true;
+                grabbedObject.transform.SetParent(null);
+                grabbedObject = null;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.G))
             {
                 if (GetComponent<Player>().playerIsFlipped == false)
                 {
                     grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0) * throwForce;
                 }
 
-                else
+                else if (GetComponent<Player>().playerIsFlipped == true)
                 {
                     grabbedObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0) * throwForce;
                 }
