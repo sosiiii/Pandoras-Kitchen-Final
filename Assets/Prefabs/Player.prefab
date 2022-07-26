@@ -223,7 +223,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  putDistance: 3
+  putDistance: 10
   throwForce: 60
 --- !u!1 &2419221267032585165
 GameObject:
