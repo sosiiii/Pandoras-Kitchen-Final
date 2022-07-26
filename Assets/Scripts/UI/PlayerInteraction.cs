@@ -31,7 +31,15 @@ public class PlayerInteraction : MonoBehaviour
     {
         ClosestInteractable?.DeActivate();
         ClosestInteractable = FindClosest();
-        ClosestInteractable?.Activate();
+
+        if (ClosestInteractable == null) return;
+        ClosestInteractable.Activate();
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("E Pushed");
+            ClosestInteractable.Interaction();
+        }
     }
     private Interactable FindClosest()
     {

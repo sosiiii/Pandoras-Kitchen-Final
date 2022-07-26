@@ -7,6 +7,6 @@ public class Button : Interactable
 
     public override void Interaction()
     {
-
+        Debug.Log("I am " + name);
     }
 }
