@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PickUp : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class PickUp : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !IsSlotFree)
+        return;
+        if (Keyboard.current.eKey.wasPressedThisFrame && !IsSlotFree)
         {
             DropItem();
         }
