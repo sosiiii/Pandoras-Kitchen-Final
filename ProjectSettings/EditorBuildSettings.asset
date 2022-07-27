@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Game Test.unity
-    guid: 7c990478310b835419ccd38b65630f73
+    path: Assets/Scenes/LevelSelection.unity
+    guid: 98afa3cd960b802428a38c8a0e6e7406
+  - enabled: 1
+    path: Assets/Scenes/TomikovaScena.unity
+    guid: 08c41e13e7cee2a46aea0b4305ba3fb9
   m_configObjects: {}
