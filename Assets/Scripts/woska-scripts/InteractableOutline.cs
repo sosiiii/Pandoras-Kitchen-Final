@@ -18,8 +18,6 @@ public class InteractableOutline : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
         DefaultMaterial = SpriteRenderer.sharedMaterial;
     }
-
-
     public void SetActive(bool active)
     {
         if (active)
