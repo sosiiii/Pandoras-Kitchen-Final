@@ -19,13 +19,21 @@ public class PickUp : MonoBehaviour
     }
     public void PickUpItem(Item item)
     {
+        if(item.IsPickedUp) return;
+
+
+        
         IsSlotFree = false;
         currentItem = item;
+        currentItem.IsPickedUp = true;
         currentItem.transform.parent = slotPosition;
         currentItem.transform.localPosition = Vector3.zero;
+        
+        currentItem.ChangeItemState();
     }
     public void DropItem()
     {
+        if(!currentItem.IsPickedUp) return;
         currentItem.IsPickedUp = false;
         currentItem.ChangeItemState();
         IsSlotFree = true;

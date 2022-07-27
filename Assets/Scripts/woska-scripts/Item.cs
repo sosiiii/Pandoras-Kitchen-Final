@@ -18,13 +18,7 @@ public class Item : MonoBehaviour, IInteractable
     public bool Interact(Interactor player)
     {
         var pickup = player.GetComponent<PickUp>();
-
-        if (!pickup.IsSlotFree)
-            return true;
         pickup.PickUpItem(this);
-        IsPickedUp = true;
-        ChangeItemState();
-      
         return true;
     }
 
