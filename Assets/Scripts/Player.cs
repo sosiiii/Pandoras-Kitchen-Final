@@ -74,8 +74,6 @@ public class Player : MonoBehaviour
 
     public void MovePlayer(InputAction.CallbackContext context)
     {
-        
-
         _horizontalMove = context.ReadValue<float>();
 
         Debug.Log(_horizontalMove);

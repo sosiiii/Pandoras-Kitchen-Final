@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class DoorToLevel : MonoBehaviour
 {
@@ -50,9 +51,9 @@ public class DoorToLevel : MonoBehaviour
         }
     }
 
-    void Update()
+    public void OpenDoor(InputAction.CallbackContext context)
     {
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.W) && isDoorOpen)
+        if (isPlayerNearby && isDoorOpen)
         {
             SceneManager.LoadScene(levelName);
         }

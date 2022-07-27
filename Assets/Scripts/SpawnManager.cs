@@ -6,8 +6,20 @@ public class SpawnManager : MonoBehaviour
 {
     public Player player;
     public List<Transform> spawnPoints = new List<Transform>();
+    public int onlyOnce;
 
     private void Awake()
+    {
+        if (PlayerPrefs.GetInt("OnlyOnce") == 0)
+        {
+            PlayerPrefs.SetInt("LastPlayedScene", 1);
+            onlyOnce++;
+            PlayerPrefs.SetInt("OnlyOnce", onlyOnce);
+            onlyOnce = PlayerPrefs.GetInt("OnlyOnce");
+        }
+    }
+
+    private void Start()
     {
         if (PlayerPrefs.GetInt("LastPlayedScene") == 1)
         {
@@ -33,5 +45,6 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(player, spawnPoints[4].transform.position, Quaternion.identity);
         }
+
     }
 }
