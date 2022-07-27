@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class Interactor : MonoBehaviour
                 currentOutline.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             currentInteractable.Interact(this);
         }
