@@ -6,6 +6,9 @@ public class EnemyBase : MonoBehaviour
 {
     public State state;
 
+    public float knockbackForce = 5;
+    public float knockbackForceUp = 3;
+
     public float speed;
 
     public Rigidbody2D rb;
@@ -49,8 +52,8 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void Demaged()
+    public void Demaged(int damage, Transform player)
     {
-        ChangeState(new Demaged(this));
+        ChangeState(new Demaged(this, damage, player, knockbackForce, knockbackForceUp));
     }
 }

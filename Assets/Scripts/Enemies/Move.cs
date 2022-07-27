@@ -13,6 +13,8 @@ public class Move : State
     public override void Process()
     {
         float direction = enemy.transform.position.x - player.transform.position.x;
+
+        Debug.Log(direction);
         enemy.rb.velocity = new Vector3(direction, 0).normalized * enemy.speed;
     }
 

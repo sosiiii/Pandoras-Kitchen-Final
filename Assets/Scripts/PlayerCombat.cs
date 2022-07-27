@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -20,21 +21,28 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+      /*  if (Input.GetKeyDown(KeyCode.F))
         {
             //animator.SetTrigger("Attack");
             EnemyDetection();
-        }
+        }*/
     }
+    
 
-    public void EnemyDetection()
+
+    public void EnemyDetection(InputAction.CallbackContext context)
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-        foreach (Collider2D enemy in hitEnemies)
+       
+        if (context.performed)
         {
-            Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<TemporaryEnemy>().Demaged(attackDemage, player);
+            
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("We hit " + enemy.name);
+                enemy.GetComponent<EnemyBase>().Demaged(attackDemage, player);
+            }
         }
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -48,9 +49,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Jump();
         JumpPhysics();
-        MovePlayer();
         FlipPlayer();
     }
 
@@ -73,9 +72,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void MovePlayer()
+    public void MovePlayer(InputAction.CallbackContext context)
     {
-        _horizontalMove = Input.GetAxisRaw("Horizontal");
+        
+
+        _horizontalMove = context.ReadValue<float>();
+
+        Debug.Log(_horizontalMove);
 
         _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
 
@@ -97,9 +100,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Jump()
+    public void Jump(InputAction.CallbackContext context)
     {
-        if (m_Grounded && Input.GetButtonDown("Jump"))
+        if (!context.performed)
+            return;
+
+        if (m_Grounded)
         {
             _animator.SetBool("IsJumping", true);
             _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);

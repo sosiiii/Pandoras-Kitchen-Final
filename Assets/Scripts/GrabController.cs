@@ -25,6 +25,7 @@ public class GrabController : MonoBehaviour
 
         rb.Cast(transform.right, filter, hit, rayDistance);
 
+        /*
         if (grabbedObject == null)
         {
             if (hit.Count > 0 && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.G)))
@@ -55,6 +56,6 @@ public class GrabController : MonoBehaviour
                 grabbedObject.GetComponent<Rigidbody2D>().velocity = transform.right * throwForce;
                 grabbedObject = null;
             }
-        }
+        }*/
     }
 }
