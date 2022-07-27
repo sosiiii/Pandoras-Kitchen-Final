@@ -9,11 +9,17 @@ public class EnemyBase : MonoBehaviour
     public float speed;
 
     public Rigidbody2D rb;
+
+    public int health;
+    public int maxHealth;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ChangeState(new Idle(this));
-    }
+
+        health = maxHealth;
+    }  
 
     public void ChangeState(State newState)
     {
@@ -23,7 +29,7 @@ public class EnemyBase : MonoBehaviour
         state.Enter();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         state.Process();
     }
@@ -41,5 +47,10 @@ public class EnemyBase : MonoBehaviour
         {
             ChangeState(new Idle(this));
         }
+    }
+
+    public void Demaged()
+    {
+        ChangeState(new Demaged(this));
     }
 }
