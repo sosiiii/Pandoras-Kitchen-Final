@@ -23,6 +23,12 @@ public class PickableItem : MonoBehaviour, IPickable
         if(_item == null) return;
         _spriteRenderer.sprite = _item.itemSprite;
     }
+
+    public GameObject GetOwner()
+    {
+        return gameObject;
+    }
+
     public GameObject PickUp()
     {
         if (IsPickedUp) return null;
