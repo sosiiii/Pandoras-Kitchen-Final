@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 2750489147309779926}
   - component: {fileID: 2750489147309779920}
   - component: {fileID: 2750489147309779927}
-  - component: {fileID: 2750489147309779921}
   - component: {fileID: 2750489147309779916}
   - component: {fileID: 9214914093724065192}
   - component: {fileID: 2097163333310522611}
@@ -235,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevator: {fileID: 0}
   horizontalSpeed: 30
   playerIsFlipped: 0
   jumpPower: 40
@@ -260,37 +258,6 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &2750489147309779921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750489147309779931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b406ad1f245f8b148b2225390b14bd68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabPoint: {fileID: 2750489149151995660}
-  rayPoint: {fileID: 2750489147622781666}
-  rayDistance: 5
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 128
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  putDistance: 0
-  throwForce: 0
 --- !u!114 &2750489147309779916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +339,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ba1cafa4-27b2-4446-994a-662afb33ddbc
     m_ActionName: New action map/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7b9a5ce-e064-4f07-948d-962fb92eca24
+    m_ActionName: Gameplay/OpenDoor[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
