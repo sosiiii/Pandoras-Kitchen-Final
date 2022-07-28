@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2750489147309779926}
   - component: {fileID: 2750489147309779920}
   - component: {fileID: 2750489147309779927}
-  - component: {fileID: 2750489147309779921}
   - component: {fileID: 2750489147309779923}
   - component: {fileID: 2750489147309779916}
   m_Layer: 0
@@ -197,37 +196,6 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &2750489147309779921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750489147309779931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b406ad1f245f8b148b2225390b14bd68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabPoint: {fileID: 2750489149151995660}
-  rayPoint: {fileID: 2750489147622781666}
-  rayDistance: 5
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 128
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  putDistance: 0
-  throwForce: 0
 --- !u!114 &2750489147309779923
 MonoBehaviour:
   m_ObjectHideFlags: 0
