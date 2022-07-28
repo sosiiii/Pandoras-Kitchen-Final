@@ -257,7 +257,6 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  elevator: {fileID: 0}
 --- !u!114 &2750489147309779916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +331,19 @@ MonoBehaviour:
     m_ActionId: 890e3d4d-68ec-4086-9224-a953cbb3a13f
     m_ActionName: Gameplay/Grab[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2097163333310522611}
+        m_TargetAssemblyTypeName: woska_scripts.PlayerInteract, Assembly-CSharp
+        m_MethodName: ThrowItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2f6c1c05-25d2-4226-9f97-d6bc430b5dc1
     m_ActionName: Gameplay/Combat[/Keyboard/f]
   - m_PersistentCalls:

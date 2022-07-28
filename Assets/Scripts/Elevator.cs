@@ -7,13 +7,23 @@ public class Elevator : MonoBehaviour
     [Header("Elevator Speed")]
     public float speed;
 
+    [Header("Floors")]
+    [Range(2, 3)] public int floors;
+
+    [Header("Elevator Start Position")]
+    public Vector3 startPos;
+
     [Header("Floor Position")]
-    public Vector3 numberThreeFloorPos;
-    public Vector3 numberTwoFloorPos;
-    public Vector3 numberOneFloorPos;
+    public List<Vector3> floorsPos = new List<Vector3>();
 
     [Header("Elevator Wait Time")]
     public float howLongWaitOnFloor;
+
+    private void Awake()
+    {
+        //Move elevator on start position
+        transform.position = new Vector3(startPos.x, startPos.y, startPos.z);
+    }
 
     private void Start()
     {
@@ -24,14 +34,25 @@ public class Elevator : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(howLongWaitOnFloor);
-            yield return StartCoroutine(MoveElevator(numberTwoFloorPos)); 
-            yield return new WaitForSeconds(howLongWaitOnFloor);
-            yield return StartCoroutine(MoveElevator(numberOneFloorPos));
-            yield return new WaitForSeconds(howLongWaitOnFloor);
-            yield return StartCoroutine(MoveElevator(numberTwoFloorPos));
-            yield return new WaitForSeconds(howLongWaitOnFloor);
-            yield return StartCoroutine(MoveElevator(numberThreeFloorPos));
+            if (floors == 2)
+            {
+                yield return new WaitForSeconds(howLongWaitOnFloor);
+                yield return StartCoroutine(MoveElevator(floorsPos[0]));
+                yield return new WaitForSeconds(howLongWaitOnFloor);
+                yield return StartCoroutine(MoveElevator(floorsPos[1]));
+            }
+
+            else if (floors == 3)
+            {
+                yield return new WaitForSeconds(howLongWaitOnFloor);
+                yield return StartCoroutine(MoveElevator(floorsPos[1]));
+                yield return new WaitForSeconds(howLongWaitOnFloor);
+                yield return StartCoroutine(MoveElevator(floorsPos[2]));
+                yield return new WaitForSeconds(howLongWaitOnFloor);
+                yield return StartCoroutine(MoveElevator(floorsPos[1]));
+                yield return new WaitForSeconds(howLongWaitOnFloor);
+                yield return StartCoroutine(MoveElevator(floorsPos[0]));
+            }
         }
     }
 
