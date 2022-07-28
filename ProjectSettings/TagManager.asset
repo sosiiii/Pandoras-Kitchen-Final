@@ -26,7 +26,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Players
   - 
   - 
   - 
@@ -41,6 +41,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1811844667
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Machines
+    uniqueID: 224484601
+    locked: 0
+  - name: Enemies
+    uniqueID: 2934478243
+    locked: 0
+  - name: Players
+    uniqueID: 4256642513
+    locked: 0
+  - name: Items
+    uniqueID: 707215399
+    locked: 0
+  - name: Foreground
+    uniqueID: 919607477
     locked: 0
