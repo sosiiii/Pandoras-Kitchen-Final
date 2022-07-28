@@ -21,7 +21,6 @@ namespace woska_scripts
         {
             if(!context.started) return;
             
-            Debug.Log("Works");
             var currentObject = _playerObjectDetector.currentObject;
             if (currentObject == null)
             {
