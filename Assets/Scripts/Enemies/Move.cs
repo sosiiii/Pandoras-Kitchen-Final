@@ -6,36 +6,69 @@ public class Move : State
 {
     Player player;
 
+    float TimerReset;
+    public float Timer;
+    public float minTime;
+    public float maxTime;
+
     float jumpForce;
     bool grounded;
     public override void Enter()
     {
         Debug.Log("Enter Move");
-        Delay();
+        enemy.MoveState = true;
     }
-    IEnumerator Delay()
-    {
 
-        yield return new WaitForSeconds(Random.Range(1, 5));
-        yield return Delay();
-    }
-    public override void Process()
-    {
-        float direction = enemy.transform.position.x - player.transform.position.x;
-
-        enemy.rb.velocity = new Vector3(direction, 0).normalized * enemy.speed;
-
-    }
 
     public Move(EnemyBase enemy, Player player) : base(enemy)
     {
         this.player = player;
         this.jumpForce = enemy.jumpForce;
         this.grounded = enemy.grounded;
+        this.Timer = enemy.Timer;
     }
+
+    public override void Process()
+    {
+        float direction = enemy.transform.position.x - player.transform.position.x;
+
+        this.Timer = enemy.Timer;
+        enemy.rb.velocity = new Vector3(direction, enemy.rb.velocity.y).normalized * enemy.speed;
+
+        if (Timer <= 0 && grounded)
+        {
+            enemy.rb.velocity = new Vector2(enemy.rb.velocity.x, jumpForce);
+            enemy.Timer = Random.Range(enemy.minTime, enemy.maxTime);
+            Debug.Log("Timer set");
+        }
+        if (direction > 0)
+        {
+            enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //doprava
+        }
+        else if(direction < 0)
+        {
+            enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //dolava
+        }
+    }
+
 
     public override void Exit()
     {
         enemy.rb.velocity = Vector3.zero;
+        enemy.MoveState = false;
     }
+    /*
+    protected override void Updating()
+    {
+        if (MoveState == true)
+        {
+            Timer -= Time.deltaTime;
+        }
+        else
+        {
+            Timer = 0;
+        }
+    }*/
 }

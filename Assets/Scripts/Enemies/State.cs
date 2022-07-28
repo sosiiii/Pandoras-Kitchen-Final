@@ -23,6 +23,11 @@ public class State
 
     public virtual void Process()
     {
+        
+    }
+
+    public virtual void Updating()
+    {
 
     }
 }

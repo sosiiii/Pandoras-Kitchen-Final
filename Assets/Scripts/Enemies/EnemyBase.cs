@@ -20,6 +20,13 @@ public class EnemyBase : MonoBehaviour
     public float jumpForce;
     public bool grounded;
 
+    [Header("JumpTimer")]
+    public float Timer;
+    public float minTime;
+    public float maxTime;
+
+    public bool MoveState;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,11 +34,12 @@ public class EnemyBase : MonoBehaviour
 
         health = maxHealth;
         grounded = true;
-    }  
+
+    }
 
     public void ChangeState(State newState)
     {
-        if(state != null)
+        if (state != null)
             state.Exit();
         state = newState;
         state.Enter();
@@ -54,7 +62,15 @@ public class EnemyBase : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ChangeState(new Idle(this));
+
+            StartCoroutine(kkt());
         }
+    }
+
+    IEnumerator kkt()
+    {
+        yield return new WaitForSeconds(1);
+        ChangeState(new Patroling(this));
     }
 
     public void Demaged(int damage, Transform player)
@@ -75,6 +91,24 @@ public class EnemyBase : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = false;
+        }
+    }
+    /*
+    private void Update()
+    {
+        state.Updating();
+    }*/
+
+    private void Update()
+    {
+        
+        if (MoveState == true)
+        {
+            Timer -= Time.deltaTime;
+        }
+        else if(MoveState == false)
+        {
+            Timer = 0;
         }
     }
 }
