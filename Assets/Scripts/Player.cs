@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    //public Elevator elevator;
+
     //Horizontal
     [Header("Move")]
     private float _horizontalMove;
@@ -30,7 +32,6 @@ public class Player : MonoBehaviour
 
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
-    private Elevator _elevator;
 
     private void Awake()
     {
@@ -44,7 +45,6 @@ public class Player : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _elevator = GetComponent<Elevator>();
     }
 
     private void Update()
@@ -125,21 +125,5 @@ public class Player : MonoBehaviour
     public void OnLanding()
     {
         _animator.SetBool("IsJumping", false);
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Elevator")
-        {
-            gameObject.transform.parent = _elevator.transform;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Elevator")
-        {
-            gameObject.transform.parent = null;
-        }
     }
 }

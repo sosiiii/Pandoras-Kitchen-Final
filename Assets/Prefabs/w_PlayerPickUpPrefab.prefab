@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575418187853358598
 GameObject:
@@ -58,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2750489147309779931
 GameObject:
@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 2750489147309779916}
   - component: {fileID: 9214914093724065192}
   - component: {fileID: 2097163333310522611}
+  - component: {fileID: 708660132}
   m_Layer: 18
   m_Name: w_PlayerPickUpPrefab
   m_TagString: Player
@@ -96,8 +97,6 @@ Transform:
   m_LocalScale: {x: -4, y: 4, z: 4}
   m_Children:
   - {fileID: 2750489149018108572}
-  - {fileID: 2750489149151995660}
-  - {fileID: 2750489147622781666}
   - {fileID: 2750489148658618836}
   - {fileID: 6168359126052080563}
   - {fileID: 4893961533755323077}
@@ -258,6 +257,7 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  elevator: {fileID: 0}
 --- !u!114 &2750489147309779916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,14 +316,10 @@ MonoBehaviour:
     m_ActionId: 1e42e192-27b9-45bc-8824-f30d7f888156
     m_ActionName: Gameplay/Jump[/Keyboard/w]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 890e3d4d-68ec-4086-9224-a953cbb3a13f
-    m_ActionName: Gameplay/Grab[/Keyboard/e]
-  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
-        m_MethodName: EnemyDetection
+      - m_Target: {fileID: 2097163333310522611}
+        m_TargetAssemblyTypeName: woska_scripts.PlayerInteract, Assembly-CSharp
+        m_MethodName: Interact
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -333,6 +329,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: 890e3d4d-68ec-4086-9224-a953cbb3a13f
+    m_ActionName: Gameplay/Grab[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
     m_ActionId: 2f6c1c05-25d2-4226-9f97-d6bc430b5dc1
     m_ActionName: Gameplay/Combat[/Keyboard/f]
   - m_PersistentCalls:
@@ -378,36 +378,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlot: {fileID: 6168359126052080563}
---- !u!1 &2750489147622781665
-GameObject:
+--- !u!61 &708660132
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2750489147622781666}
-  m_Layer: 0
-  m_Name: RayPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2750489147622781666
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750489147622781665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.324, y: 0.645, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 2750489147309779931}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0037398338, y: 0.1651218}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.1}
+    oldSize: {x: 2.7692308, y: 2.3076923}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.60078144, y: 0.30615377}
+  m_EdgeRadius: 0
 --- !u!1 &2750489148658618843
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2750489149018108579
 GameObject:
@@ -485,33 +481,3 @@ CircleCollider2D:
   m_Offset: {x: -0.030021667, y: 0.08673704}
   serializedVersion: 2
   m_Radius: 0.29948723
---- !u!1 &2750489149151995667
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2750489149151995660}
-  m_Layer: 0
-  m_Name: GrabPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2750489149151995660
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750489149151995667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3125, y: 0.6675, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

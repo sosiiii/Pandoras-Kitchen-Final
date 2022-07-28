@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevator: {fileID: 0}
   horizontalSpeed: 30
   playerIsFlipped: 0
   jumpPower: 40
@@ -297,6 +296,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ba1cafa4-27b2-4446-994a-662afb33ddbc
     m_ActionName: New action map/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7b9a5ce-e064-4f07-948d-962fb92eca24
+    m_ActionName: Gameplay/OpenDoor[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -374,7 +377,7 @@ GameObject:
   - component: {fileID: 2750489149018108573}
   m_Layer: 0
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
