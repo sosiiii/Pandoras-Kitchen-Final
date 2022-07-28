@@ -12,6 +12,10 @@ namespace woska_scripts
         [SerializeField] private Transform itemSlot;
 
         private GameObject itemInHand;
+        
+        public IPickable currentItemInHand { get; private set; }
+
+        public bool HasItem => currentItemInHand != null;
         private void Awake()
         {
             _playerObjectDetector = GetComponent<PlayerObjectDetector>();
@@ -38,16 +42,7 @@ namespace woska_scripts
             }
             else if (currentObject.TryGetComponent<IInteractable>(out IInteractable interactable))
             {
-                if (itemInHand != null)
-                {
-                    // We want to put item in machine
-                    Debug.Log($"I want to use {itemInHand.GetComponent<PickableItem>().name} with machine {currentObject.name}");
-                }
-                else
-                {
-                    Debug.Log($"I want to get item from machine {currentObject.name}");
-                }
-                    
+                interactable.Interact(this);
             }
   
         }
