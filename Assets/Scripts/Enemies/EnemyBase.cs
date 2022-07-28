@@ -16,12 +16,17 @@ public class EnemyBase : MonoBehaviour
     public int health;
     public int maxHealth;
 
+    public int jumpChanceNumber = 1000000;
+    public float jumpForce;
+    public bool grounded;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ChangeState(new Idle(this));
 
         health = maxHealth;
+        grounded = true;
     }  
 
     public void ChangeState(State newState)
@@ -55,5 +60,21 @@ public class EnemyBase : MonoBehaviour
     public void Demaged(int damage, Transform player)
     {
         ChangeState(new Demaged(this, damage, player, knockbackForce, knockbackForceUp));
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = false;
+        }
     }
 }
