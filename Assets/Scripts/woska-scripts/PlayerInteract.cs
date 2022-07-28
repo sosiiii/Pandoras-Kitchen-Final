@@ -46,6 +46,17 @@ namespace woska_scripts
             }
   
         }
+        public void ThrowItem(InputAction.CallbackContext context)
+        {
+            if(!context.started) return;
+
+            if (itemInHand != null)
+            {
+                itemInHand.GetComponent<PickableItem>().Throw();
+                itemInHand = null;
+            }
+
+        }
 
         private void DropItemInHand()
         {

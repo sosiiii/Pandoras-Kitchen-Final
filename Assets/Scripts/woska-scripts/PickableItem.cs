@@ -50,7 +50,11 @@ public class PickableItem : MonoBehaviour, IPickable
 
     public void Throw()
     {
-        Drop();
+        if(!IsPickedUp) return;
+        IsPickedUp = false;
+        rigidbody2D.isKinematic = false;
+        rigidbody2D.AddForce(transform.parent.right * 50f,ForceMode2D.Impulse);
+        transform.parent = null;
         
     }
 }
