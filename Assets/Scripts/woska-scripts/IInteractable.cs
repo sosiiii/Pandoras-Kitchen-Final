@@ -1,5 +1,7 @@
-﻿using System;
-public interface IInteractable
+namespace woska_scripts
 {
-    public bool Interact(Interactor player);
+    public interface IInteractable
+    {
+        
+    }
 }
