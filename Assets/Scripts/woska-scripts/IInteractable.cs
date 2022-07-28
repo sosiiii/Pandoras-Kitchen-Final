@@ -1,5 +1,9 @@
-﻿using System;
-public interface IInteractable
+using UnityEngine;
+
+namespace woska_scripts
 {
-    public bool Interact(Interactor player);
+    public interface IInteractable
+    {
+        public bool Interact(PlayerInteract playerInteract);
+    }
 }

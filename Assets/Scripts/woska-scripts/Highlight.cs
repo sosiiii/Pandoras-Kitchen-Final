@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InteractableOutline : MonoBehaviour
+public class Highlight : MonoBehaviour
 {
     [SerializeField] private Material OutLineMaterial;
     private SpriteRenderer SpriteRenderer;
     private Material DefaultMaterial;
 
-    public bool IsDisplayed { get; private set; }
+    public bool IsToggled { get; private set; }
 
     private void Awake()
     {
@@ -18,16 +18,16 @@ public class InteractableOutline : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
         DefaultMaterial = SpriteRenderer.sharedMaterial;
     }
-    public void SetActive(bool active)
+    public void ToggleHighlight(bool toggle)
     {
-        if (active)
+        if (toggle && !IsToggled)
         {
-            IsDisplayed = true;
+            IsToggled = true;
             SpriteRenderer.sharedMaterial = OutLineMaterial;
         }
-        else
+        else if (!toggle && IsToggled)
         {
-            IsDisplayed = false;
+            IsToggled = false;
             SpriteRenderer.sharedMaterial = DefaultMaterial;
         }
     }

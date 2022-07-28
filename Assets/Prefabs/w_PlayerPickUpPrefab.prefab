@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &539430824830524020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6168359126052080563}
+  m_Layer: 0
+  m_Name: ItemSlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6168359126052080563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539430824830524020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.781, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2750489147309779925}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1575418187853358598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4893961533755323077}
+  m_Layer: 0
+  m_Name: InteractPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4893961533755323077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575418187853358598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2750489147309779925}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2750489147309779931
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,10 +74,11 @@ GameObject:
   - component: {fileID: 2750489147309779926}
   - component: {fileID: 2750489147309779920}
   - component: {fileID: 2750489147309779927}
-  - component: {fileID: 2750489147309779923}
   - component: {fileID: 2750489147309779916}
-  m_Layer: 0
-  m_Name: PlayerNew
+  - component: {fileID: 9214914093724065192}
+  - component: {fileID: 2097163333310522611}
+  m_Layer: 18
+  m_Name: w_PlayerPickUpPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,6 +99,8 @@ Transform:
   - {fileID: 2750489149151995660}
   - {fileID: 2750489147622781666}
   - {fileID: 2750489148658618836}
+  - {fileID: 6168359126052080563}
+  - {fileID: 4893961533755323077}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,9 +142,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: -38324783
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -3655621501393774895, guid: 9c447c54c8e0416e9446cadb88c48fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevator: {fileID: 0}
   horizontalSpeed: 30
   playerIsFlipped: 0
   jumpPower: 40
@@ -196,26 +258,6 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &2750489147309779923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750489147309779931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec75642b298e614bbacbbb89cc0d3b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  animator: {fileID: 0}
-  attackPoint: {fileID: 2750489148658618836}
-  attackRange: 3
-  attackDemage: 1
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &2750489147309779916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +321,7 @@ MonoBehaviour:
     m_ActionName: Gameplay/Grab[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2750489147309779923}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
         m_MethodName: EnemyDetection
         m_Mode: 0
@@ -297,11 +339,45 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ba1cafa4-27b2-4446-994a-662afb33ddbc
     m_ActionName: New action map/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7b9a5ce-e064-4f07-948d-962fb92eca24
+    m_ActionName: Gameplay/OpenDoor[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &9214914093724065192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750489147309779931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f352b26aa9249f383609238a651d755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRadius: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  interactionPoint: {fileID: 4893961533755323077}
+--- !u!114 &2097163333310522611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750489147309779931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66382a7449e4b8a883618315d7924d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot: {fileID: 6168359126052080563}
 --- !u!1 &2750489147622781665
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2750489149018108572}
   - component: {fileID: 2750489149018108573}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
