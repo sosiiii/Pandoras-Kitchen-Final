@@ -27,6 +27,10 @@ public class EnemyBase : MonoBehaviour
 
     public bool MoveState;
 
+    public LayerMask PatrolLayerMask;
+
+    public float patrolWait;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,14 +67,15 @@ public class EnemyBase : MonoBehaviour
         {
             ChangeState(new Idle(this));
 
-            StartCoroutine(kkt());
+            StartCoroutine(Delay());
         }
     }
 
-    IEnumerator kkt()
+    IEnumerator Delay()
     {
-        yield return new WaitForSeconds(1);
-        ChangeState(new Patroling(this));
+        yield return new WaitForSeconds(5);
+        if(!MoveState)
+            ChangeState(new Patroling(this));
     }
 
     public void Demaged(int damage, Transform player)

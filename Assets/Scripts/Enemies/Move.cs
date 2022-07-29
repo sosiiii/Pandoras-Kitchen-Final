@@ -30,17 +30,21 @@ public class Move : State
 
     public override void Process()
     {
+        Debug.LogError(enemy);
+        Debug.Log(player);
         float direction = enemy.transform.position.x - player.transform.position.x;
 
         this.Timer = enemy.Timer;
         enemy.rb.velocity = new Vector3(direction, enemy.rb.velocity.y).normalized * enemy.speed;
-
+        
         if (Timer <= 0 && grounded)
         {
-            enemy.rb.velocity = new Vector2(enemy.rb.velocity.x, jumpForce);
+            enemy.rb.AddForce(Vector2.up * jumpForce);
+
             enemy.Timer = Random.Range(enemy.minTime, enemy.maxTime);
             Debug.Log("Timer set");
         }
+
         if (direction > 0)
         {
             enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -59,16 +63,4 @@ public class Move : State
         enemy.rb.velocity = Vector3.zero;
         enemy.MoveState = false;
     }
-    /*
-    protected override void Updating()
-    {
-        if (MoveState == true)
-        {
-            Timer -= Time.deltaTime;
-        }
-        else
-        {
-            Timer = 0;
-        }
-    }*/
 }
