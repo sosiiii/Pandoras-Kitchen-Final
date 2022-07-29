@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     {
         if (timer.timeValue <= 0)
         {
-            // ak je èas menší ako 0 tak hra skonèí teraz sa len naèíta znovu
+            // when is time less then 0 then game is over
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

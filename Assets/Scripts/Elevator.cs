@@ -10,9 +10,6 @@ public class Elevator : MonoBehaviour
     [Header("Floors")]
     [Range(2, 3)] public int floors;
 
-    [Header("Elevator Start Position")]
-    public Vector3 startPos;
-
     [Header("Floor Position")]
     public List<Vector3> floorsPos = new List<Vector3>();
 
@@ -22,7 +19,7 @@ public class Elevator : MonoBehaviour
     private void Awake()
     {
         //Move elevator on start position
-        transform.position = new Vector3(startPos.x, startPos.y, startPos.z);
+        transform.position = new Vector3(floorsPos[0].x, floorsPos[0].y, floorsPos[0].z);
     }
 
     private void Start()
