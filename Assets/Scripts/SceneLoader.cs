@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-
-    /*private void Start()
+    public void LoadMainMenuScene()
     {
-        if (sceneName == null) { return; }
-    }*/
+        SceneManager.LoadScene("MainMenu");
+    }
 
-    public void LoadScene()
+    public void LoadLevelSelectionScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame()
