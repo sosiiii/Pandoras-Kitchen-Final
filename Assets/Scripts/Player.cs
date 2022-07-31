@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
 
     public void MovePlayer(InputAction.CallbackContext context)
     {
+        _animator.SetBool("Moving", true);
         _horizontalMove = context.ReadValue<float>();
 
         Debug.Log(_horizontalMove);
