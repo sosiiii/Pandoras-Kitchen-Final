@@ -45,6 +45,14 @@ public class Patroling : State
             if (patrolTime <= 0)
             {
                 destination = (destination + 1) % points.Count;
+                if (destination == 1)
+                {
+                    enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                else
+                {
+                    enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
                 patrolTime = enemy.patrolWait;
             }
 

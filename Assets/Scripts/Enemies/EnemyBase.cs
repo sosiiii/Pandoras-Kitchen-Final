@@ -34,7 +34,7 @@ public class EnemyBase : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ChangeState(new Idle(this));
+        ChangeState(new Patroling(this));
 
         health = maxHealth;
         grounded = true;
