@@ -41,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
             foreach (Collider2D enemy in hitEnemies)
             {
                 Debug.Log("We hit " + enemy.name);
-                enemy.GetComponent<EnemyBase>().Demaged(attackDemage, player);
+                enemy.GetComponent<SquidBase>().Demaged(attackDemage, player);
             }
         }
     }

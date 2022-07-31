@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patroling : State
+public class Patroling : SquidState
 {
     float speed = 10;
 
@@ -64,7 +64,7 @@ public class Patroling : State
         }
     }
 
-    public Patroling(EnemyBase enemy) : base(enemy)
+    public Patroling(SquidBase enemy) : base(enemy)
     {
 
     }

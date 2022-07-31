@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : State
+public class Move : SquidState
 {
     Player player;
 
@@ -20,7 +20,7 @@ public class Move : State
     }
 
 
-    public Move(EnemyBase enemy, Player player) : base(enemy)
+    public Move(SquidBase enemy, Player player) : base(enemy)
     {
         this.player = player;
         this.jumpForce = enemy.jumpForce;

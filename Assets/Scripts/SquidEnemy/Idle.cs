@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Idle : State
+public class Idle : SquidState
 {
-    public Idle(EnemyBase enemy) : base(enemy)
+    public Idle(SquidBase enemy) : base(enemy)
     {
     }
 

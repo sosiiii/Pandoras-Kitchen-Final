@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State
+public class SquidState
 {
-    protected EnemyBase enemy;
+    protected SquidBase enemy;
 
-    public State(EnemyBase enemy)
+    public SquidState(SquidBase enemy)
     {
         this.enemy = enemy;
     } 

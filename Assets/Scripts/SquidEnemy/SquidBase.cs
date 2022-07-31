@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public class SquidBase : MonoBehaviour
 {
-    public State state;
+    public SquidState state;
 
     public float knockbackForce = 5;
     public float knockbackForceUp = 3;
@@ -41,7 +41,7 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    public void ChangeState(State newState)
+    public void ChangeState(SquidState newState)
     {
         if (state != null)
             state.Exit();

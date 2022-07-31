@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Demaged : State
+public class Demaged : SquidState
 {
     int damage;
 
@@ -27,7 +27,7 @@ public class Demaged : State
     }
 
 
-    public Demaged(EnemyBase enemy, int damage, Transform player, float knockbackForce, float knockbackForceUp) : base(enemy)
+    public Demaged(SquidBase enemy, int damage, Transform player, float knockbackForce, float knockbackForceUp) : base(enemy)
     {
         this.damage = damage;
         this.player = player;
