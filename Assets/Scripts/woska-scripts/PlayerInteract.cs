@@ -35,16 +35,27 @@ namespace woska_scripts
             {
                 DropItemInHand();
                     
-                itemInHand = currentObject;
-                itemInHand = pickable.PickUp();
-                itemInHand.transform.parent = itemSlot;
-                itemInHand.transform.localPosition = Vector3.zero;
+                PickUpItem(pickable);
             }
             else if (currentObject.TryGetComponent<IInteractable>(out IInteractable interactable))
             {
                 interactable.Interact(this);
             }
   
+        }
+
+        public void ClearItemSlot()
+        {
+            itemInHand = null;
+            currentItemInHand = null;
+        }
+
+        public void PickUpItem(IPickable pickable)
+        {
+            itemInHand = pickable.GetOwner();
+            currentItemInHand = pickable;
+            currentItemInHand.PickUp();
+            currentItemInHand.ChangeParent(itemSlot);
         }
         public void ThrowItem(InputAction.CallbackContext context)
         {
@@ -53,7 +64,7 @@ namespace woska_scripts
             if (itemInHand != null)
             {
                 itemInHand.GetComponent<PickableItem>().Throw();
-                itemInHand = null;
+                ClearItemSlot();
             }
 
         }
@@ -63,7 +74,7 @@ namespace woska_scripts
             if (itemInHand != null)
             {
                 itemInHand.GetComponent<IPickable>().Drop();
-                itemInHand = null;
+                ClearItemSlot();
             }
         }
     }

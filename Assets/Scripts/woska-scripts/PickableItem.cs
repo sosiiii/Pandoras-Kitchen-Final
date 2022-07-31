@@ -57,4 +57,10 @@ public class PickableItem : MonoBehaviour, IPickable
         transform.parent = null;
         
     }
+
+    public void ChangeParent(Transform parent)
+    {
+        transform.parent = parent;
+        transform.localPosition = Vector3.zero;
+    }
 }

@@ -7,4 +7,5 @@ using UnityEngine;
         public GameObject PickUp();
         public void Drop();
         public void Throw();
+        public void ChangeParent(Transform parent);
     }
