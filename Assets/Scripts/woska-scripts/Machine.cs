@@ -93,10 +93,9 @@ public class Machine : MonoBehaviour, IInteractable
     IItemContainer GetFirstItemSlot()
     {
 
-        for (int i = _inputSlots.Count-1; i <= 0; i--)
+        for (int i = _inputSlots.Count-1; i >= 0; i--)
         {
-            var current = _inputSlots[i].IsFull();
-            if (current) return _inputSlots[i];
+            if (_inputSlots[i].IsFull()) return _inputSlots[i];
         }
 
         return null;

@@ -745,9 +745,25 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2750489147309779924, guid: 7d3edc4d8cb1b4502975cc2de001a942, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750489147309779925, guid: 7d3edc4d8cb1b4502975cc2de001a942, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750489147309779925, guid: 7d3edc4d8cb1b4502975cc2de001a942, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750489147309779925, guid: 7d3edc4d8cb1b4502975cc2de001a942, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750489147309779925, guid: 7d3edc4d8cb1b4502975cc2de001a942, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2750489147309779925, guid: 7d3edc4d8cb1b4502975cc2de001a942, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1546,6 +1562,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7395490398614058367, guid: 8af43bccf685d654b889eec680edbdd9, type: 3}
+    - target: {fileID: 49471792059290573, guid: 8043932d4809f4f8b810b088abe4faac, type: 3}
+      propertyPath: _offset.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 49471792059290573, guid: 8043932d4809f4f8b810b088abe4faac, type: 3}
       propertyPath: _outPutSlot
       value: 
