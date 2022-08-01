@@ -99,6 +99,7 @@ public class PlayerCombat : MonoBehaviour
        
         if (context.performed && ammo > 0)
         {
+            Hit();
             ammo--;
             anim.SetTrigger("Attack");
             // StopCoroutine(Reloading());

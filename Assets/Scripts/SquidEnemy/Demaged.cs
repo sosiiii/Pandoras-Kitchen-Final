@@ -45,9 +45,7 @@ public class Demaged : SquidState
 
     IEnumerator Stun()
     {
-
-
-        yield return null;
+        yield return new WaitForSeconds(10);
     }
 
     void KnockBack()

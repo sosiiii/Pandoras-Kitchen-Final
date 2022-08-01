@@ -208,13 +208,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  animator: {fileID: 0}
+  anim: {fileID: 0}
   attackPoint: {fileID: 2750489148658618836}
   attackRange: 3
   attackDemage: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  ammoPoints: []
+  ammo: 0
+  maxAmmo: 0
+  reload: 0
 --- !u!114 &2750489147309779916
 MonoBehaviour:
   m_ObjectHideFlags: 0
