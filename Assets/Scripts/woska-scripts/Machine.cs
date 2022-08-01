@@ -5,6 +5,7 @@ using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.Serialization;
 using woska_scripts;
+using Random = System.Random;
 
 [RequireComponent(typeof(BoxCollider2D), typeof(Highlight), typeof(Animator))]
 public class Machine : MonoBehaviour, IInteractable
@@ -16,73 +17,161 @@ public class Machine : MonoBehaviour, IInteractable
     public bool FinishedItem { get; private set; }
     public bool FreeInputSlots => _inputSlots.Count < inputSlotsCount;
     public bool InputSlotsEmpty => _inputSlots.Count == 0;
-
-    public bool OutPutSlotEmpty => outPutSlot == null;
+    
 
     [SerializeField] private int inputSlotsCount = 2;
-    private Stack<IPickable> _inputSlots = new Stack<IPickable>();
 
-    public IPickable outPutSlot;
+    [SerializeField] private Transform _middlePoinTransform;
+    [SerializeField] private Vector3 _offset = Vector3.right;
 
-
-    [SerializeField] private Transform outPutSlotTransform;
     
-    
+    [SerializeField] private List<IItemContainer> _inputSlots = new List<IItemContainer>();
+
+    [SerializeField] private ItemSlot _outPutSlot;
+
+    [SerializeField] private IItemContainer itemSlotPrefab;
 
     private void Awake()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
         _boxCollider2D.isTrigger = true;
+        
+        var tmp = (IItemContainer[])transform.GetChild(0).gameObject.GetComponentsInChildren<IItemContainer>();
+   
+        _inputSlots = new List<IItemContainer>(tmp);
+        
+        
+        Debug.Log(_inputSlots.Count);
+        
     }
 
     public bool Interact(PlayerInteract playerInteract)
     {
-        if (IsRunning) return false;
+        var playerItemSlot = playerInteract.ItemSlot;
 
-        if (!OutPutSlotEmpty)
+        if (playerItemSlot.IsFull())
         {
-            //Take item out
-            if (playerInteract.HasItem) return false;
-            
-            
-            playerInteract.PickUpItem(outPutSlot);
-            outPutSlot = null;
-
+            if (FreeInputSlot())
+            {
+                InsertItem(playerInteract);
+            }
         }
         else
         {
-            if (playerInteract.HasItem && FreeInputSlots)
+            if (_outPutSlot.IsFull())
             {
-                Debug.Log("Insert item");
-                var itemInHand = playerInteract.currentItemInHand;
-
-                playerInteract.ClearItemSlot();
-                _inputSlots.Push(itemInHand);
-
-                itemInHand.ChangeParent(transform);
-
-                //Check for crafting
-                
-                if(_inputSlots.Count == 2)
-                    StartCoroutine(CoroutineCrafting());
+                //Take item out
             }
-            else if (!playerInteract.HasItem && !InputSlotsEmpty)
+            else if (ContainsItem())
             {
-                Debug.Log("Take item");
-                var item = _inputSlots.Pop();
-                playerInteract.PickUpItem(item);
-            }
-            else
-            {
-                Debug.Log("Player has nothing in his hands and machine is empty");
+                RemoveItem(playerInteract);
             }
         }
 
-
-
-
         return true;
+    }
+
+    bool FreeInputSlot()
+    {
+        foreach (var slot in _inputSlots)
+        {
+            if (!slot.IsFull()) return true;
+        }
+
+        return false;
+    }
+    bool ContainsItem()
+    {
+        foreach (var slot in _inputSlots)
+        {
+            if (slot.IsFull()) return true;
+        }
+
+        return false;
+    }
+    IItemContainer GetFirstItemSlot()
+    {
+
+        for (int i = _inputSlots.Count-1; i <= 0; i--)
+        {
+            var current = _inputSlots[i].IsFull();
+            if (current) return _inputSlots[i];
+        }
+
+        return null;
+    }
+
+    IItemContainer GetFreeInputSlot()
+    {
+        foreach (var slot in _inputSlots)
+        {
+            if (!slot.IsFull()) return slot;
+        }
+
+        return null;
+    }
+    int FreeInputSlotsCount()
+    {
+        int free = 0;
+        foreach (var slot in _inputSlots)
+        {
+            if (!slot.IsFull()) free++;
+        }
+
+        return free;
+    }
+    private void InsertItem(PlayerInteract playerInteract)
+    {
+        Debug.Log("Insert item");
+        var itemInHand = playerInteract.ItemSlot.RemoveItem();
+
+        var freeInputSlot = GetFreeInputSlot();
+        
+        Debug.Log(FreeInputSlotsCount());
+        
+        freeInputSlot.AddItem(itemInHand);
+        
+        UpdateSlotPosition();
+    }
+
+    private void UpdateSlotPosition()
+    {
+        var numberOfFreeSlots = FreeInputSlotsCount();
+
+        if (numberOfFreeSlots == 2)
+        {
+            _inputSlots[0].SetLocalPosition(Vector3.zero);
+            ;
+        }
+        else if (numberOfFreeSlots == 1)
+        {
+            _inputSlots[0].SetLocalPosition(-_offset * 0.5f);
+            _inputSlots[1].SetLocalPosition(_offset * 0.5f);
+        }
+        else if (numberOfFreeSlots == 0)
+        {
+            _inputSlots[0].SetLocalPosition(-_offset);
+            _inputSlots[1].SetLocalPosition(Vector3.zero);
+            _inputSlots[2].SetLocalPosition(_offset);
+        }
+    }
+
+    private void RemoveItem(PlayerInteract playerInteract)
+    {
+        var playerSlot = playerInteract.ItemSlot;
+
+        var firstFullItemSlot = GetFirstItemSlot();
+
+        var item = firstFullItemSlot.RemoveItem();
+
+
+        playerSlot.AddItem(item);
+        
+        
+        UpdateSlotPosition();
+
+
     }
 
     private IEnumerator CoroutineCrafting()
@@ -90,10 +179,8 @@ public class Machine : MonoBehaviour, IInteractable
         IsRunning = true;
         _animator.Play("MachineWorking", 0, 0f);
         yield return new WaitForSeconds(4f);
-
-        Destroy(_inputSlots.Pop().GetOwner());
-        outPutSlot = _inputSlots.Pop();
-        outPutSlot.ChangeParent(outPutSlotTransform);
+        
+      
         _animator.Play("MachineIdle", 0, 0f);
         IsRunning = false;
     }

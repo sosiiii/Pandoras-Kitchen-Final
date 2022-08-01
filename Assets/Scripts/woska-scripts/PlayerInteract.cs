@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,18 +8,17 @@ namespace woska_scripts
     public class PlayerInteract : MonoBehaviour
     {
         private PlayerObjectDetector _playerObjectDetector;
-
-
-        [SerializeField] private Transform itemSlot;
-
-        private GameObject itemInHand;
-        
         public IPickable currentItemInHand { get; private set; }
 
+        public IItemContainer ItemSlot { get; private set; }
         public bool HasItem => currentItemInHand != null;
+
+        [SerializeField] private SolidItem solidItemPrefab;
+        [SerializeField] private ItemSlot _itemSlotGO;
         private void Awake()
         {
             _playerObjectDetector = GetComponent<PlayerObjectDetector>();
+            ItemSlot = _itemSlotGO;
         }
 
         public void Interact(InputAction.CallbackContext context)
@@ -29,53 +29,53 @@ namespace woska_scripts
             if (currentObject == null)
             {
                 DropItemInHand();
-                    
             }
             else if (currentObject.TryGetComponent<IPickable>(out IPickable pickable))
             {
-                DropItemInHand();
-                    
+                if(ItemSlot.IsFull()) DropItemInHand();
                 PickUpItem(pickable);
             }
             else if (currentObject.TryGetComponent<IInteractable>(out IInteractable interactable))
             {
                 interactable.Interact(this);
             }
-  
         }
-
-        public void ClearItemSlot()
-        {
-            itemInHand = null;
-            currentItemInHand = null;
-        }
-
+        
         public void PickUpItem(IPickable pickable)
         {
-            itemInHand = pickable.GetOwner();
-            currentItemInHand = pickable;
-            currentItemInHand.PickUp();
-            currentItemInHand.ChangeParent(itemSlot);
+            var itemToPickUp = pickable.GetItem();
+            pickable.DestroyItem();
+            ItemSlot.AddItem(itemToPickUp);
         }
         public void ThrowItem(InputAction.CallbackContext context)
         {
             if(!context.started) return;
+            
+            if(!ItemSlot.IsFull()) return;
 
-            if (itemInHand != null)
-            {
-                itemInHand.GetComponent<PickableItem>().Throw();
-                ClearItemSlot();
-            }
-
+            var item = InitItem();
+            item.Throw();
+            
         }
 
         private void DropItemInHand()
         {
-            if (itemInHand != null)
-            {
-                itemInHand.GetComponent<IPickable>().Drop();
-                ClearItemSlot();
-            }
+            if(!ItemSlot.IsFull()) return;
+
+            InitItem();
+        }
+
+        private IPickable InitItem()
+        {
+            var itemRemoved = ItemSlot.RemoveItem();
+            
+            //Creates a in world item
+            var instantiateItem = Instantiate(solidItemPrefab, ItemSlot.GetPosition(), transform.rotation);
+
+            //Sets in world item to correct sprite
+            instantiateItem.Init(itemRemoved);
+
+            return instantiateItem;
         }
     }
 }
