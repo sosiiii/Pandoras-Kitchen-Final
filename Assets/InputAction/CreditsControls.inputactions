@@ -1,0 +1,55 @@
+{
+    "name": "CreditsControls",
+    "maps": [
+        {
+            "name": "LoadMenu",
+            "id": "928461f9-262c-4f9e-a48f-faab78fd91d3",
+            "actions": [
+                {
+                    "name": "LoadMenu",
+                    "type": "Button",
+                    "id": "10be2366-7d4e-4da8-a692-20e30868f6d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cfbdc1d6-0898-4e56-a4cb-f36978d64bbb",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LoadMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10dab632-802b-46d1-8d6a-ee037c9a151a",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LoadMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44e5cbc8-2f3f-45f8-9309-ad1b6b8a4f5f",
+                    "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LoadMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

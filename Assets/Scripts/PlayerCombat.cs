@@ -7,7 +7,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Transform player;
 
-    public Animator animator;
+    public Animator anim;
 
     public Transform attackPoint;
     public float attackRange;
@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         player = this.transform;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,13 +36,13 @@ public class PlayerCombat : MonoBehaviour
        
         if (context.performed)
         {
-            
+            anim.SetTrigger("Attack");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
             foreach (Collider2D enemy in hitEnemies)
             {
                 Debug.Log("We hit " + enemy.name);
-                enemy.GetComponent<EnemyBase>().Demaged(attackDemage, player);
+                enemy.GetComponent<SquidBase>().Demaged(attackDemage, player);
             }
         }
     }
