@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bone
   m_EditorClassIdentifier: 
   itemName: Bone
-  itemSprite: {fileID: 21300000, guid: 329747083f05bbc4f9f0c4ae9f4cde8c, type: 3}
+  itemSprite: {fileID: 21300000, guid: 00aa63a5acceb420db492fc62fd7ccea, type: 3}

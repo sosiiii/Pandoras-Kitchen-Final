@@ -15,6 +15,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("LevelSelection");
     }
 
+    public void LoadSettingsScene()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
     public void LoadCreditsScene()
     {
         SceneManager.LoadScene("Credits");

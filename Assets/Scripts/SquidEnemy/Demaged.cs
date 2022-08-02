@@ -12,15 +12,12 @@ public class Demaged : SquidState
     Transform player;
 
     Rigidbody2D rb;
-
-    Animator anim;
     public override void Enter()
     {
-        anim = enemy.GetComponent<Animator>();
         Debug.Log("Enter Demaged");
 
         rb = enemy.rb;
-        anim.SetTrigger("Demaged");
+
         enemy.health -= damage;
         KnockBack();
         if (enemy.health <= 0)
