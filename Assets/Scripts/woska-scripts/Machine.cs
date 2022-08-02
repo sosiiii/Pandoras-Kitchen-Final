@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using TMPro.EditorUtilities;
+using System.Linq;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.Serialization;
 using woska_scripts;
+using Random = System.Random;
 
 [RequireComponent(typeof(BoxCollider2D), typeof(Highlight), typeof(Animator))]
 public class Machine : MonoBehaviour, IInteractable
@@ -13,55 +16,156 @@ public class Machine : MonoBehaviour, IInteractable
     public bool IsRunning { get; private set; }
     
     public bool FinishedItem { get; private set; }
-    public bool HasFreeSlots { get; private set; }
+    
+    [SerializeField] private Vector3 _offset = Vector3.right;
+
+    [SerializeField] private List<IItemContainer> _inputSlots = new List<IItemContainer>();
+
+    [SerializeField] private ItemSlot _outPutSlot;
+
 
     private void Awake()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
         _boxCollider2D.isTrigger = true;
+        
+        var tmp = (IItemContainer[])transform.GetChild(0).gameObject.GetComponentsInChildren<IItemContainer>();
+        _inputSlots = new List<IItemContainer>(tmp);
+        
     }
-
     public bool Interact(PlayerInteract playerInteract)
     {
-        if (IsRunning) return false;
+        var playerItemSlot = playerInteract.ItemSlot;
 
-        StartCoroutine(CoroutineCrafting());
-
-        if (FinishedItem)
+        //Player has item in hand
+        if (playerItemSlot.IsFull())
         {
-            // We must take item out
-            
-            //If we have empty hand we take item out
-            
-            
-            //If we have full hand ... nothing
-        }
-        else if(HasFreeSlots)
-        {
-            if (playerInteract.HasItem)
+            //Machine has free input slot
+            if (FreeInputSlot())
             {
-                //Insert item
+                InsertItem(playerInteract);
             }
-        }
-        
-        
-
-        if (playerInteract.currentItemInHand != null)
-        {
-            return true;
         }
         else
         {
-            return false;
+            if (_outPutSlot.IsFull())
+            {
+                //Take item out
+            }
+            else if (ContainsItem())
+            {
+                RemoveItem(playerInteract);
+            }
         }
+
+        return true;
+    }
+
+    bool FreeInputSlot()
+    {
+        foreach (var slot in _inputSlots)
+        {
+            if (!slot.IsFull()) return true;
+        }
+
+        return false;
+    }
+    bool ContainsItem()
+    {
+        foreach (var slot in _inputSlots)
+        {
+            if (slot.IsFull()) return true;
+        }
+
+        return false;
+    }
+    IItemContainer GetFirstItemSlot()
+    {
+
+        for (int i = _inputSlots.Count-1; i >= 0; i--)
+        {
+            if (_inputSlots[i].IsFull()) return _inputSlots[i];
+        }
+
+        return null;
+    }
+
+    IItemContainer GetFreeInputSlot()
+    {
+        foreach (var slot in _inputSlots)
+        {
+            if (!slot.IsFull()) return slot;
+        }
+
+        return null;
+    }
+    int FreeInputSlotsCount()
+    {
+        int free = 0;
+        foreach (var slot in _inputSlots)
+        {
+            if (!slot.IsFull()) free++;
+        }
+
+        return free;
+    }
+    private void InsertItem(PlayerInteract playerInteract)
+    {
+        var itemInHand = playerInteract.ItemSlot.RemoveItem();
+
+        var freeInputSlot = GetFreeInputSlot();
+
+        freeInputSlot.AddItem(itemInHand);
+        
+        UpdateSlotPosition();
+    }
+
+    private void UpdateSlotPosition()
+    {
+        var numberOfFreeSlots = FreeInputSlotsCount();
+
+        if (numberOfFreeSlots == 2 || _inputSlots.Count == 1)
+        {
+            _inputSlots[0].SetLocalPosition(Vector3.zero);
+        }
+        else if (numberOfFreeSlots == 1)
+        {
+            _inputSlots[0].SetLocalPosition(-_offset * 0.5f);
+            _inputSlots[1].SetLocalPosition(_offset * 0.5f);
+        }
+        else if (numberOfFreeSlots == 0)
+        {
+            _inputSlots[0].SetLocalPosition(-_offset);
+            _inputSlots[1].SetLocalPosition(Vector3.zero);
+            _inputSlots[2].SetLocalPosition(_offset);
+        }
+    }
+
+    private void RemoveItem(PlayerInteract playerInteract)
+    {
+        var playerSlot = playerInteract.ItemSlot;
+
+        var firstFullItemSlot = GetFirstItemSlot();
+
+        var item = firstFullItemSlot.RemoveItem();
+
+
+        playerSlot.AddItem(item);
+        
+        
+        UpdateSlotPosition();
+
+
     }
 
     private IEnumerator CoroutineCrafting()
     {
         IsRunning = true;
         _animator.Play("MachineWorking", 0, 0f);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
+        
+      
         _animator.Play("MachineIdle", 0, 0f);
         IsRunning = false;
     }
