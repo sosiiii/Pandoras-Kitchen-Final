@@ -220,9 +220,9 @@ MonoBehaviour:
   speed: 25
   floors: 3
   floorsPos:
-  - {x: -57.35, y: 36.3, z: 0}
-  - {x: -57.35, y: 11.3, z: 0}
-  - {x: -57.35, y: -17.3, z: 0}
+  - {x: -67.35, y: 31.31, z: 0}
+  - {x: -67.35, y: 6.309999, z: 0}
+  - {x: -67.35, y: -23.69, z: 0}
   howLongWaitOnFloor: 3
 --- !u!1 &7878170801072373059
 GameObject:
