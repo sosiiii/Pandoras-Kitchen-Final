@@ -127,13 +127,45 @@
             ]
         },
         {
-            "name": "Play",
-            "id": "2f7499b7-c5c2-487a-8453-faac2727f819",
+            "name": "Gameplay1",
+            "id": "8c77f21c-00db-48b3-be14-f34ab63ee9b5",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Movement",
+                    "type": "PassThrough",
+                    "id": "87c2899c-d179-4032-a44b-b196c6427c94",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
                     "type": "Button",
-                    "id": "ba1cafa4-27b2-4446-994a-662afb33ddbc",
+                    "id": "fea08806-ec98-476d-ae45-afdbb701b6f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "261b9dca-b294-4973-ba23-8403469da9e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Combat",
+                    "type": "Button",
+                    "id": "6f7fb764-e389-4462-8d95-6a8541c419f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "OpenDoor",
+                    "type": "Button",
+                    "id": "135d709f-133d-4b07-9c84-476b18a9e285",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -142,12 +174,78 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "80c94cb8-18e8-4833-91b5-51fb45f0926a",
-                    "path": "",
+                    "id": "1335a820-7684-4fd6-882a-06e1e8a9696c",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "4bca4d7c-994c-4ac2-b94c-c21e1e8daf27",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c31fa624-f5dd-4b9f-ad5f-83afba7e8e4a",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c4a7a5b8-70cd-41cf-879d-5ac93e0cd07d",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "ade0e136-9676-4699-bb5d-436d486b6b28",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b705605-c34d-4b66-a7f2-ae22297c90e0",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Combat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b323ec7-6c99-4ba3-a6eb-9e14a1e6a8e5",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "OpenDoor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
