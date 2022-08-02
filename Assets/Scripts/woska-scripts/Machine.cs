@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,21 +16,13 @@ public class Machine : MonoBehaviour, IInteractable
     public bool IsRunning { get; private set; }
     
     public bool FinishedItem { get; private set; }
-    public bool FreeInputSlots => _inputSlots.Count < inputSlotsCount;
-    public bool InputSlotsEmpty => _inputSlots.Count == 0;
     
-
-    [SerializeField] private int inputSlotsCount = 2;
-
-    [SerializeField] private Transform _middlePoinTransform;
     [SerializeField] private Vector3 _offset = Vector3.right;
 
-    
     [SerializeField] private List<IItemContainer> _inputSlots = new List<IItemContainer>();
 
     [SerializeField] private ItemSlot _outPutSlot;
 
-    [SerializeField] private IItemContainer itemSlotPrefab;
 
     private void Awake()
     {
@@ -38,20 +31,17 @@ public class Machine : MonoBehaviour, IInteractable
         _boxCollider2D.isTrigger = true;
         
         var tmp = (IItemContainer[])transform.GetChild(0).gameObject.GetComponentsInChildren<IItemContainer>();
-   
         _inputSlots = new List<IItemContainer>(tmp);
         
-        
-        Debug.Log(_inputSlots.Count);
-        
     }
-
     public bool Interact(PlayerInteract playerInteract)
     {
         var playerItemSlot = playerInteract.ItemSlot;
 
+        //Player has item in hand
         if (playerItemSlot.IsFull())
         {
+            //Machine has free input slot
             if (FreeInputSlot())
             {
                 InsertItem(playerInteract);
@@ -122,13 +112,10 @@ public class Machine : MonoBehaviour, IInteractable
     }
     private void InsertItem(PlayerInteract playerInteract)
     {
-        Debug.Log("Insert item");
         var itemInHand = playerInteract.ItemSlot.RemoveItem();
 
         var freeInputSlot = GetFreeInputSlot();
-        
-        Debug.Log(FreeInputSlotsCount());
-        
+
         freeInputSlot.AddItem(itemInHand);
         
         UpdateSlotPosition();
@@ -138,10 +125,9 @@ public class Machine : MonoBehaviour, IInteractable
     {
         var numberOfFreeSlots = FreeInputSlotsCount();
 
-        if (numberOfFreeSlots == 2)
+        if (numberOfFreeSlots == 2 || _inputSlots.Count == 1)
         {
             _inputSlots[0].SetLocalPosition(Vector3.zero);
-            ;
         }
         else if (numberOfFreeSlots == 1)
         {
