@@ -127,4 +127,12 @@ public class Player : MonoBehaviour
     {
         _animator.SetBool("IsJumping", false);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+    }
 }

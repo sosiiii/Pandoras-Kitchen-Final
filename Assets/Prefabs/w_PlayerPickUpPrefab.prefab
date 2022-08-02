@@ -183,7 +183,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2750489147309779931}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4d39aa0290ddf145963cddad42a238d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -216,7 +216,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: f4d39aa0290ddf145963cddad42a238d, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -348,12 +348,28 @@ MonoBehaviour:
     m_ActionName: Gameplay/Combat[/Keyboard/f]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: ba1cafa4-27b2-4446-994a-662afb33ddbc
-    m_ActionName: New action map/New action
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: a7b9a5ce-e064-4f07-948d-962fb92eca24
     m_ActionName: Gameplay/OpenDoor[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 87c2899c-d179-4032-a44b-b196c6427c94
+    m_ActionName: Gameplay1/Movement[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fea08806-ec98-476d-ae45-afdbb701b6f5
+    m_ActionName: Gameplay1/Jump[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 261b9dca-b294-4973-ba23-8403469da9e6
+    m_ActionName: Gameplay1/Grab[/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f7fb764-e389-4462-8d95-6a8541c419f3
+    m_ActionName: Gameplay1/Combat[/Keyboard/rightCtrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 135d709f-133d-4b07-9c84-476b18a9e285
+    m_ActionName: Gameplay1/OpenDoor[/Keyboard/rightShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -388,7 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66382a7449e4b8a883618315d7924d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot: {fileID: 6168359126052080563}
+  solidItemPrefab: {fileID: 0}
+  _itemSlotGO: {fileID: 0}
 --- !u!61 &708660132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -485,7 +502,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 2750489149018108579}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4d39aa0290ddf145963cddad42a238d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
