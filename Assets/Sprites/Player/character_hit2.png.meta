@@ -1,199 +1,241 @@
 fileFormatVersion: 2
-guid: 37db6fd26ee44919bffee8a330bd9f5d
+guid: aaa807840a4943e79b5aa0802ee18d99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3434707515398226520
-    second: 001_vanish_0
+      213: -9092965180657331526
+    second: 001_hit2_0
   - first:
-      213: 4915276799413289622
-    second: 001_vanish_1
+      213: 6439382889914594774
+    second: 001_hit2_1
   - first:
-      213: 6861718086028691877
-    second: 001_vanish_2
+      213: -8165719529936067018
+    second: 001_hit2_2
   - first:
-      213: -8259878062113611040
-    second: 001_vanish_3
+      213: 5632600301517600803
+    second: 001_hit2_3
   - first:
-      213: 2042593591504991650
-    second: 001_vanish_4
+      213: -6737290717812393329
+    second: 001_hit2_4
   - first:
-      213: -6479041247088793098
-    second: 001_vanish_5
+      213: -6735315317013241014
+    second: 001_hit2_5
   - first:
-      213: -8201731601289760984
-    second: 001_vanish_6
+      213: 7939145764304593538
+    second: 001_hit2_6
   - first:
-      213: 5122436602269251396
-    second: 001_vanish_7
+      213: -6381988243674975830
+    second: 001_hit2_7
   - first:
-      213: -948179390938322655
-    second: 001_vanish_8
+      213: 2038242314717913234
+    second: 001_hit2_8
   - first:
-      213: -6726162613481963542
-    second: 001_vanish_9
+      213: 4488208323825842998
+    second: 001_hit2_9
   - first:
-      213: 3144973476477944799
-    second: 001_vanish_10
+      213: -3543501767045418177
+    second: 001_hit2_10
   - first:
-      213: -4999458232325339157
-    second: 001_vanish_11
+      213: -5170352317665553165
+    second: 001_hit2_11
   - first:
-      213: 5078890676291316291
-    second: 001_vanish_12
+      213: 3530031593297470880
+    second: 001_hit2_12
   - first:
-      213: 1593672562383212841
-    second: 001_vanish_13
+      213: 3813052908413769064
+    second: 001_hit2_13
   - first:
-      213: 2000303750712964288
-    second: 001_vanish_14
+      213: 8842289039032168729
+    second: 001_hit2_14
   - first:
-      213: 3476343102986788287
-    second: 001_vanish_15
+      213: 4914432517744140523
+    second: 001_hit2_15
   - first:
-      213: 1695258484887350024
-    second: 001_vanish_16
+      213: -8577176063348433926
+    second: 001_hit2_16
   - first:
-      213: -1699803188733962847
-    second: 001_vanish_17
+      213: -1457313999706201939
+    second: 001_hit2_17
   - first:
-      213: -4271397324320417159
-    second: 001_vanish_18
+      213: -8944557728787240226
+    second: 001_hit2_18
   - first:
-      213: -3798337595460405455
-    second: 001_vanish_19
+      213: 2210512251243644298
+    second: 001_hit2_19
   - first:
-      213: -6165679853596640873
-    second: 001_vanish_20
+      213: -8051352220710045221
+    second: 001_hit2_20
   - first:
-      213: 7053619147452027998
-    second: 001_vanish_21
+      213: 8419965306400454257
+    second: 001_hit2_21
   - first:
-      213: -8300555443500492425
-    second: 001_vanish_22
+      213: -2665433586495446557
+    second: 001_hit2_22
   - first:
-      213: 855643875274518717
-    second: 001_vanish_23
+      213: 6910857705966810997
+    second: 001_hit2_23
   - first:
-      213: 1208968505376009898
-    second: 001_vanish_24
+      213: 5026049153306531167
+    second: 001_hit2_24
   - first:
-      213: -4656850555114168956
-    second: 001_vanish_25
+      213: 6936415491989773123
+    second: 001_hit2_25
   - first:
-      213: -8533464056732746797
-    second: 001_vanish_26
+      213: -3632951486679733264
+    second: 001_hit2_26
   - first:
-      213: 7368898737076916928
-    second: 001_vanish_27
+      213: 7655142059833352780
+    second: 001_hit2_27
   - first:
-      213: 4705915955322536588
-    second: 001_vanish_28
+      213: -8631737453569084469
+    second: 001_hit2_28
   - first:
-      213: 7655124871304752728
-    second: 001_vanish_29
+      213: -4470182505180062659
+    second: 001_hit2_29
   - first:
-      213: -780366997863978320
-    second: 001_vanish_30
+      213: 4034518837222843558
+    second: 001_hit2_30
   - first:
-      213: -2436450766142868159
-    second: 001_vanish_31
+      213: -3740585051898036154
+    second: 001_hit2_31
   - first:
-      213: -6933376847463828097
-    second: vanish_0
+      213: -8353576788402523031
+    second: 001_hit2_32
   - first:
-      213: -5237305773744717419
-    second: vanish_1
+      213: 1462316784469473775
+    second: 001_hit2_33
   - first:
-      213: -8832942586056227262
-    second: vanish_2
+      213: -3978399991139095935
+    second: 001_hit2_34
   - first:
-      213: -8963126696323742251
-    second: vanish_3
+      213: 6651266095964599965
+    second: 001_hit2_35
   - first:
-      213: -5780482753717323668
-    second: vanish_4
+      213: -2888984889203218095
+    second: 001_hit2_36
   - first:
-      213: 3281484461675188788
-    second: vanish_5
+      213: 7034821086263276409
+    second: 001_hit2_37
   - first:
-      213: -1242349326372387410
-    second: vanish_6
+      213: -6706653429598587480
+    second: 001_hit2_38
   - first:
-      213: 6980888030113846711
-    second: vanish_7
+      213: -5274358452612069277
+    second: hit2_0
   - first:
-      213: -3064017222887765310
-    second: vanish_8
+      213: 3655956208215277545
+    second: hit2_1
   - first:
-      213: 7909386141080420498
-    second: vanish_9
+      213: 1586402833736046071
+    second: hit2_2
   - first:
-      213: 2208351160603301257
-    second: vanish_10
+      213: -4148476520895587007
+    second: hit2_3
   - first:
-      213: -3524833060866120207
-    second: vanish_11
+      213: 2558150729480811363
+    second: hit2_4
   - first:
-      213: 5290899786636593083
-    second: vanish_12
+      213: -6382383319874499519
+    second: hit2_5
   - first:
-      213: 3793135003011521512
-    second: vanish_13
+      213: -8858180729425359725
+    second: hit2_6
   - first:
-      213: 8127399618877946523
-    second: vanish_14
+      213: 4754879087600898629
+    second: hit2_7
   - first:
-      213: 4907074289330451353
-    second: vanish_15
+      213: 4625350963428140893
+    second: hit2_8
   - first:
-      213: -243917037616477623
-    second: vanish_16
+      213: -3817101295631139238
+    second: hit2_9
   - first:
-      213: 2503918929811048904
-    second: vanish_17
+      213: -8585271175440404271
+    second: hit2_10
   - first:
-      213: 1120524881432023382
-    second: vanish_18
+      213: 23969435656016177
+    second: hit2_11
   - first:
-      213: -9181914173064295235
-    second: vanish_19
+      213: -7036500050963787583
+    second: hit2_12
   - first:
-      213: -3995811919799648164
-    second: vanish_20
+      213: -4589207118948648902
+    second: hit2_13
   - first:
-      213: -4951816434380497990
-    second: vanish_21
+      213: -5921094935529716941
+    second: hit2_14
   - first:
-      213: 8240427576413946002
-    second: vanish_22
+      213: -3519608371416266205
+    second: hit2_15
   - first:
-      213: -4554653555070836905
-    second: vanish_23
+      213: 7432678977671633619
+    second: hit2_16
   - first:
-      213: -6245187095425293849
-    second: vanish_24
+      213: -6492412880999474177
+    second: hit2_17
   - first:
-      213: -2491518914093591735
-    second: vanish_25
+      213: 672309493171037465
+    second: hit2_18
   - first:
-      213: -6312508621195008799
-    second: vanish_26
+      213: 1842742056556269355
+    second: hit2_19
   - first:
-      213: 2541455224421076861
-    second: vanish_27
+      213: 6978008931822586889
+    second: hit2_20
   - first:
-      213: 7809726351429310546
-    second: vanish_28
+      213: 8037731144297158094
+    second: hit2_21
   - first:
-      213: 3477101644308552507
-    second: vanish_29
+      213: 4342723654223804648
+    second: hit2_22
   - first:
-      213: -275543275449285507
-    second: vanish_30
+      213: -3827469859778547824
+    second: hit2_23
   - first:
-      213: 3946212249003284976
-    second: vanish_31
+      213: 888168391379498629
+    second: hit2_24
+  - first:
+      213: 3741612491698065725
+    second: hit2_25
+  - first:
+      213: -1695149835751385334
+    second: hit2_26
+  - first:
+      213: -6040701376351299853
+    second: hit2_27
+  - first:
+      213: 4372922321154989461
+    second: hit2_28
+  - first:
+      213: -3226812343228009016
+    second: hit2_29
+  - first:
+      213: -807624022117278653
+    second: hit2_30
+  - first:
+      213: -4965327591001679275
+    second: hit2_31
+  - first:
+      213: 3665183488593982727
+    second: hit2_32
+  - first:
+      213: -1771673081520881003
+    second: hit2_33
+  - first:
+      213: 5539328379449762760
+    second: hit2_34
+  - first:
+      213: -221857059279976951
+    second: hit2_35
+  - first:
+      213: 3952922695284822681
+    second: hit2_36
+  - first:
+      213: -3621283786465322042
+    second: hit2_37
+  - first:
+      213: -1976906597703977825
+    second: hit2_38
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -216,7 +258,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -308,7 +349,238 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vanish_0
+      name: hit2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3688afd9ee6bdc6b0800000000000000
+      internalID: -5274358452612069277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef3e012dc09cb230800000000000000
+      internalID: 3655956208215277545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5928fd8f8040610800000000000000
+      internalID: 1586402833736046071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d58f47596ad66c0800000000000000
+      internalID: -4148476520895587007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3633c98e880608320800000000000000
+      internalID: 2558150729480811363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_5
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c80869f283d67a0800000000000000
+      internalID: -6382383319874499519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_6
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c046a2f8b611580800000000000000
+      internalID: -8858180729425359725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_7
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54292667659bcf140800000000000000
+      internalID: 4754879087600898629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_8
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5725a0f13c803040800000000000000
+      internalID: 4625350963428140893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_9
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ef832789ee60bc0800000000000000
+      internalID: -3817101295631139238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_10
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 900
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d079774a5dfad880800000000000000
+      internalID: -8585271175440404271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit2_11
       rect:
         serializedVersion: 2
         x: 0
@@ -322,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f753009ed72b7cf90800000000000000
-      internalID: -6933376847463828097
+      spriteID: 1315eb12318255000800000000000000
+      internalID: 23969435656016177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_1
+      name: hit2_12
       rect:
         serializedVersion: 2
         x: 360
@@ -343,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59108dfa52a5157b0800000000000000
-      internalID: -5237305773744717419
+      spriteID: 1c019401c74595e90800000000000000
+      internalID: -7036500050963787583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_2
+      name: hit2_13
       rect:
         serializedVersion: 2
         x: 720
@@ -364,14 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 246c2b454851b6580800000000000000
-      internalID: -8832942586056227262
+      spriteID: a383f52a07cdf40c0800000000000000
+      internalID: -4589207118948648902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_3
+      name: hit2_14
       rect:
         serializedVersion: 2
         x: 1080
@@ -385,14 +657,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d58dc422c39c9380800000000000000
-      internalID: -8963126696323742251
+      spriteID: 3330366078b04dda0800000000000000
+      internalID: -5921094935529716941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_4
+      name: hit2_15
       rect:
         serializedVersion: 2
         x: 1440
@@ -406,14 +678,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c683862df8997cfa0800000000000000
-      internalID: -5780482753717323668
+      spriteID: 32a0e3975d6d72fc0800000000000000
+      internalID: -3519608371416266205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_5
+      name: hit2_16
       rect:
         serializedVersion: 2
         x: 1800
@@ -427,14 +699,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4321d1a5bbc2a8d20800000000000000
-      internalID: 3281484461675188788
+      spriteID: 3da91a1762e262760800000000000000
+      internalID: 7432678977671633619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_6
+      name: hit2_17
       rect:
         serializedVersion: 2
         x: 2160
@@ -448,14 +720,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea5c0a2bed942cee0800000000000000
-      internalID: -1242349326372387410
+      spriteID: ffb1bdc02e056e5a0800000000000000
+      internalID: -6492412880999474177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_7
+      name: hit2_18
       rect:
         serializedVersion: 2
         x: 2520
@@ -469,14 +741,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b556b35da811e060800000000000000
-      internalID: 6980888030113846711
+      spriteID: 91525970ce5845900800000000000000
+      internalID: 672309493171037465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_8
+      name: hit2_19
       rect:
         serializedVersion: 2
         x: 2880
@@ -490,14 +762,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca8814d19c6a75d0800000000000000
-      internalID: -3064017222887765310
+      spriteID: b2f85bd132cb29910800000000000000
+      internalID: 1842742056556269355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_9
+      name: hit2_20
       rect:
         serializedVersion: 2
         x: 3240
@@ -511,14 +783,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2900f722ac8c3cd60800000000000000
-      internalID: 7909386141080420498
+      spriteID: 90cc9c4072ed6d060800000000000000
+      internalID: 6978008931822586889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_10
+      name: hit2_21
       rect:
         serializedVersion: 2
         x: 3600
@@ -532,14 +804,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985d4132ea3a5ae10800000000000000
-      internalID: 2208351160603301257
+      spriteID: ec51de7d3e1cb8f60800000000000000
+      internalID: 8037731144297158094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_11
+      name: hit2_22
       rect:
         serializedVersion: 2
         x: 0
@@ -553,14 +825,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f5a58aa107451fc0800000000000000
-      internalID: -3524833060866120207
+      spriteID: 8e832bf9724744c30800000000000000
+      internalID: 4342723654223804648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_12
+      name: hit2_23
       rect:
         serializedVersion: 2
         x: 360
@@ -574,14 +846,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb70aa4d25d0d6940800000000000000
-      internalID: 5290899786636593083
+      spriteID: 09fa26bf07812eac0800000000000000
+      internalID: -3827469859778547824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_13
+      name: hit2_24
       rect:
         serializedVersion: 2
         x: 720
@@ -595,14 +867,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eb1a97303ce3a430800000000000000
-      internalID: 3793135003011521512
+      spriteID: 586b7ec3278635c00800000000000000
+      internalID: 888168391379498629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_14
+      name: hit2_25
       rect:
         serializedVersion: 2
         x: 1080
@@ -616,14 +888,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9a7dde74e25ac070800000000000000
-      internalID: 8127399618877946523
+      spriteID: d31d3debcb0ece330800000000000000
+      internalID: 3741612491698065725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_15
+      name: hit2_26
       rect:
         serializedVersion: 2
         x: 1440
@@ -637,14 +909,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9937efd311e691440800000000000000
-      internalID: 4907074289330451353
+      spriteID: a071af6a43e9978e0800000000000000
+      internalID: -1695149835751385334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_16
+      name: hit2_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -658,14 +930,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94a44322fbe6d9cf0800000000000000
-      internalID: -243917037616477623
+      spriteID: 3f61e5c6a1e1b2ca0800000000000000
+      internalID: -6040701376351299853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_17
+      name: hit2_28
       rect:
         serializedVersion: 2
         x: 2160
@@ -679,14 +951,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c983c51005bfb220800000000000000
-      internalID: 2503918929811048904
+      spriteID: 59dd1deaeadbfac30800000000000000
+      internalID: 4372922321154989461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_18
+      name: hit2_29
       rect:
         serializedVersion: 2
         x: 2520
@@ -700,14 +972,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6511ebf5177ec8f00800000000000000
-      internalID: 1120524881432023382
+      spriteID: 8c57c0d254f0833d0800000000000000
+      internalID: -3226812343228009016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_19
+      name: hit2_30
       rect:
         serializedVersion: 2
         x: 2880
@@ -721,14 +993,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbcc06c15b9439080800000000000000
-      internalID: -9181914173064295235
+      spriteID: 34c90a91b3ebac4f0800000000000000
+      internalID: -807624022117278653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_20
+      name: hit2_31
       rect:
         serializedVersion: 2
         x: 3240
@@ -742,14 +1014,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50021bca360c88c0800000000000000
-      internalID: -3995811919799648164
+      spriteID: 55a16e80ddc971bb0800000000000000
+      internalID: -4965327591001679275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_21
+      name: hit2_32
       rect:
         serializedVersion: 2
         x: 3600
@@ -763,14 +1035,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abb1fc3503d974bb0800000000000000
-      internalID: -4951816434380497990
+      spriteID: 7057542c6f85dd230800000000000000
+      internalID: 3665183488593982727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_22
+      name: hit2_33
       rect:
         serializedVersion: 2
         x: 0
@@ -784,14 +1056,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2908c799831eb5270800000000000000
-      internalID: 8240427576413946002
+      spriteID: 59283d518b0c967e0800000000000000
+      internalID: -1771673081520881003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_23
+      name: hit2_34
       rect:
         serializedVersion: 2
         x: 360
@@ -805,14 +1077,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f580729be9ac0c0800000000000000
-      internalID: -4554653555070836905
+      spriteID: 8c3e75fffc5afdc40800000000000000
+      internalID: 5539328379449762760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_24
+      name: hit2_35
       rect:
         serializedVersion: 2
         x: 720
@@ -826,14 +1098,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e16255dc63a459a0800000000000000
-      internalID: -6245187095425293849
+      spriteID: 90644b61e2ecbecf0800000000000000
+      internalID: -221857059279976951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_25
+      name: hit2_36
       rect:
         serializedVersion: 2
         x: 1080
@@ -847,14 +1119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 943d84e8fb85c6dd0800000000000000
-      internalID: -2491518914093591735
+      spriteID: 99218057f3a9bd630800000000000000
+      internalID: 3952922695284822681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_26
+      name: hit2_37
       rect:
         serializedVersion: 2
         x: 1440
@@ -868,14 +1140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e4a418aad67568a0800000000000000
-      internalID: -6312508621195008799
+      spriteID: 6cb5ad4259d9ebdc0800000000000000
+      internalID: -3621283786465322042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanish_27
+      name: hit2_38
       rect:
         serializedVersion: 2
         x: 1800
@@ -889,92 +1161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7fcd28bf00154320800000000000000
-      internalID: 2541455224421076861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vanish_28
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25893f92db8b16c60800000000000000
-      internalID: 7809726351429310546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vanish_29
-      rect:
-        serializedVersion: 2
-        x: 2520
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3b10f4e585214030800000000000000
-      internalID: 3477101644308552507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vanish_30
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d740992d9d21d2cf0800000000000000
-      internalID: -275543275449285507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vanish_31
-      rect:
-        serializedVersion: 2
-        x: 3240
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f9d22ee123c3c630800000000000000
-      internalID: 3946212249003284976
+      spriteID: f947ab96ced9094e0800000000000000
+      internalID: -1976906597703977825
       vertices: []
       indices: 
       edges: []
@@ -989,39 +1177,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      vanish_20: -3995811919799648164
-      vanish_14: 8127399618877946523
-      vanish_19: -9181914173064295235
-      vanish_24: -6245187095425293849
-      vanish_2: -8832942586056227262
-      vanish_12: 5290899786636593083
-      vanish_28: 7809726351429310546
-      vanish_29: 3477101644308552507
-      vanish_27: 2541455224421076861
-      vanish_13: 3793135003011521512
-      vanish_7: 6980888030113846711
-      vanish_17: 2503918929811048904
-      vanish_11: -3524833060866120207
-      vanish_0: -6933376847463828097
-      vanish_15: 4907074289330451353
-      vanish_23: -4554653555070836905
-      vanish_18: 1120524881432023382
-      vanish_26: -6312508621195008799
-      vanish_30: -275543275449285507
-      vanish_6: -1242349326372387410
-      vanish_16: -243917037616477623
-      vanish_8: -3064017222887765310
-      vanish_25: -2491518914093591735
-      vanish_4: -5780482753717323668
-      vanish_31: 3946212249003284976
-      vanish_21: -4951816434380497990
-      vanish_1: -5237305773744717419
-      vanish_3: -8963126696323742251
-      vanish_9: 7909386141080420498
-      vanish_10: 2208351160603301257
-      vanish_5: 3281484461675188788
-      vanish_22: 8240427576413946002
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
