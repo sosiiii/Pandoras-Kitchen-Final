@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6168359126052080563}
+  - component: {fileID: 865061744}
+  - component: {fileID: 865061743}
   m_Layer: 0
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -30,6 +32,70 @@ Transform:
   m_Father: {fileID: 2750489147309779925}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &865061744
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539430824830524020}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &865061743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539430824830524020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b042af84a5c74b88aeccba1b3aed7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575418187853358598
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 2750489147309779931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -44.72, y: 24.44, z: 0}
-  m_LocalScale: {x: -4, y: 4, z: 4}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 2750489149018108572}
   - {fileID: 2750489148658618836}
@@ -146,7 +212,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -3655621501393774895, guid: 9c447c54c8e0416e9446cadb88c48fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -183,7 +249,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2750489147309779931}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: f4d39aa0290ddf145963cddad42a238d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -213,10 +279,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4d39aa0290ddf145963cddad42a238d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -233,9 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 30
+  horizontalSpeed: 8
   playerIsFlipped: 0
-  jumpPower: 40
+  jumpPower: 20
   gravityScale: 10
   fallingGravityScale: 20
   OnLandEvent:
@@ -387,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f352b26aa9249f383609238a651d755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRadius: 3
+  interactionRadius: 1
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -404,8 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66382a7449e4b8a883618315d7924d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solidItemPrefab: {fileID: 0}
-  _itemSlotGO: {fileID: 0}
+  solidItemPrefab: {fileID: 2465003522560058866, guid: fdc868703157e445abe0a17c39253959, type: 3}
+  _itemSlotGO: {fileID: 865061743}
 --- !u!61 &708660132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -502,7 +568,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 2750489149018108579}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: f4d39aa0290ddf145963cddad42a238d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

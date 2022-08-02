@@ -21,25 +21,25 @@ public class Player : MonoBehaviour
     [SerializeField] private float gravityScale = 10;
     [SerializeField] private float fallingGravityScale = 40;
 
-    [Header("Events")]
-    [SerializeField] private UnityEvent OnLandEvent;
+    /*[Header("Events")]
+    [SerializeField] private UnityEvent OnLandEvent;*/
 
     [Header("Ground")]
     private bool m_Grounded;
-    const float k_GroundedRadius = 1f;
+    public float k_GroundedRadius = 0.2f;
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
 
-    private void Awake()
+    /*private void Awake()
     {
         if (OnLandEvent == null)
         {
             OnLandEvent = new UnityEvent();
         }
-    }
+    }*/
 
     private void Start()
     {
@@ -49,13 +49,15 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        _rigidbody2D.velocity = new Vector2(_horizontalMove * horizontalSpeed, _rigidbody2D.velocity.y);
+
         JumpPhysics();
         FlipPlayer();
     }
 
     private void FixedUpdate()
     {
-        bool wasGrounded = m_Grounded;
+        //bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -64,24 +66,19 @@ public class Player : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                if (!wasGrounded)
+                /*if (!wasGrounded)
                 {
                     OnLandEvent.Invoke();
-                }
+                }*/
             }
         }
     }
 
     public void MovePlayer(InputAction.CallbackContext context)
     {
-        _animator.SetBool("Moving", true);
         _horizontalMove = context.ReadValue<float>();
 
-        Debug.Log(_horizontalMove);
-
         _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
-
-        _rigidbody2D.velocity = new Vector2(_horizontalMove * horizontalSpeed , _rigidbody2D.velocity.y);
     }
 
     private void FlipPlayer()
@@ -102,11 +99,12 @@ public class Player : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         if (!context.performed)
+        {
             return;
+        }
 
         if (m_Grounded)
         {
-            _animator.SetBool("IsJumping", true);
             _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
     }
@@ -123,16 +121,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnLanding()
+    /*public void OnLanding()
     {
         _animator.SetBool("IsJumping", false);
+    }*/
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _animator.SetBool("IsJumping", false);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            _rigidbody2D.velocity = Vector2.zero;
+            _animator.SetBool("IsJumping", true);
         }
     }
 }
