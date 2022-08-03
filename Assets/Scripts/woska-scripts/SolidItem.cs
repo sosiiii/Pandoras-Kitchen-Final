@@ -32,14 +32,11 @@ public class SolidItem : MonoBehaviour, IPickable
         _rigidbody2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        
-        Debug.Log(_rigidbody2D);
     }
 
     public void Init(Item item)
     {
         _item = item;
-        Debug.Log(_item.itemSprite);
         _spriteRenderer.sprite = _item.itemSprite;
     }
     public Item GetItem()

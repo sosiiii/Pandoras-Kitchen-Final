@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185245384735950188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4270957242234446740}
@@ -356,6 +356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389086151367680719}
     m_Modifications:
+    - target: {fileID: 944625574818160224, guid: eaa188d2be6c44b6d96231f081469f41, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9254902
+      objectReference: {fileID: 0}
     - target: {fileID: 4114385673189727346, guid: eaa188d2be6c44b6d96231f081469f41, type: 3}
       propertyPath: m_Name
       value: Outputslot
@@ -370,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936488970273395222, guid: eaa188d2be6c44b6d96231f081469f41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 4936488970273395222, guid: eaa188d2be6c44b6d96231f081469f41, type: 3}
       propertyPath: m_LocalPosition.z
