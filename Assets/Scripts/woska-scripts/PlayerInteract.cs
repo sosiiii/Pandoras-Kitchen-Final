@@ -53,7 +53,7 @@ namespace woska_scripts
         {
             if(!context.started) return;
             
-            if(!ItemSlot.IsFull() && _playerCombat.enabled) return;
+            if(!ItemSlot.IsFull() && _playerCombat.attacking) return;
 
             var item = InitItem();
             item.Throw();
