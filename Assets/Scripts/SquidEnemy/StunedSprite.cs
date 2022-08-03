@@ -19,12 +19,4 @@ public class StunedSprite : MonoBehaviour
         Instantiate(enemy, myTransform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
-
-    private void Update()
-    {
-        if ()
-        {
-
-        }
-    }
 }

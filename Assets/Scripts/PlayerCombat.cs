@@ -15,6 +15,8 @@ public class PlayerCombat : MonoBehaviour
     public int attackDemage;
     public LayerMask enemyLayer;
 
+    public bool attacking;
+
     void Start()
     {
         player = this.transform;
@@ -65,6 +67,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (context.performed && ammo > 0 && player.GetComponent<PlayerInteract>().ItemSlot.IsFull() == false)
         {
+            attacking = true;
             Debug.Log("You see");
             ammo--;
             //anim.SetTrigger("Attack");
@@ -84,7 +87,9 @@ public class PlayerCombat : MonoBehaviour
         {
             Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<SquidBase>().Demaged(attackDemage, player);
+            
         }
+        attacking = false;
     }
 
     private void OnDrawGizmosSelected()
