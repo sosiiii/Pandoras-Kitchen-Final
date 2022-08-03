@@ -86,12 +86,12 @@ public class MachineBehavior : MonoBehaviour, IInteractable
             InsertItem(playerInteract);
             if (CraftingInProgress)
             {
-                _progressBarBehavior.IncreaseDuration(8f);
+                _progressBarBehavior.IncreaseDuration(2f);
             }
             else
             {
                 _progressBarBehavior.gameObject.SetActive(true);
-                _progressBarBehavior.StartTimer(8f);
+                _progressBarBehavior.StartTimer(2f);
                 _animator.Play("MachineWorking", 0, 0f);
             }
         }

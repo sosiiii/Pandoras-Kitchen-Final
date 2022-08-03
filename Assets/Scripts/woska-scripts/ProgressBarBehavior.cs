@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class ProgressBarBehavior : MonoBehaviour
 {
+    private int _minimum;
+
+    private int _maximum;
+
+    private int _current;
+    
     // Start is called before the first frame update
 
     private Image _barFill;
@@ -22,12 +28,10 @@ public class ProgressBarBehavior : MonoBehaviour
     private void Awake()
     {
         _barFill = transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        ToggleActive(false);
     }
 
     public void StartTimer(float duration)
     {
-        Debug.Log("WORRKS");
         remainingDuration = maxDuration = duration;
         StartCoroutine(UpdateTimer());
     }
@@ -50,12 +54,30 @@ public class ProgressBarBehavior : MonoBehaviour
             _barFill.fillAmount = 1-(remainingDuration/maxDuration);
         }
         IsRunning = false;
-        OnTimerRunout.Invoke();
+        OnTimerRunout?.Invoke();
         ToggleActive(false);
+    }
+
+    public void StopTimer()
+    {
+        StopCoroutine(UpdateTimer());
     }
 
     public void ToggleActive(bool toggle)
     {
         gameObject.SetActive(toggle);
+    }
+
+    private void UpdateCurrentFill()
+    {
+        float currentOffset = _current - _minimum;
+        float maximumOffset = _minimum - _maximum;
+        float fillAmount = currentOffset / _maximum;
+        
+        
+        
+
+        _barFill.fillAmount = fillAmount;
+
     }
 }
