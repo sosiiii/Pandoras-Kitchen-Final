@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Combat",
+                    "name": "Combat & throwing",
                     "type": "Button",
                     "id": "2f6c1c05-25d2-4226-9f97-d6bc430b5dc1",
                     "expectedControlType": "Button",
@@ -109,7 +109,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Combat",
+                    "action": "Combat & throwing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -155,7 +155,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Combat",
+                    "name": "Combat & throwing",
                     "type": "Button",
                     "id": "6f7fb764-e389-4462-8d95-6a8541c419f3",
                     "expectedControlType": "Button",
@@ -234,7 +234,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Combat",
+                    "action": "Combat & throwing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
