@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &539430824830524020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6168359126052080563}
-  m_Layer: 0
-  m_Name: ItemSlot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6168359126052080563
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539430824830524020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.781, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575418187853358598
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2750489147309779925}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2750489147309779931
 GameObject:
@@ -79,7 +49,7 @@ GameObject:
   - component: {fileID: 2097163333310522611}
   - component: {fileID: 708660132}
   m_Layer: 18
-  m_Name: w_PlayerPickUpPrefab
+  m_Name: w_PlayerPickUpPrefab_s
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,11 +64,10 @@ Transform:
   m_GameObject: {fileID: 2750489147309779931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -44.72, y: 24.44, z: 0}
-  m_LocalScale: {x: -4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2750489149018108572}
   - {fileID: 2750489148658618836}
-  - {fileID: 6168359126052080563}
   - {fileID: 4893961533755323077}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -146,7 +115,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -3655621501393774895, guid: 9c447c54c8e0416e9446cadb88c48fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -233,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 30
+  horizontalSpeed: 10
   playerIsFlipped: 0
   jumpPower: 40
   gravityScale: 10
@@ -371,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f352b26aa9249f383609238a651d755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRadius: 3
+  interactionRadius: 1
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -388,7 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66382a7449e4b8a883618315d7924d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot: {fileID: 6168359126052080563}
+  solidItemPrefab: {fileID: 2465003522560058866, guid: fdc868703157e445abe0a17c39253959, type: 3}
+  _itemSlotGO: {fileID: 0}
 --- !u!61 &708660132
 BoxCollider2D:
   m_ObjectHideFlags: 0
