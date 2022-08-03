@@ -30,8 +30,7 @@ public class Move : SquidState
 
     public override void Process()
     {
-        Debug.LogError(enemy);
-        Debug.Log(player);
+
         float direction = enemy.transform.position.x - player.transform.position.x;
 
         this.Timer = enemy.Timer;

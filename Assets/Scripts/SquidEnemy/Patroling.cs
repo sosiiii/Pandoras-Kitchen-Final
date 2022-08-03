@@ -17,7 +17,7 @@ public class Patroling : SquidState
     public override void Enter()
     {
         this.patrolTime = enemy.patrolWait;
-        Debug.Log("EnterPatroling");
+        Debug.LogError("EnterPatroling");
         points.Clear();
         foreach (Transform point in enemy.transform)
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using woska_scripts;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
     private float time = 2;
     private bool relode = false;
 
-
+    public 
     void Update()
     {
 
@@ -62,14 +63,12 @@ public class PlayerCombat : MonoBehaviour
 
     public void EnemyDetection(InputAction.CallbackContext context)
     {
-        if (context.performed && ammo > 0)
+        if (context.performed && ammo > 0 && player.GetComponent<PlayerInteract>().ItemSlot.IsFull() == false)
         {
-            Debug.LogError("You see");
+            Debug.Log("You see");
             ammo--;
-            anim.SetTrigger("Attack");
+            //anim.SetTrigger("Attack");
             Hit();
-            // StopCoroutine(Reloading());
-            // StartCoroutine(Reloading());
             relode = false;
             relode = true;
             time = 2;

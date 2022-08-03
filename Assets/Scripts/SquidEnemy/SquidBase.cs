@@ -31,14 +31,23 @@ public class SquidBase : MonoBehaviour
 
     public float patrolWait;
 
+    public GameObject StunedEnemy;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ChangeState(new Patroling(this));
+        ChangeState(new Idle(this));
+        StartCoroutine(DelayedStart());
 
         health = maxHealth;
         grounded = true;
 
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(5);
+        ChangeState(new Patroling(this));
     }
 
     public void ChangeState(SquidState newState)
@@ -68,14 +77,24 @@ public class SquidBase : MonoBehaviour
             ChangeState(new Idle(this));
 
             StartCoroutine(Delay());
+
         }
+    }
+
+    IEnumerator IdleToPatrol()
+    {
+        yield return new WaitForSeconds(3);
+        ChangeState(new Patroling(this));
     }
 
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(5);
-        if(!MoveState)
+        if (!MoveState)
+        {
+            Debug.LogError("patroling changed");
             ChangeState(new Patroling(this));
+        }
     }
 
     public void Demaged(int damage, Transform player)
@@ -114,6 +133,11 @@ public class SquidBase : MonoBehaviour
         else if(MoveState == false)
         {
             Timer = 0;
+        }
+
+        if (health <= 0)
+        {
+            ChangeState(new Stuned(this));
         }
     }
 }

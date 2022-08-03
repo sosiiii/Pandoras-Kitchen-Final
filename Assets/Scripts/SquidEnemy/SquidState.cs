@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquidState
+public class SquidState : MonoBehaviour
 {
     protected SquidBase enemy;
 
