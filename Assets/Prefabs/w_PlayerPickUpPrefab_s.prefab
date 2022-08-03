@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 2097163333310522611}
   - component: {fileID: 708660132}
   m_Layer: 18
-  m_Name: w_PlayerPickUpPrefab
+  m_Name: w_PlayerPickUpPrefab_s
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
