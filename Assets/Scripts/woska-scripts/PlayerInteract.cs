@@ -8,6 +8,7 @@ namespace woska_scripts
     public class PlayerInteract : MonoBehaviour
     {
         private PlayerObjectDetector _playerObjectDetector;
+        private PlayerCombat _playerCombat;
         public IPickable currentItemInHand { get; private set; }
 
         public IItemContainer ItemSlot { get; private set; }
@@ -18,6 +19,7 @@ namespace woska_scripts
         private void Awake()
         {
             _playerObjectDetector = GetComponent<PlayerObjectDetector>();
+            _playerCombat = GetComponent<PlayerCombat>();
             ItemSlot = _itemSlotGO;
         }
 
@@ -51,7 +53,7 @@ namespace woska_scripts
         {
             if(!context.started) return;
             
-            if(!ItemSlot.IsFull()) return;
+            if(!ItemSlot.IsFull() && _playerCombat.enabled) return;
 
             var item = InitItem();
             item.Throw();
