@@ -30,7 +30,6 @@ public class PauseSettings : MonoBehaviour
         {
             Pause();
         }
-
     }
 
     public void Pause()
@@ -39,7 +38,6 @@ public class PauseSettings : MonoBehaviour
         pauseCanvas.gameObject.SetActive(true);
         isGamePaused = true;
         AudioListener.pause = true;
-
 
         //Disabling Player Controls
         PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();

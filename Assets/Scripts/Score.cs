@@ -18,16 +18,25 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTextResults;
     public List<GameObject> stars = new List<GameObject>();
 
+    WinSystem winSystem;
+        
     private void Awake()
     {
-        score = 100;
+        winSystem = FindObjectOfType<WinSystem>();
     }
 
+    private void Start()
+    {
+        score = 0;
+    }
+
+    //Increase score when order is finished
     public void IncreaseScore()
     {
         score += scoreToAddRemove;
     }
 
+    //Decrease score when order is failed
     public void DecreaseScore()
     {
         score -= scoreToAddRemove;
@@ -53,6 +62,9 @@ public class Score : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true);
+
+            //level is won
+            winSystem.LevelIsWon();
         }
     }
 }

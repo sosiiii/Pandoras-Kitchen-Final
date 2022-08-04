@@ -43,53 +43,41 @@ public class Elevator : MonoBehaviour
 
                 yield return new WaitForSeconds(howLongWaitOnFloor);
                 EnableElevatorBarricades();
-                //DisableElevatorBarricade(elevatorBarricades[0]);
-               // DisableElevatorBarricade(elevatorBarricades[0]);
                 yield return StartCoroutine(MoveElevator(floorsPos[1]));
 
                 DisableElevatorBarricade(elevatorBarricades[1]);
 
                 yield return new WaitForSeconds(howLongWaitOnFloor);
                 EnableElevatorBarricades();
-                //DisableElevatorBarricade(elevatorBarricades[1]);
-               // DisableElevatorBarricade(elevatorBarricades[1]);
                 yield return StartCoroutine(MoveElevator(floorsPos[0]));
             }
 
-            /*else if (floors == 3)
+            else if (floors == 3)
             {
-                _elevatorFloor.WhatFloor(floorNumber[0]);
                 DisableElevatorBarricade(elevatorBarricades[0]);
 
                 yield return new WaitForSeconds(howLongWaitOnFloor);
                 EnableElevatorBarricades();
-                DisableElevatorBarricade(elevatorBarricades[1]);
                 yield return StartCoroutine(MoveElevator(floorsPos[1]));
 
-                _elevatorFloor.WhatFloor(floorNumber[1]);
                 DisableElevatorBarricade(elevatorBarricades[1]);
 
                 yield return new WaitForSeconds(howLongWaitOnFloor);
                 EnableElevatorBarricades();
-                DisableElevatorBarricade(elevatorBarricades[2]);
                 yield return StartCoroutine(MoveElevator(floorsPos[2]));
 
-                _elevatorFloor.WhatFloor(floorNumber[2]);
                 DisableElevatorBarricade(elevatorBarricades[2]);
 
                 yield return new WaitForSeconds(howLongWaitOnFloor);
                 EnableElevatorBarricades();
-                DisableElevatorBarricade(elevatorBarricades[1]);
                 yield return StartCoroutine(MoveElevator(floorsPos[1]));
 
-                _elevatorFloor.WhatFloor(floorNumber[1]);
                 DisableElevatorBarricade(elevatorBarricades[1]);
 
                 yield return new WaitForSeconds(howLongWaitOnFloor);
                 EnableElevatorBarricades();
-                DisableElevatorBarricade(elevatorBarricades[0]);
                 yield return StartCoroutine(MoveElevator(floorsPos[0]));
-            }*/
+            }
         }
     }
 
