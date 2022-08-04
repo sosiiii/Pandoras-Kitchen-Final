@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuMusicPlayer : MonoBehaviour
 {
+    AudioSource audioSource;
+
     private void Awake()
     {
         if (FindObjectsOfType<MenuMusicPlayer>().Length > 1)
@@ -18,16 +20,21 @@ public class MenuMusicPlayer : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex >= 3)
         {
-            GetComponent<AudioSource>().Pause();
+            audioSource.Pause();
         }
 
         else
         {
-            GetComponent<AudioSource>().UnPause();
+            audioSource.UnPause();
         }
     }
 }
