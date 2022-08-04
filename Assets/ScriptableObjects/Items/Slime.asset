@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   itemName: 
-  itemSprite: {fileID: -4691176017488882149, guid: 12d0355f65a4ddf4b808bbd74157bde5, type: 3}
+  itemSprite: {fileID: 21300000, guid: c404137dba2524bdaa557cd1bc76633c, type: 3}
