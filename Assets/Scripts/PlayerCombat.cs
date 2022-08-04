@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Transform player;
 
-    public Animator anim;
+    Animator anim;
 
     public Transform attackPoint;
     public float attackRange;
@@ -70,7 +70,7 @@ public class PlayerCombat : MonoBehaviour
             attacking = true;
             Debug.Log("You see");
             ammo--;
-            //anim.SetTrigger("Attack");
+            anim.SetTrigger("Attack");
             Hit();
             relode = false;
             relode = true;

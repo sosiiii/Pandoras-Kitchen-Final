@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
-    private Animator _animator;
+    //private Animator _animator;
     private Rigidbody2D _rigidbody2D;
 
     /*private void Awake()
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     {
         _horizontalMove = context.ReadValue<float>();
 
-        _animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
+        //_animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
     }
 
     private void FlipPlayer()
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         _animator.SetBool("IsJumping", false);
     }*/
 
-    private void OnCollisionStay2D(Collision2D collision)
+    /*private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -140,5 +140,5 @@ public class Player : MonoBehaviour
         {
             _animator.SetBool("IsJumping", true);
         }
-    }
+    }*/
 }
