@@ -2931,13 +2931,6 @@ Tilemap:
     m_Data: {fileID: -1162852992084168371, guid: cd175d8210c184fca93afc39b93a4de4, type: 3}
   - m_RefCount: 85
     m_Data: {fileID: -9003014715543488056, guid: cd175d8210c184fca93afc39b93a4de4, type: 3}
-<<<<<<< Updated upstream
-=======
-  - m_RefCount: 2
-    m_Data: {fileID: 9032132464197839370, guid: cd175d8210c184fca93afc39b93a4de4, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 5139929440698224996, guid: cd175d8210c184fca93afc39b93a4de4, type: 3}
->>>>>>> Stashed changes
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -3065,52 +3058,22 @@ CompositeCollider2D:
         Y: -89997136
       - X: 160002864
         Y: -89997136
-<<<<<<< Updated upstream
     - - X: -129997136
         Y: -39997140
-=======
-    - - X: -129997177
-        Y: -49997240
-      - X: -129997236
-        Y: -49997181
-      - X: -129997236
-        Y: -39997099
-      - X: -129997177
-        Y: -39997040
-      - X: -129997136
-        Y: -39997040
->>>>>>> Stashed changes
       - X: -129997136
         Y: 40002860
       - X: 90002864
         Y: 40002860
       - X: 90002864
-<<<<<<< Updated upstream
         Y: -39997140
-=======
-        Y: -39997040
-      - X: 90002905
-        Y: -39997040
-      - X: 90002964
-        Y: -39997099
-      - X: 90002964
-        Y: -49997181
-      - X: 90002905
-        Y: -49997240
->>>>>>> Stashed changes
   m_CompositePaths:
     m_Paths:
     - - {x: 16.000257, y: -8.999714}
       - {x: 16.000257, y: 9.000286}
       - {x: -15.999714, y: 9.000257}
       - {x: -15.999685, y: -8.999714}
-<<<<<<< Updated upstream
     - - {x: 9.000286, y: -3.9996848}
       - {x: -12.999714, y: -3.9996848}
-=======
-    - - {x: 9.000296, y: -4.9996886}
-      - {x: -12.999723, y: -4.9996886}
->>>>>>> Stashed changes
       - {x: -12.999684, y: 4.000286}
       - {x: 9.000286, y: 4.000257}
   m_VertexDistance: 0.0005

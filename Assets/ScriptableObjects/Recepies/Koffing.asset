@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c6e900931d43279e17b9e45fa7da0, type: 3}
+  m_Name: Koffing
+  m_EditorClassIdentifier: 
+  <ItemsNeeded>k__BackingField:
+  - {fileID: 11400000, guid: 0fef4eecd2272449ca15672e09bed357, type: 2}
+  - {fileID: 11400000, guid: 0fef4eecd2272449ca15672e09bed357, type: 2}
+  <Result>k__BackingField: {fileID: 0}
+  <CanBeCraftedIn>k__BackingField: {fileID: 11400000, guid: eafe281e3e7214c42997ba9a1ee1c578, type: 2}

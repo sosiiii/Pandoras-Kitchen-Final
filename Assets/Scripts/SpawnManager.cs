@@ -6,7 +6,6 @@ public class SpawnManager : MonoBehaviour
 {
     public Player player;
     public List<Transform> spawnPoints = new List<Transform>();
-    public int onlyOnce;
 
     private void Start()
     {
