@@ -5,15 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class WinSystem : MonoBehaviour
 {
+    [Header("Unlock Scene")]
     public string nextSceneName;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] private int scoreToUnlockNextLevel;
+
+    Score score;
+
+    private void Awake()
     {
-        if (collision.tag == "Player")
+        score = FindObjectOfType<Score>();
+    }
+
+    private void Update()
+    {
+        if (score.score >= scoreToUnlockNextLevel)
         {
-            //unlock next scene
+            //Unlock next level
             PlayerPrefs.SetInt(nextSceneName, 1);
-            SceneManager.LoadScene("LevelSelection");
         }
     }
 }

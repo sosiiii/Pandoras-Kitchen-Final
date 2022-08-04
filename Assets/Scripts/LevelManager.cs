@@ -7,6 +7,10 @@ public class LevelManager : MonoBehaviour
 {
     private Timer timer;
 
+    [Header("Canvases")]
+    [SerializeField] Canvas gameCanvas;
+    [SerializeField] Canvas scoreCanvas;
+
     void Start()
     {
         timer = FindObjectOfType<Timer>();
@@ -21,8 +25,9 @@ public class LevelManager : MonoBehaviour
     {
         if (timer.timeValue <= 0)
         {
-            // when is time less then 0 then game is over
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // when is time less then 0 then show score canvas
+            gameCanvas.gameObject.SetActive(false);
+            scoreCanvas.gameObject.SetActive(true);
         }
     }
 }
