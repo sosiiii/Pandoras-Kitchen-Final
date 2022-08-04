@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d4c6e900931d43279e17b9e45fa7da0, type: 3}
-  m_Name: SlimeJuice
+  m_Name: Bonked Squid
   m_EditorClassIdentifier: 
   <ItemsNeeded>k__BackingField:
-  - {fileID: 11400000, guid: b065bd55fd4d3416ab8650941d667279, type: 2}
-  <Result>k__BackingField: {fileID: 11400000, guid: d86ce6c3accb249be84eb1f409f081d9, type: 2}
-  <CanBeCraftedIn>k__BackingField: {fileID: 11400000, guid: 0dad2fbfcf8494ae8930355fae11ab33, type: 2}
+  - {fileID: 11400000, guid: 0f80a39fb9b1a479c8f3294f78549ac3, type: 2}
+  <Result>k__BackingField: {fileID: 11400000, guid: 0f80a39fb9b1a479c8f3294f78549ac3, type: 2}
+  <CanBeCraftedIn>k__BackingField: {fileID: 0}

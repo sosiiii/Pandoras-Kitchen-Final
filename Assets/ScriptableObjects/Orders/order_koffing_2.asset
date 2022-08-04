@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fc75cb1e8ade4583b2852e5462b3545, type: 3}
-  m_Name: SlimeJuice
+  m_Name: order_koffing_2
   m_EditorClassIdentifier: 
-  <WhatWasOrdered>k__BackingField: {fileID: 11400000, guid: b7625aa9f5da244bd8eb49e69ef42145, type: 2}
+  <WhatWasOrdered>k__BackingField: {fileID: 11400000, guid: 31609574938ac4a95bbca5bffdb7ce11, type: 2}
   <TimeToAcceptOrder>k__BackingField: 10
-  <TimeToFinishOrder>k__BackingField: 50
+  <TimeToFinishOrder>k__BackingField: 20

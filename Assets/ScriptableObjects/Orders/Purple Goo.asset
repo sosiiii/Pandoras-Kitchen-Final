@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605faf6ac881f41bda3b74b786ddae28, type: 3}
-  m_Name: Slime
+  m_Script: {fileID: 11500000, guid: 3fc75cb1e8ade4583b2852e5462b3545, type: 3}
+  m_Name: Purple Goo
   m_EditorClassIdentifier: 
-  itemName: 
-  itemSprite: {fileID: 21300000, guid: c404137dba2524bdaa557cd1bc76633c, type: 3}
+  <WhatWasOrdered>k__BackingField: {fileID: 11400000, guid: 8858fc3a893d8426f964df1e42dd7640, type: 2}
+  <TimeToAcceptOrder>k__BackingField: 10
+  <TimeToFinishOrder>k__BackingField: 20

@@ -24,7 +24,8 @@ public class SolidItem : MonoBehaviour, IPickable
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (_item == null) return;
-        _spriteRenderer.sprite = _item.itemSprite;
+        Init(_item);
+        
     }
 
     private void Awake()
@@ -32,12 +33,18 @@ public class SolidItem : MonoBehaviour, IPickable
         _rigidbody2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        if (_item == null) return;
+        
+        Init(_item);
     }
 
     public void Init(Item item)
     {
         _item = item;
         _spriteRenderer.sprite = _item.itemSprite;
+
+       //var size = _spriteRenderer.sprite.bounds.size;
     }
     public Item GetItem()
     {
