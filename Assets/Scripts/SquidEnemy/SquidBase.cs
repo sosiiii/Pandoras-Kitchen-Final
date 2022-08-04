@@ -10,6 +10,7 @@ public class SquidBase : MonoBehaviour
     public float knockbackForceUp = 3;
 
     public float speed;
+    public float patrolingSpeed;
 
     public Rigidbody2D rb;
 
@@ -26,12 +27,22 @@ public class SquidBase : MonoBehaviour
     public float maxTime;
 
     public bool MoveState;
+    public GameObject StunedEnemy;
+
+
+    [Header("stuned")]
+    public float patrolTimer;
+    public float patrolStartTimer;
+
+    public Vector2 patrol1;
+    public Vector2 patrol2;
 
     public LayerMask PatrolLayerMask;
 
     public float patrolWait;
 
-    public GameObject StunedEnemy;
+
+    public bool patroling;
 
     private void Start()
     {
@@ -138,6 +149,11 @@ public class SquidBase : MonoBehaviour
         if (health <= 0)
         {
             ChangeState(new Stuned(this));
+        }
+
+        if (patroling)
+        {
+            patrolTimer -= Time.deltaTime;
         }
     }
 }
