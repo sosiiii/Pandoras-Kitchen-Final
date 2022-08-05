@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605faf6ac881f41bda3b74b786ddae28, type: 3}
   m_Name: Purple Goo
   m_EditorClassIdentifier: 
+  isEnemy: 0
   itemName: Purple Goo
-  itemSprite: {fileID: 21300000, guid: ef000e6bb99644cbe9a295d449ca28de, type: 3}
+  itemSprite: {fileID: 21300000, guid: c6faa539f03e14f65b304129148d51b7, type: 3}

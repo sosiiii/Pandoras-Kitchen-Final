@@ -12,10 +12,11 @@ public class ItemSlot : MonoBehaviour, IItemContainer
 
     private Item _item = null;
 
-    private void Start()
+    private void Awake()
     {
         ToggleSlot(false);
     }
+    
     public bool ContainsItem(Item item)
     {
         return _item == item && item != null;
@@ -33,9 +34,9 @@ public class ItemSlot : MonoBehaviour, IItemContainer
     public bool AddItem(Item item)
     {
         if (IsFull()) return false;
+        ToggleSlot(true);
         _item = item;
         ItemIcon.sprite = item.itemSprite;
-        ToggleSlot(true);
         return true;
     }
     public bool IsFull()

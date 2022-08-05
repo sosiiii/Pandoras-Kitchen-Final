@@ -14,8 +14,8 @@ public class ProgressBar : MonoBehaviour
     private float _current;
 
 
-    [SerializeField] private Image mask;
-    [SerializeField] private Image fill;
+    private Image mask;
+    private Image fill;
     private Image background;
 
     [SerializeField] private Color fillColorFull;
@@ -31,13 +31,13 @@ public class ProgressBar : MonoBehaviour
         mask = transform.GetChild(0).GetComponent<Image>();
         fill = transform.GetChild(0).GetChild(0).GetComponent<Image>();
         background = GetComponent<Image>();
+        ToggleActive(false);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         fill.color = fillColorFull;
-        ToggleActive(false);
     }
 
     // Update is called once per frame
@@ -97,9 +97,12 @@ public class ProgressBar : MonoBehaviour
 
     public void ToggleActive(bool toggle)
     {
+        Debug.Log("Bar is: " + toggle);
         mask.enabled = toggle;
         fill.enabled = toggle;
         background.enabled = toggle;
+        
+        Debug.Log(background.name);
     }
 
     private float GetCurrentFill()

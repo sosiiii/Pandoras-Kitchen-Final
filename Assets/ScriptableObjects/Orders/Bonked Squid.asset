@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <WhatWasOrdered>k__BackingField: {fileID: 11400000, guid: a561559f2023c48f58277e7df00177a6, type: 2}
   <TimeToAcceptOrder>k__BackingField: 0
-  <TimeToFinishOrder>k__BackingField: 2
+  <TimeToFinishOrder>k__BackingField: 20

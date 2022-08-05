@@ -34,17 +34,20 @@ public class UIOrder : MonoBehaviour
         _resultImage.sprite = Order.WhatWasOrdered.Result.itemSprite;
         var itemNeeded = Order.WhatWasOrdered.ItemsNeeded;
         
-        Debug.Log(itemNeeded.Count);
+        _progressBarBehavior.ToggleActive(true);
         
         for (int i = 0; i < itemNeeded.Count; i++)
         {
             var image = _ingredientsImages[i];
-            image.transform.parent.gameObject.SetActive(true);
-            image.sprite = itemNeeded[i].itemSprite;
+
+                image.enabled = true;
+                image.transform.parent.GetComponent<Image>().enabled = true;
+                image.sprite = itemNeeded[i].itemSprite;
+
         }
         
-        _progressBarBehavior.StartTimer(Order.TimeToAcceptOrder);
-        
+        _progressBarBehavior.StartTimer(Order.TimeToFinishOrder);
+
         _progressBarBehavior.OnTimerRunout += OnTimerRunout;
     }
 

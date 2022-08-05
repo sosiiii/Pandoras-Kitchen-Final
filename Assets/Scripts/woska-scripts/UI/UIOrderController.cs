@@ -42,8 +42,6 @@ public class UIOrderController : MonoBehaviour
         {
 
             var goal = uiOrder.Order.WhatWasOrdered.Result;
-            Debug.Log(uiOrder.Order);
-
             if (goal == item)
             {
                 foundMatchingOrder = true;

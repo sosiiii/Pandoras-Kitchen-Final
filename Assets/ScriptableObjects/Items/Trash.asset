@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605faf6ac881f41bda3b74b786ddae28, type: 3}
   m_Name: Trash
   m_EditorClassIdentifier: 
+  isEnemy: 0
   itemName: Trash
-  itemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemSprite: {fileID: 21300000, guid: f081b517c9210422d8908f89db597017, type: 3}

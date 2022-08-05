@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class Highlight : MonoBehaviour
@@ -30,5 +31,10 @@ public class Highlight : MonoBehaviour
             IsToggled = false;
             SpriteRenderer.sharedMaterial = DefaultMaterial;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        
     }
 }
