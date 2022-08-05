@@ -10,8 +10,6 @@ public class UIOrderController : MonoBehaviour
     private List<UIOrder> _orderUis = new List<UIOrder>();
     [SerializeField] private UIOrder uiOrderPrefab;
 
-
-
     private readonly int scoreForCompletedOrder = 50;
     private readonly int _penaltyForNotCompletedORder = -20;
     private readonly int _penaltyForTurningInBadOrder = -50;
