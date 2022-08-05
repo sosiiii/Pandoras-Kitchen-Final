@@ -48,6 +48,6 @@ public class Demaged : SquidState
     void KnockBack()
     {
         Vector2 knockbackDirection = new Vector2(enemy.transform.position.x - player.position.x, 0);
-        rb.velocity = new Vector2(knockbackDirection.x, knockbackForceUp) * knockbackForce;
+        rb.velocity = new Vector2(knockbackDirection.x * knockbackForce , knockbackForceUp);
     }
 }

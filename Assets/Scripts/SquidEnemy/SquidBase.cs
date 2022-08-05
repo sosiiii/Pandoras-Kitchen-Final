@@ -10,7 +10,6 @@ public class SquidBase : MonoBehaviour
     public float knockbackForceUp = 3;
 
     public float speed;
-    public float patrolingSpeed;
 
     public Rigidbody2D rb;
 
@@ -30,7 +29,8 @@ public class SquidBase : MonoBehaviour
     public GameObject StunedEnemy;
 
 
-    [Header("stuned")]
+    [Header("Patroling")]
+    public float patrolingSpeed;
     public float patrolTimer;
     public float patrolStartTimer;
 
@@ -44,6 +44,10 @@ public class SquidBase : MonoBehaviour
 
     public bool patroling;
 
+    public bool canTimerRun = true;
+
+    public RaycastHit2D hit;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,14 +55,16 @@ public class SquidBase : MonoBehaviour
         StartCoroutine(DelayedStart());
 
         health = maxHealth;
-        grounded = true;
 
     }
 
     IEnumerator DelayedStart()
     {
         yield return new WaitForSeconds(5);
-        ChangeState(new Patroling(this));
+        if (!MoveState)
+        {
+            ChangeState(new Patroling(this));
+        }
     }
 
     public void ChangeState(SquidState newState)
@@ -79,6 +85,7 @@ public class SquidBase : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ChangeState(new Move(this, collision.GetComponent<Player>()));
+            StopCoroutine(Delay());
         }
     }
     void OnTriggerExit2D(Collider2D collision)
@@ -87,8 +94,8 @@ public class SquidBase : MonoBehaviour
         {
             ChangeState(new Idle(this));
 
+            MoveState = false;
             StartCoroutine(Delay());
-
         }
     }
 
@@ -100,12 +107,10 @@ public class SquidBase : MonoBehaviour
 
     IEnumerator Delay()
     {
+        
         yield return new WaitForSeconds(5);
-        if (!MoveState)
-        {
-            Debug.LogError("patroling changed");
-            ChangeState(new Patroling(this));
-        }
+        Debug.LogError("patroling changed");
+        ChangeState(new Patroling(this));
     }
 
     public void Demaged(int damage, Transform player)
@@ -113,7 +118,17 @@ public class SquidBase : MonoBehaviour
         ChangeState(new Demaged(this, damage, player, knockbackForce, knockbackForceUp));
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public bool Grounded()
+    {
+        if (!Physics2D.Raycast(transform.position, -transform.up, 50, PatrolLayerMask))
+        {
+            hit = Physics2D.Raycast(transform.position, -transform.up, 50, PatrolLayerMask);
+            return true;
+        }
+        return false;
+    }
+
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -127,7 +142,7 @@ public class SquidBase : MonoBehaviour
         {
             grounded = false;
         }
-    }
+    }*/
     /*
     private void Update()
     {
@@ -151,7 +166,7 @@ public class SquidBase : MonoBehaviour
             ChangeState(new Stuned(this));
         }
 
-        if (patroling)
+        if (patroling && canTimerRun)
         {
             patrolTimer -= Time.deltaTime;
         }

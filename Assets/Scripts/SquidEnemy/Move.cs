@@ -19,7 +19,6 @@ public class Move : SquidState
         enemy.MoveState = true;
     }
 
-
     public Move(SquidBase enemy, Player player) : base(enemy)
     {
         this.player = player;
