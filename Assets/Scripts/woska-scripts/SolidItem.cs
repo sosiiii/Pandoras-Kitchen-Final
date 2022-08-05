@@ -15,7 +15,7 @@ public class SolidItem : MonoBehaviour, IPickable
 
     [SerializeField] private Item _item;
     
-    private const float THROW_STRENGTH = 50f;
+    private const float THROW_STRENGTH = 20;
 
     private void OnValidate()
     {

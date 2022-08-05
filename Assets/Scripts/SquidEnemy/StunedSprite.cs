@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,14 @@ public class StunedSprite : MonoBehaviour, IPickable
     Transform myTransform;
     public float StunTime = 10;
     public bool carried;
+    private Rigidbody2D _rigidbody2D;
+    
+    [SerializeField] private float THROW_STRENGTH = 50f;
+
+    private void Awake()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
 
     private void Start()
@@ -46,6 +55,6 @@ public class StunedSprite : MonoBehaviour, IPickable
     }
     public void Throw()
     {
-        //_rigidbody2D.AddForce(transform.right * THROW_STRENGTH,ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(transform.right * THROW_STRENGTH,ForceMode2D.Impulse);
     }
 }
