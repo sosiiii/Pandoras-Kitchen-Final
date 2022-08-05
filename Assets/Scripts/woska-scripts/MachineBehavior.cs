@@ -19,7 +19,7 @@ public class MachineBehavior : MonoBehaviour, IInteractable
     private ItemSlot _outPutSlot;
 
 
-    private ProgressBarBehavior _progressBarBehavior;
+    private ProgressBar _progressBarBehavior;
 
 
     private List<Item> _machineInventory = new List<Item>();
@@ -45,10 +45,10 @@ public class MachineBehavior : MonoBehaviour, IInteractable
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        var parent = transform.parent;
-        _progressBarBehavior = parent.GetChild(1).GetComponent<ProgressBarBehavior>();
-        _outPutSlot = parent.GetChild(2).GetComponent<ItemSlot>();
-        var slots = parent.GetChild(3).GetComponentsInChildren<ItemSlot>();
+        var parent = transform.GetChild(0);
+        _progressBarBehavior = parent.GetChild(0).GetComponent<ProgressBar>();
+        _outPutSlot = parent.GetChild(1).GetComponent<ItemSlot>();
+        var slots = parent.GetChild(2).GetComponentsInChildren<ItemSlot>();
         
         Debug.Log(slots.Length);
        _inputSlots = new List<ItemSlot>(slots);
@@ -86,12 +86,12 @@ public class MachineBehavior : MonoBehaviour, IInteractable
             InsertItem(playerInteract);
             if (CraftingInProgress)
             {
-                _progressBarBehavior.IncreaseDuration(2f);
+                _progressBarBehavior.UpdateBar(_machine.CraftingTime);
             }
             else
             {
                 _progressBarBehavior.gameObject.SetActive(true);
-                _progressBarBehavior.StartTimer(2f);
+                _progressBarBehavior.StartTimer(_machine.CraftingTime);
                 _animator.Play("MachineWorking", 0, 0f);
             }
         }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4537837192168905915}
   - component: {fileID: 4537837192168905916}
   - component: {fileID: 4537837192168905893}
+  - component: {fileID: -3435068581095571417}
   m_Layer: 13
   m_Name: StunnedEnemy
   m_TagString: Untagged
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6982275024262290076, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
+  _item: {fileID: 11400000, guid: 0f80a39fb9b1a479c8f3294f78549ac3, type: 2}
   StunTime: 10
 --- !u!95 &4537837192168905893
 Animator:
@@ -167,3 +169,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3435068581095571417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537837192168905914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31587e40269c34092af0b1e715bc7493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutLineMaterial: {fileID: 2100000, guid: ad2e90cbcd5534a38b6001422ce3ccf5, type: 2}

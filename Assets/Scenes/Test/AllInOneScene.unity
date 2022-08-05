@@ -2874,6 +2874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllInOnePlayer1
       objectReference: {fileID: 0}
+    - target: {fileID: 7885712925550483525, guid: 62ea99c078f6be145b58d49fee05a039, type: 3}
+      propertyPath: _stunedSprite
+      value: 
+      objectReference: {fileID: 4537837192168905916, guid: 062c5df4dd010fd42baf21745effb21c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62ea99c078f6be145b58d49fee05a039, type: 3}
 --- !u!1 &1494186904
@@ -10059,5 +10063,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7101538376576371950, guid: c0f09ba975f23b342af0d5419b943b22, type: 3}
+      propertyPath: _stunedSprite
+      value: 
+      objectReference: {fileID: 4537837192168905916, guid: 062c5df4dd010fd42baf21745effb21c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0f09ba975f23b342af0d5419b943b22, type: 3}

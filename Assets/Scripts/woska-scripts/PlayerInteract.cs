@@ -16,6 +16,8 @@ namespace woska_scripts
 
         [SerializeField] private SolidItem solidItemPrefab;
         [SerializeField] private ItemSlot _itemSlotGO;
+
+        [SerializeField] private StunedSprite _stunedSprite;
         private void Awake()
         {
             _playerObjectDetector = GetComponent<PlayerObjectDetector>();
@@ -70,12 +72,20 @@ namespace woska_scripts
         private IPickable InitItem()
         {
             var itemRemoved = ItemSlot.RemoveItem();
-            
-            //Creates a in world item
-            var instantiateItem = Instantiate(solidItemPrefab, ItemSlot.GetPosition(), transform.rotation);
 
-            //Sets in world item to correct sprite
-            instantiateItem.Init(itemRemoved);
+            IPickable instantiateItem;
+            if (itemRemoved.isEnemy)
+            {
+                instantiateItem = Instantiate(_stunedSprite, ItemSlot.GetPosition(), transform.rotation);
+            }
+            else
+            {
+                //Creates a in world item
+                instantiateItem = Instantiate(solidItemPrefab, ItemSlot.GetPosition(), transform.rotation);
+
+                //Sets in world item to correct sprite
+                ((SolidItem)instantiateItem).Init(itemRemoved);
+            }
 
             return instantiateItem;
         }

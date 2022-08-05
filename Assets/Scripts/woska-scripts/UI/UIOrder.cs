@@ -11,7 +11,7 @@ public class UIOrder : MonoBehaviour
 {
     [SerializeField] private Image _resultImage;
     [SerializeField] private List<Image> _ingredientsImages;
-    [SerializeField] private ProgressBarBehavior _progressBarBehavior;
+    [SerializeField] private ProgressBar _progressBarBehavior;
     public Order Order { get; private set; }
 
 
