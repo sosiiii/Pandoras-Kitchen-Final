@@ -9,6 +9,14 @@ public class UIOrderController : MonoBehaviour
 
     private List<UIOrder> _orderUis = new List<UIOrder>();
     [SerializeField] private UIOrder uiOrderPrefab;
+
+
+
+    private readonly int scoreForCompletedOrder = 50;
+    private readonly int _penaltyForNotCompletedORder = -20;
+    private readonly int _penaltyForTurningInBadOrder = -50;
+
+    private int currentScore = 0;
     private void OnEnable()
     {
         OrderGenerator.onOrderAccepted += OnOrderAccepted;
@@ -29,10 +37,16 @@ public class UIOrderController : MonoBehaviour
         _orderUis.Add(orderUI);
     }
 
+    private void AddScore(int amount)
+    {
+        currentScore += amount;
+        if (currentScore < 0) currentScore = 0;
+    }
     private void OrderNotCompleted(UIOrder order)
     {
       /// Lower score
       _orderUis.Remove(order);
+      AddScore(scoreForCompletedOrder);
     }
 
     private void OrderTurnIn(Item item)
@@ -57,10 +71,12 @@ public class UIOrderController : MonoBehaviour
         if (foundMatchingOrder)
         {
             //Score up
+            AddScore(scoreForCompletedOrder);
         }
         else
         {
             //Score down
+            AddScore(_penaltyForTurningInBadOrder);
         }
     }
     
