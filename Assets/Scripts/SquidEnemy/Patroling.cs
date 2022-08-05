@@ -14,6 +14,7 @@ public class Patroling : SquidState
 
     public float GroundedPosition;
 
+    public float ErrorTimer;
 
     public Patroling(SquidBase enemy) : base(enemy)
     {
@@ -27,13 +28,14 @@ public class Patroling : SquidState
         point1 = enemy.patrol1;
         point2 = enemy.patrol2;
         enemy.patroling = true;
-        Debug.Log("EnteredPatroling");
+        Debug.LogError("EnteredPatroling");
     }
     public override void Process()
     {
         GroundedPosition = enemy.transform.position.y;
         if (enemy.patrolTimer <= 0)
         {
+            Debug.LogError("CanTimerRunFalse");
             enemy.canTimerRun = false;
             enemy.patrolTimer = Random.Range(1, 5);
             Patrol();
@@ -43,11 +45,12 @@ public class Patroling : SquidState
         {
             PatrolMove();
         }
+        ErrorTimer += Time.fixedDeltaTime;
     }
     public override void Exit()
     {
         enemy.patroling = false;
-
+        Debug.LogError("PatrolingExit");
     }
 
     void Patrol()
@@ -61,7 +64,7 @@ public class Patroling : SquidState
         Debug.Log(movement);
         if (movement.x < point2.x && movement.x > point1.x)
         {
-
+            Debug.LogError("Moving");
             if (movement.x >= enemy.transform.position.x)
             {
                 enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -73,12 +76,24 @@ public class Patroling : SquidState
 
             enemy.transform.position = Vector2.MoveTowards(enemy.transform.position, movement, enemy.patrolingSpeed);
         }
+        else
+        {
+            Debug.LogError("FalseIf");
+            Patrol();
+        }
 
+        if (ErrorTimer >= 10)
+        {
+            Patrol();
+            ErrorTimer = 0;
+        }
 
         if (enemy.transform.position.x == movement.x)
         {
             movement.y = enemy.transform.position.y;
+            Debug.LogError("CanTimerRunTrue");
             enemy.canTimerRun = true;
+            ErrorTimer = 0;
         }
     }
 }
