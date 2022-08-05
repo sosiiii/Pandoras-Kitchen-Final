@@ -4139,7 +4139,7 @@ MonoBehaviour:
   - {fileID: 1352817442}
   cabin: {fileID: 116140308}
   speed: 1
-  waitTime: 0
+  waitTime: 0.5
 --- !u!4 &740838669
 Transform:
   m_ObjectHideFlags: 0
