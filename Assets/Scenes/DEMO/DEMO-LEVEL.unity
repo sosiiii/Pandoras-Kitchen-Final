@@ -4545,12 +4545,16 @@ PrefabInstance:
       objectReference: {fileID: 687050637}
     - target: {fileID: 8638513678998397152, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: orderPool.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8638513678998397152, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: orderPool.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 1a3dcb0bc34af413aa4d5cc0d23491ba, type: 2}
+      objectReference: {fileID: 11400000, guid: f85b76be5c95e43f48686ed8d7d67935, type: 2}
+    - target: {fileID: 8638513678998397152, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
+      propertyPath: orderPool.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6dbf33bb8166046228f86974cddf088f, type: 2}
     - target: {fileID: 8638513678998397158, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: m_Name
       value: ZeusShrine

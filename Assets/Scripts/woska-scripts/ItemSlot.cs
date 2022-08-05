@@ -12,11 +12,12 @@ public class ItemSlot : MonoBehaviour, IItemContainer
 
     private Item _item = null;
 
-    private void Awake()
+    
+    private void Start()
     {
         ToggleSlot(false);
     }
-    
+
     public bool ContainsItem(Item item)
     {
         return _item == item && item != null;
