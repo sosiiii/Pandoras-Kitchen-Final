@@ -2536,21 +2536,37 @@ PrefabInstance:
       propertyPath: orderPool.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: e8f0a3a1181af49af826fb5d669654f6, type: 2}
+    - target: {fileID: 8638513678998397153, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bd3cc77ed4f54cd3992520a6372788b, type: 3}
     - target: {fileID: 8638513678998397158, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: m_Name
-      value: OrderGenerator (1)
+      value: ZeusShrine
       objectReference: {fileID: 0}
     - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.09
+      value: -11.7
       objectReference: {fileID: 0}
     - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.84
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2598,12 +2614,24 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.09
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -2.89
       objectReference: {fileID: 0}
     - target: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2639,8 +2667,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8463675218762560199, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
       propertyPath: m_Name
-      value: OrderReciver (1)
+      value: PandorasBox
       objectReference: {fileID: 0}
+    - target: {fileID: 8463675218762560204, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31565806d3c564146b5518522a9d0b2a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
 --- !u!1 &1411814221
@@ -6795,7 +6827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819069272548900579, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.84
       objectReference: {fileID: 0}
     - target: {fileID: 819069272548900579, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6833,6 +6865,14 @@ PrefabInstance:
       propertyPath: _machine
       value: 
       objectReference: {fileID: 11400000, guid: eafe281e3e7214c42997ba9a1ee1c578, type: 2}
+    - target: {fileID: 7027320638668684941, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027320638668684941, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.9167382
+      objectReference: {fileID: 0}
     - target: {fileID: 8642590009674179236, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_Name
       value: Cooking Pot
@@ -6840,7 +6880,7 @@ PrefabInstance:
     - target: {fileID: 9175247843985973646, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88710df8fd3db42f4970b12d0ef0e3bd, type: 3}
+      objectReference: {fileID: 21300000, guid: d7e1ae54f32a448149ade980795d72c0, type: 3}
     - target: {fileID: 9175247843985973646, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -6864,7 +6904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819069272548900579, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.84
       objectReference: {fileID: 0}
     - target: {fileID: 819069272548900579, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6902,6 +6942,14 @@ PrefabInstance:
       propertyPath: _machine
       value: 
       objectReference: {fileID: 11400000, guid: d2b8df2d7873c48908c83bd15e1a5c60, type: 2}
+    - target: {fileID: 7027320638668684941, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027320638668684941, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.9167382
+      objectReference: {fileID: 0}
     - target: {fileID: 8642590009674179236, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_Name
       value: Blender
@@ -6909,7 +6957,7 @@ PrefabInstance:
     - target: {fileID: 9175247843985973646, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88710df8fd3db42f4970b12d0ef0e3bd, type: 3}
+      objectReference: {fileID: 21300000, guid: f7f27efd6e03645378b1a2559d2b1184, type: 3}
     - target: {fileID: 9175247843985973646, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -7558,6 +7606,18 @@ PrefabInstance:
     - target: {fileID: 197206286417994175, guid: 051b42cb6f73340558147c8acc264373, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 197206286666870678, guid: 051b42cb6f73340558147c8acc264373, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197206286666870678, guid: 051b42cb6f73340558147c8acc264373, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197206286666870678, guid: 051b42cb6f73340558147c8acc264373, type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 197206286666870679, guid: 051b42cb6f73340558147c8acc264373, type: 3}
       propertyPath: m_Enabled

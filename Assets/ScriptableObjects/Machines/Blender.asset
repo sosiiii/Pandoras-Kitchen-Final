@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blender
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Blender
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 88710df8fd3db42f4970b12d0ef0e3bd, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: f7f27efd6e03645378b1a2559d2b1184, type: 3}
   <MaxRecipeLength>k__BackingField: 1
   <CraftingRecipes>k__BackingField:
   - {fileID: 11400000, guid: 8858fc3a893d8426f964df1e42dd7640, type: 2}

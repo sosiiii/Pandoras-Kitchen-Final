@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cooking Pot
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Cooking Pot
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 88710df8fd3db42f4970b12d0ef0e3bd, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: d7e1ae54f32a448149ade980795d72c0, type: 3}
   <MaxRecipeLength>k__BackingField: 3
   <CraftingRecipes>k__BackingField:
   - {fileID: 11400000, guid: 685f4cff0f19c48d7bcef7227f28b19b, type: 2}
