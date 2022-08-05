@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tenticle
   m_EditorClassIdentifier: 
   itemName: 
-  itemSprite: {fileID: 21300000, guid: 33633efb814e04b3db3a372e06a2b9d4, type: 3}
+  itemSprite: {fileID: 21300000, guid: e362e56a9f0714e019e079997747b78c, type: 3}
