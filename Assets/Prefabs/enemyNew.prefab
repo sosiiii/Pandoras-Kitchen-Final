@@ -171,8 +171,9 @@ MonoBehaviour:
   MoveState: 0
   StunedEnemy: {fileID: 4537837192168905914, guid: 062c5df4dd010fd42baf21745effb21c, type: 3}
   patrolingSpeed: 0.1
+  patrolingSpeedMax: 0.5
+  patrolingSpeedMin: 0.05
   patrolTimer: 0
-  patrolStartTimer: 5
   patrol1: {x: -11.63, y: -2.552713}
   patrol2: {x: 10.28, y: -2.552713}
   PatrolLayerMask:

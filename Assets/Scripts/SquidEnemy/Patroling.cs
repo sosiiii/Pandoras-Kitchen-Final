@@ -35,7 +35,7 @@ public class Patroling : SquidState
         if (enemy.patrolTimer <= 0)
         {
             enemy.canTimerRun = false;
-            enemy.patrolTimer = enemy.patrolStartTimer;
+            enemy.patrolTimer = Random.Range(1, 5);
             Patrol();
         }
 
@@ -50,29 +50,10 @@ public class Patroling : SquidState
 
     }
 
-   /* IEnumerator Patroled()
-    {
-        Debug.Log("IEnuerator");
-        movement = new Vector2(Random.Range(minMovement, maxMovement), GroundedPosition);
-        Debug.Log(point1);
-        Debug.Log(point2);
-        if (movement.x < point2.x && movement.x > point1.x)
-        {
-            Debug.LogError("true");
-            enemy.transform.position = new Vector2(movement.x, movement.y) * Time.deltaTime * enemy.patrolingSpeed;
-            yield return new WaitForSeconds(enemy.patrolWait);
-            StartCoroutine(Patroled());
-        }
-        else
-        {
-            Debug.LogError("false");
-            StartCoroutine(Patroled());
-        }
-    }*/
-
     void Patrol()
     {
         movement = new Vector2(Random.Range(minMovement, maxMovement), GroundedPosition);
+        enemy.patrolingSpeed = Random.Range(enemy.patrolingSpeedMin, enemy.patrolingSpeedMax);
     }
 
     void PatrolMove()

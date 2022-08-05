@@ -31,8 +31,9 @@ public class SquidBase : MonoBehaviour
 
     [Header("Patroling")]
     public float patrolingSpeed;
+    public float patrolingSpeedMax;
+    public float patrolingSpeedMin;
     public float patrolTimer;
-    public float patrolStartTimer;
 
     public Vector2 patrol1;
     public Vector2 patrol2;
