@@ -15,5 +15,5 @@ MonoBehaviour:
   <ItemsNeeded>k__BackingField:
   - {fileID: 11400000, guid: 0fef4eecd2272449ca15672e09bed357, type: 2}
   - {fileID: 11400000, guid: 0fef4eecd2272449ca15672e09bed357, type: 2}
-  <Result>k__BackingField: {fileID: 0}
+  <Result>k__BackingField: {fileID: 11400000, guid: 61f8054a535504f91bb3df6cdf0e63e7, type: 2}
   <CanBeCraftedIn>k__BackingField: {fileID: 11400000, guid: eafe281e3e7214c42997ba9a1ee1c578, type: 2}

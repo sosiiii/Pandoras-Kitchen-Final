@@ -19,4 +19,5 @@ MonoBehaviour:
   <CraftingRecipes>k__BackingField:
   - {fileID: 11400000, guid: 685f4cff0f19c48d7bcef7227f28b19b, type: 2}
   - {fileID: 11400000, guid: 31609574938ac4a95bbca5bffdb7ce11, type: 2}
+  - {fileID: 11400000, guid: b7a161051757446b88959baa84fa3a11, type: 2}
   <Trash>k__BackingField: {fileID: 11400000, guid: 36b2d33b09875453db53c44bc85831ee, type: 2}

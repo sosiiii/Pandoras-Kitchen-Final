@@ -115,6 +115,7 @@ public class MachineBehavior : MonoBehaviour, IInteractable
         
         foreach (var inputSlot in _inputSlots)
         {
+            Debug.Log("DDDDß");
             if(inputSlot.IsFull()) continue;
             inputSlot.AddItem(itemInHand);
             break;
