@@ -46,9 +46,9 @@ MonoBehaviour:
   score: 100
   scoreToAddRemove: 30
   scoreText: {fileID: 0}
-  oneStarScore: 120
-  twoStarsScore: 300
-  threeStarsScore: 350
+  oneStarScore: 30
+  twoStarsScore: 60
+  threeStarsScore: 90
   scoreTextResults: {fileID: 0}
   stars:
   - {fileID: 0}
