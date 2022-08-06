@@ -19,12 +19,6 @@ public class StunedSprite : MonoBehaviour, IPickable
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-
-    private void Start()
-    {
-        StartCoroutine(Stunned());
-    }
-
     private void Update()
     {
         if (carried)

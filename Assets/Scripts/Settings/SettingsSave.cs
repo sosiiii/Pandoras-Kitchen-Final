@@ -10,12 +10,6 @@ public class SettingsSave : MonoBehaviour
         VolumeStart();
     }
 
-    //RESOLUTON
-    private void ResolutionStart()
-    {
-
-    }
-
     //FULLSCREEN
     private void FullscreenStart()
     {

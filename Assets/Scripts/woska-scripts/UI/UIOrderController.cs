@@ -15,6 +15,14 @@ public class UIOrderController : MonoBehaviour
     private readonly int _penaltyForTurningInBadOrder = -50;
 
     private int currentScore = 0;
+
+    Score score;
+
+    private void Awake()
+    {
+        score = FindObjectOfType<Score>();
+    }
+
     private void OnEnable()
     {
         OrderGenerator.onOrderAccepted += OnOrderAccepted;
@@ -42,9 +50,9 @@ public class UIOrderController : MonoBehaviour
     }
     private void OrderNotCompleted(UIOrder order)
     {
-      /// Lower score
-      _orderUis.Remove(order);
-      AddScore(scoreForCompletedOrder);
+        // Lower score
+        _orderUis.Remove(order);
+        AddScore(scoreForCompletedOrder);
     }
 
     private void OrderTurnIn(Item item)
@@ -69,15 +77,14 @@ public class UIOrderController : MonoBehaviour
         if (foundMatchingOrder)
         {
             //Score up
-            AddScore(scoreForCompletedOrder);
+            score.IncreaseScore();
+            //AddScore(scoreForCompletedOrder);
         }
         else
         {
             //Score down
-            AddScore(_penaltyForTurningInBadOrder);
+            score.DecreaseScore();
+            //AddScore(_penaltyForTurningInBadOrder);
         }
     }
-    
-    
-    
 }
