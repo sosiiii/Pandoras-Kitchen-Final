@@ -687,7 +687,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6927058015612289744}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1599998, y: -2.2, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
@@ -1000,7 +1000,7 @@ MonoBehaviour:
     m_ActionName: Gameplay1/OpenDoor[/Keyboard/rightShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 3c69eaac-4562-4623-aa0e-6972253e2561
+  m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &4173599170772956323
@@ -1075,6 +1075,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.99999994, y: 0.99999994}
+  m_Offset: {x: 0.03329744, y: 0}
+  m_Size: {x: 0.5837758, y: 0.99999994}
   m_Direction: 0

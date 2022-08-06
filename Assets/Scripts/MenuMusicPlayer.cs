@@ -27,7 +27,6 @@ public class MenuMusicPlayer : MonoBehaviour
 
     private void Update()
     {
-        return;
         if (SceneManager.GetActiveScene().buildIndex >= 3)
         {
             audioSource.Pause();

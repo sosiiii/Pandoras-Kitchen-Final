@@ -52,7 +52,8 @@ public class UIOrderController : MonoBehaviour
     {
         // Lower score
         _orderUis.Remove(order);
-        AddScore(scoreForCompletedOrder);
+        score.DecreaseScore();
+        //AddScore(scoreForCompletedOrder);
     }
 
     private void OrderTurnIn(Item item)
