@@ -8848,6 +8848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemyNew
       objectReference: {fileID: 0}
+    - target: {fileID: 6982275024262290078, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
 --- !u!1 &1925948284

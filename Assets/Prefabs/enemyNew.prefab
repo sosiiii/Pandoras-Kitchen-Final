@@ -135,7 +135,7 @@ MonoBehaviour:
   speed: 7
   rb: {fileID: 6982275024262290077}
   health: 0
-  maxHealth: 5
+  maxHealth: 1
   jumpChanceNumber: 1
   jumpForce: 5
   grounded: 0
