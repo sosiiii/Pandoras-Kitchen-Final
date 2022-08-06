@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DEMO
+  m_text: TUTORIAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7207b09f2b4e68e4bb461b0338627aee, type: 2}
   m_sharedMaterial: {fileID: 9153090091651950005, guid: 7207b09f2b4e68e4bb461b0338627aee, type: 2}
@@ -2645,7 +2645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df976c5828ff4d4dba105616cd8a201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: DEMO-LEVEL
+  levelName: TUTORIAL
   isAlwaysOpen: 1
   doorOpenSprite: {fileID: 8322971191178876770, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
   doorCloseSprite: {fileID: -8425966301496999361, guid: f0e96175de0de47478d23782871e1d0a, type: 3}

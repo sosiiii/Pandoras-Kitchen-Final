@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SquidBase : MonoBehaviour
 {
+    public static int enemiesCount = 0;
     public SquidState state;
 
     public float knockbackForce = 5;
@@ -51,6 +53,7 @@ public class SquidBase : MonoBehaviour
 
     private void Start()
     {
+        enemiesCount++;
         rb = GetComponent<Rigidbody2D>();
         ChangeState(new Idle(this));
         StartCoroutine(DelayedStart());
@@ -171,5 +174,10 @@ public class SquidBase : MonoBehaviour
         {
             patrolTimer -= Time.deltaTime;
         }
+    }
+
+    private void OnDestroy()
+    {
+        enemiesCount--;
     }
 }
