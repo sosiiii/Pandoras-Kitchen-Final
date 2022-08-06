@@ -13927,6 +13927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElevatorSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4666540869263879471, guid: b505e792d749e71458d29aa658cb6ee8, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b505e792d749e71458d29aa658cb6ee8, type: 3}
 --- !u!1001 &3926955317066375829
