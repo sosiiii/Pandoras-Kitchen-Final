@@ -6,21 +6,12 @@ using Random = UnityEngine.Random;
 
 public class EnemyGenerator : MonoBehaviour
 {
-
-
     [SerializeField] private SquidBase enemy;
     [SerializeField] private int maxEnemies = 4;
     
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnEnemy());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator SpawnEnemy()
