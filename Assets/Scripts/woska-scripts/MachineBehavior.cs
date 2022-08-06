@@ -83,6 +83,8 @@ public class MachineBehavior : MonoBehaviour, IInteractable
         //Player has item in hand
         if (playerItemSlot.IsFull() && CanInsertItem)
         {
+            //Add check if item is enemy and if machine can process enemies
+            if (_machine.OnlyProcessesEnemies != playerInteract.ItemSlot.GetItem().isEnemy) return false;
             InsertItem(playerInteract);
             if (CraftingInProgress)
             {
@@ -115,7 +117,6 @@ public class MachineBehavior : MonoBehaviour, IInteractable
         
         foreach (var inputSlot in _inputSlots)
         {
-            Debug.Log("DDDDß");
             if(inputSlot.IsFull()) continue;
             inputSlot.AddItem(itemInHand);
             break;

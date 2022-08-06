@@ -21,4 +21,6 @@ public class Machine : ScriptableObject
     [field: SerializeField] public List<CraftingRecipe> CraftingRecipes { get; private set; }
     [field: SerializeField] public Item Trash { get; private set; }
     
+    [field: SerializeField] public bool OnlyProcessesEnemies { get; private set; }
+    
 }

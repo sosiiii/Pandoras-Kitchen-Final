@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,15 +8,14 @@ public class MenuMusicPlayer : MonoBehaviour
 {
     AudioSource audioSource;
 
+    private static MenuMusicPlayer _musicPlayer;
+
     private void Awake()
     {
-        if (FindObjectsOfType<MenuMusicPlayer>().Length > 1)
-        {
-            Destroy(gameObject);
-        }
-
+        if(_musicPlayer != null) Destroy(gameObject);
         else
         {
+            _musicPlayer = this;
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -27,6 +27,7 @@ public class MenuMusicPlayer : MonoBehaviour
 
     private void Update()
     {
+        return;
         if (SceneManager.GetActiveScene().buildIndex >= 3)
         {
             audioSource.Pause();

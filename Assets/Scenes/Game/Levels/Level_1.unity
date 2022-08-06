@@ -13806,11 +13806,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4973847650952555087, guid: b505e792d749e71458d29aa658cb6ee8, type: 3}
       propertyPath: speed
-      value: 6
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4973847650952555087, guid: b505e792d749e71458d29aa658cb6ee8, type: 3}
       propertyPath: floors
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973847650952555087, guid: b505e792d749e71458d29aa658cb6ee8, type: 3}
+      propertyPath: howLongWaitOnFloor
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4973847650952555103, guid: b505e792d749e71458d29aa658cb6ee8, type: 3}

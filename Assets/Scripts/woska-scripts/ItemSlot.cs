@@ -58,4 +58,9 @@ public class ItemSlot : MonoBehaviour, IItemContainer
     {
         SlotIcon.gameObject.SetActive(toggle);
     }
+
+    public Item GetItem()
+    {
+        return _item;
+    }
 }

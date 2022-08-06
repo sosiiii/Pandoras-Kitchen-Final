@@ -12,5 +12,7 @@ namespace woska_scripts
         Vector3 GetPosition();
 
         void SetLocalPosition(Vector3 position);
+
+        Item GetItem();
     }
 }
