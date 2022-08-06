@@ -84,23 +84,19 @@ public class SquidBase : MonoBehaviour
         state.Process();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void TriggerEnter(Player player)
     {
-        if (collision.CompareTag("Player"))
-        {
-            ChangeState(new Move(this, collision.GetComponent<Player>()));
-            StopCoroutine(Delay());
-        }
+        ChangeState(new Move(this, player));
+        StopCoroutine(Delay());
     }
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            ChangeState(new Idle(this));
 
-            MoveState = false;
-            StartCoroutine(Delay());
-        }
+    public void TriggerExit()
+    {
+
+        ChangeState(new Idle(this));
+
+        MoveState = false;
+        StartCoroutine(Delay());
     }
 
     IEnumerator IdleToPatrol()

@@ -29,7 +29,7 @@ public class PlayerCombat : MonoBehaviour
     public int maxAmmo;
     public bool reload;
 
-    private float time = 2;
+    private float time = 1.2f;
     private bool relode = false;
 
     public 
@@ -56,7 +56,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 relode = false;
             }
-            time = 2;
+            time = 1.2f;
             ammo++;
         }
     }
