@@ -8800,14 +8800,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 848702357}
     m_Modifications:
-    - target: {fileID: 6982275024262290049, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982275024262290049, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1360489053
-      objectReference: {fileID: 0}
     - target: {fileID: 6982275024262290050, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8855,26 +8847,6 @@ PrefabInstance:
     - target: {fileID: 6982275024262290076, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
       propertyPath: m_Name
       value: enemyNew
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982275024262290078, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: patrol1.x
-      value: -9.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982275024262290078, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: patrol1.y
-      value: -0.6527076
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982275024262290078, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: patrol2.x
-      value: 9.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982275024262290078, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: patrol2.y
-      value: -0.6527076
-      objectReference: {fileID: 0}
-    - target: {fileID: 6982275024262290078, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
-      propertyPath: patrolingSpeedMin
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
