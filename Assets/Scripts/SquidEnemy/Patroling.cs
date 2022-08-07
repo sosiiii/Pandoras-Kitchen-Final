@@ -35,7 +35,7 @@ public class Patroling : SquidState
         GroundedPosition = enemy.transform.position.y;
         if (enemy.patrolTimer <= 0)
         {
-            Debug.LogError("CanTimerRunFalse");
+            //Debug.LogError("CanTimerRunFalse");
             enemy.canTimerRun = false;
             enemy.patrolTimer = Random.Range(1, 5);
             Patrol();
@@ -61,10 +61,10 @@ public class Patroling : SquidState
 
     void PatrolMove()
     {
-        Debug.Log(movement);
+        //Debug.Log(movement);
         if (movement.x < point2.x && movement.x > point1.x)
         {
-            Debug.LogError("Moving");
+            //Debug.LogError("Moving");
             if (movement.x >= enemy.transform.position.x)
             {
                 enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -78,7 +78,7 @@ public class Patroling : SquidState
         }
         else
         {
-            Debug.LogError("FalseIf");
+            //Debug.LogError("FalseIf");
             Patrol();
         }
 
@@ -91,7 +91,7 @@ public class Patroling : SquidState
         if (enemy.transform.position.x == movement.x)
         {
             movement.y = enemy.transform.position.y;
-            Debug.LogError("CanTimerRunTrue");
+            //Debug.LogError("CanTimerRunTrue");
             enemy.canTimerRun = true;
             ErrorTimer = 0;
         }

@@ -74,7 +74,7 @@ public class PlayerCombat : MonoBehaviour
             Hit();
             relode = false;
             relode = true;
-            time = 2;
+            time = 1.2f;
         }
     }
 

@@ -86,8 +86,8 @@ public class SquidBase : MonoBehaviour
 
     public void TriggerEnter(Player player)
     {
+        StopAllCoroutines();
         ChangeState(new Move(this, player));
-        StopCoroutine(Delay());
     }
 
     public void TriggerExit()
@@ -97,12 +97,6 @@ public class SquidBase : MonoBehaviour
 
         MoveState = false;
         StartCoroutine(Delay());
-    }
-
-    IEnumerator IdleToPatrol()
-    {
-        yield return new WaitForSeconds(3);
-        ChangeState(new Patroling(this));
     }
 
     IEnumerator Delay()
@@ -128,6 +122,10 @@ public class SquidBase : MonoBehaviour
         return false;
     }
 
+    public void Stunned()
+    {
+        ChangeState(new Stuned(this));
+    }
     /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -159,11 +157,6 @@ public class SquidBase : MonoBehaviour
         else if(MoveState == false)
         {
             Timer = 0;
-        }
-
-        if (health <= 0)
-        {
-            ChangeState(new Stuned(this));
         }
 
         if (patroling && canTimerRun)

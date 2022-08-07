@@ -40,9 +40,9 @@ public class Demaged : SquidState
         //DemagedEnemy(int Demage);
     }
 
-    IEnumerator Stun()
+    void Stun()
     {
-        yield return new WaitForSeconds(10);
+        enemy.Stunned();
     }
 
     void KnockBack()
