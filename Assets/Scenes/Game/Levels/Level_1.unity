@@ -13285,17 +13285,17 @@ Tilemap:
       e33: 6.82e-43
   - m_RefCount: 0
     m_Data:
-      e00: -2.0323359e-22
-      e01: 2.1e-44
+      e00: -2.0322854e-22
+      e01: NaN
       e02: 1.5869217e+38
       e03: 0
       e10: 2.55e-43
-      e11: 0
+      e11: NaN
       e12: 4.5904e-41
       e13: 0
       e20: 4e-45
       e21: 0
-      e22: -2.0323339e-22
+      e22: -2.0322834e-22
       e23: 0
       e30: 0
       e31: 7.34684e-40
@@ -15498,6 +15498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllInOnePlayer ARROWS
       objectReference: {fileID: 0}
+    - target: {fileID: 5628766329388478831, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
 --- !u!1001 &3284813701063766831
@@ -15568,6 +15572,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1009585795}
     m_Modifications:
+    - target: {fileID: 1109741527894977741, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5837759
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109741527894977741, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9626899
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109741527894977741, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03329743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109741527894977741, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.018654991
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046962737848612772, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046962738398537999, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: attackDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046962738398537999, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289744, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_Name
       value: AllInOnePlayer WASD
@@ -15577,12 +15609,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1599998
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.45
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.z
