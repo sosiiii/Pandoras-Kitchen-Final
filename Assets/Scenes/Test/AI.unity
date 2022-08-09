@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 592626070}
   - component: {fileID: 592626069}
   - component: {fileID: 592626068}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 1980186256}
   - component: {fileID: 1980186255}
   - component: {fileID: 1980186258}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,6 +827,11 @@ MonoBehaviour:
   rb: {fileID: 2033165917}
   right: 1
   direction: 1
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  deadEnemyItem: {fileID: 11400000, guid: 7852d076086444b72aa1e615d0dda8ce, type: 2}
+  itemObjectPrefab: {fileID: 4198291713372462698, guid: de7c61c6c914e4d039e3ab6484c059e9, type: 3}
 --- !u!1001 &3017950160018501932
 PrefabInstance:
   m_ObjectHideFlags: 0
