@@ -1,54 +1,66 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Intereaction;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace woska_scripts
 {
-    [RequireComponent(typeof(Highlight), typeof(BoxCollider2D))]
-    public class OrderGenerator : MonoBehaviour, IInteractable
+    public class OrderGenerator : MonoBehaviour
     {
-        public static Action<Order> onOrderAccepted;
 
+        public bool CanGenerate => _currentNumberOfActiveOrders < _levelSettings.MaxActiveOrders;
+        private int _currentNumberOfActiveOrders = 0;
+        public static Action<CraftingRecipe> orderGenerated;
 
-        [SerializeField] private List<Order> orderPool = new List<Order>();
+        [SerializeField] private LevelSettings _levelSettings;
 
-
-        private Order currentOrder;
-
-        private ItemSlot _newOrderIcon;
-
-        private void Awake()
+        private void OnEnable()
         {
-            _newOrderIcon = transform.GetChild(0).GetChild(0).GetComponent<ItemSlot>();
+            OrderController.orderFinished += OrderFinished;
+            
+        }
+
+        private void OnDisable()
+        {
+            OrderController.orderFinished -= OrderFinished;
         }
 
         private void Start()
         {
-            GenerateRandomOrder();
+            StartCoroutine(Generate()); 
         }
-
-        public bool Interact(PlayerInteract playerInteract)
+        private IEnumerator Generate()
         {
-            if (currentOrder == null) return false;
+            while (true)
+            {
+                while (CanGenerate)
+                {
+                    _currentNumberOfActiveOrders++;
+                    GenerateRandomOrder();
+                    yield return new WaitForSeconds(3f);
+                }
 
-            onOrderAccepted?.Invoke(currentOrder);
+                yield return new WaitUntil(() => CanGenerate == false);
+            }
+
+            //Reached maximum of orders 
+            //Wait for number of active orders to decrease
+            //Then
             
-            Invoke(nameof(GenerateRandomOrder), Random.Range(5f, 10f));
-
-            _newOrderIcon.RemoveItem();
-
-            currentOrder = null;
-
-            return true;
         }
-
         private void GenerateRandomOrder()
         {
-            currentOrder = orderPool[Random.Range(0, orderPool.Count)];
+            var order = _levelSettings.OrderPool[Random.Range(0, _levelSettings.OrderPool.Count)];
 
-            _newOrderIcon.AddItem(currentOrder.WhatWasOrdered.Result);
+            orderGenerated?.Invoke(order);
+        }
+        
+        private void OrderFinished()
+        {
+            _currentNumberOfActiveOrders--;
         }
         
         

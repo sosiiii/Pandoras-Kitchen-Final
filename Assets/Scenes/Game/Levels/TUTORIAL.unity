@@ -2579,7 +2579,7 @@ PrefabInstance:
     - target: {fileID: 8638513678998397152, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: orderPool.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: e8f0a3a1181af49af826fb5d669654f6, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8638513678998397152, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
       propertyPath: orderPool.Array.data[2]
       value: 

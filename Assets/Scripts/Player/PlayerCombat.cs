@@ -65,7 +65,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void EnemyDetection(InputAction.CallbackContext context)
     {
-        if (context.performed && ammo > 0 && player.GetComponent<PlayerInteract>().ItemSlot.IsFull() == false)
+        if (context.performed && ammo > 0 && !player.GetComponent<PlayerInteraction>().InventorySlot.IsFree)
         {
             attacking = true;
             Debug.Log("You see");
