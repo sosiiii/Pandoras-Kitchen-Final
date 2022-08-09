@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ae1cdb6bf4651ac1289c221bf4054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outLineMaterial: {fileID: 0}
+  outLineMaterial: {fileID: 2100000, guid: ad2e90cbcd5534a38b6001422ce3ccf5, type: 2}
   <Type>k__BackingField: 0
   <Priority>k__BackingField: 1
