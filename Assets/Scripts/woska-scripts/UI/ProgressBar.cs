@@ -8,12 +8,9 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     private float _minimum;
-
     private float _maximum;
-
     private float _current;
-
-
+    
     private Image mask;
     private Image fill;
     private Image background;
@@ -24,92 +21,61 @@ public class ProgressBar : MonoBehaviour
     
     public bool IsRunning { get; private set; }
     
-    public Action OnTimerRunout;
+    public enum ProgressBarType
+    {
+        Increase,
+        Decrease
+    }
+
+    [SerializeField] private ProgressBarType type = ProgressBarType.Increase;
 
     private void Awake()
     {
         mask = transform.GetChild(0).GetComponent<Image>();
         fill = transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        background = GetComponent<Image>();
-        ToggleActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        //background = GetComponent<Image>();
+        
         fill.color = fillColorFull;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+        mask.gameObject.SetActive(false);
     }
-    
-    public void StartTimer(float duration)
+    public void Init(float maximum)
     {
-        _minimum = 0;
-        _current = _maximum = duration;
+
+        mask.gameObject.SetActive(true);
+        _current = _maximum = maximum;
         
-        ToggleActive(true);
-        StartCoroutine(UpdateTimer());
+        var currentFill = GetCurrentFill();
+        fill.fillAmount = currentFill;
     }
-    private IEnumerator UpdateTimer()
+    public void UpdateBar(float current, float maximum)
     {
-        IsRunning = true;
-        var timeDecrease = 0.1f;
-        while (_current > _minimum)
-        {
-            
-            yield return new WaitForSeconds(timeDecrease);
-            _current -= timeDecrease;
-            var currentFill = GetCurrentFill();
-            fill.fillAmount = currentFill;
-
-            if (currentFill > 0.6f)
-            {
-                fill.color = fillColorFull;
-            }
-            else if (currentFill > 0.3f)
-                fill.color = fillColorHalf;
-            else
-            {
-                fill.color = fillColorLow;
-            }
-        }
-        IsRunning = false;
-        OnTimerRunout?.Invoke();
+        _current = current;
+        _maximum = maximum;
         
-        ToggleActive(false);
-    }
+        var currentFill = GetCurrentFill();
+        fill.fillAmount = currentFill;
 
-
-    public void UpdateBar(float time)
-    {
-        _maximum += time;
-        _current += time;
+        if (currentFill > 0.6f) 
+            fill.color = fillColorFull;
+        else if (currentFill > 0.3f)
+            fill.color = fillColorHalf;
+        else
+            fill.color = fillColorLow;
     }
 
     public void StopTimer()
     {
-        StopCoroutine(UpdateTimer());
+        mask.gameObject.SetActive(false);
     }
-
-    public void ToggleActive(bool toggle)
-    {
-        Debug.Log("Bar is: " + toggle);
-        mask.enabled = toggle;
-        fill.enabled = toggle;
-        background.enabled = toggle;
-        
-        Debug.Log(background.name);
-    }
-
+    
     private float GetCurrentFill()
     {
         float currentOffset = _current - _minimum;
         float maximumOffset = _maximum - _minimum;
 
-        return  currentOffset / maximumOffset;
+        var fill = currentOffset / maximumOffset;
+        
+        return type == ProgressBarType.Decrease ?  fill : 1 - fill;
     }
 }
