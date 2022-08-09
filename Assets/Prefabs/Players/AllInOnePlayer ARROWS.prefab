@@ -293,9 +293,9 @@ MonoBehaviour:
     m_ActionName: Gameplay/Jump[/Keyboard/w]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: woska_scripts.PlayerInteract, Assembly-CSharp
-        m_MethodName: Interact
+      - m_Target: {fileID: 5255056115871860728}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: HandleInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -321,9 +321,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: woska_scripts.PlayerInteract, Assembly-CSharp
-        m_MethodName: ThrowItem
+      - m_Target: {fileID: 5255056115871860728}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: HandleThrow
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -373,9 +373,9 @@ MonoBehaviour:
     m_ActionName: Gameplay1/Jump[/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: woska_scripts.PlayerInteract, Assembly-CSharp
-        m_MethodName: Interact
+      - m_Target: {fileID: 5255056115871860728}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: HandleInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -401,9 +401,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: woska_scripts.PlayerInteract, Assembly-CSharp
-        m_MethodName: ThrowItem
+      - m_Target: {fileID: 5255056115871860728}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: HandleThrow
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
