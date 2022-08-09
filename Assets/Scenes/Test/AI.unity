@@ -263,6 +263,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &477097366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477097367}
+  m_Layer: 8
+  m_Name: GroundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &477097367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477097366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.39, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2033165920}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &592626067
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,11 +420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.678332
+      value: -5.64
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3696184
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -441,7 +471,7 @@ GameObject:
   - component: {fileID: 1048327271}
   - component: {fileID: 1048327270}
   - component: {fileID: 1048327272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980186254}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.33, y: -0.562361, z: 0}
+  m_LocalPosition: {x: 8.65, y: -0.56, z: 0}
   m_LocalScale: {x: 6.65, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -820,8 +850,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c737bd12dbf854a99d5899639f5a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  HP: 2
   speed: 1
+  knockbackForce: 1
+  knockbackForceUp: 99
   groundDetector: {fileID: 1793028048}
   wallDetector: {fileID: 0}
   rb: {fileID: 2033165917}
@@ -832,6 +864,11 @@ MonoBehaviour:
     m_Bits: 64
   deadEnemyItem: {fileID: 11400000, guid: 7852d076086444b72aa1e615d0dda8ce, type: 2}
   itemObjectPrefab: {fileID: 4198291713372462698, guid: de7c61c6c914e4d039e3ab6484c059e9, type: 3}
+  k_GroundedRadius: 0.2
+  m_GroundCheck: {fileID: 477097367}
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &3017950160018501932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,7 +886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6982275024262290050, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.63
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 6982275024262290050, guid: 4831265e93e7b494098b4316f9c7e4b4, type: 3}
       propertyPath: m_LocalPosition.y

@@ -53,14 +53,14 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            var squidBase = enemy.GetComponent<SquidScript>();
+            var SquidScript = enemy.GetComponent<SquidScript>();
 
-            if (squidBase == null)
+            if (SquidScript == null)
             {
                 continue;
             }
 
-            //squidBase.Demaged(attackDamage, player);
+            SquidScript.Damaged(attackDamage, player);
         }
     }
 
