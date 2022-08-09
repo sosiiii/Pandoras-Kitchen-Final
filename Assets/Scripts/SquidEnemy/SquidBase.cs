@@ -21,6 +21,7 @@ public class SquidBase : MonoBehaviour
     public int jumpChanceNumber = 1000000;
     public float jumpForce;
     public bool grounded;
+    public Transform RayShooter;
 
     [Header("JumpTimer")]
     public float Timer;
@@ -31,7 +32,7 @@ public class SquidBase : MonoBehaviour
     public GameObject StunedEnemy;
 
 
-    [Header("Patroling")]
+    [Header("Patroling")]       
     public float patrolingSpeed;
     public float patrolingSpeedMax;
     public float patrolingSpeedMin;
@@ -84,7 +85,7 @@ public class SquidBase : MonoBehaviour
         state.Process();
     }
 
-    public void TriggerEnter(Player player)
+    /*public void TriggerEnter(Player player)
     {
         StopAllCoroutines();
         ChangeState(new Move(this, player));
@@ -97,8 +98,11 @@ public class SquidBase : MonoBehaviour
 
         MoveState = false;
         StartCoroutine(Delay());
+    }*/
+    public void Move(Transform player)
+    {
+        ChangeState((new Move(this, player)));
     }
-
     IEnumerator Delay()
     {
         

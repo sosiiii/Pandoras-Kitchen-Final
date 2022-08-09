@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EmptyObjectScript : MonoBehaviour
 {
-    private SquidBase enemy;
+    /*private SquidBase enemy;
 
     private void Start()
     {
@@ -23,5 +23,5 @@ public class EmptyObjectScript : MonoBehaviour
         {
             enemy.TriggerExit();
         }
-    }
+    }*/
 }

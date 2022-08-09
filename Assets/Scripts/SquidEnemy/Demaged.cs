@@ -24,6 +24,10 @@ public class Demaged : SquidState
         {
             Stun();
         }
+        else
+        {
+            enemy.Move(player);
+        }
     }
 
 
