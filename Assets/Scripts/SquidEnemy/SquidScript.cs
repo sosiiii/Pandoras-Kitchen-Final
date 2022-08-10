@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquidScript : MonoBehaviour
+public class SquidScript : MonoBehaviour, IDamagable
 {
 
     public enum SquidStates{
@@ -129,6 +129,16 @@ public class SquidScript : MonoBehaviour
         }
         
         rb.velocity = new Vector2(dir.x * knockbackForce, knockbackForceUp);
-        transform.right = -dir * Vector2.right;
+        transform.right = dir * Vector2.right;
+    }
+
+    public void Damage(float attackDemage, Vector3 knockbackDir)
+    {
+        Damaged(attackDemage, knockbackDir);
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 }
