@@ -53,14 +53,20 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            var squidBase = enemy.GetComponent<SquidScript>();
+            var SquidScript = enemy.GetComponent<SquidScript>();
 
-            if (squidBase == null)
+            if (SquidScript == null)
             {
                 continue;
             }
 
-            //squidBase.Demaged(attackDamage, player);
+            var direction = (SquidScript.transform.position - transform.position).x;
+            var dirVector = (direction * Vector2.right).normalized;
+            
+            Debug.Log(dirVector);
+            
+
+            SquidScript.Damaged(attackDamage, dirVector);
         }
     }
 

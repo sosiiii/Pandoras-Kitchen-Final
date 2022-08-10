@@ -13,6 +13,8 @@ public class NewElevator : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float waitTime;
 
+    [SerializeField] private bool loop;
+
     private int currentFloorIndex = 0;
 
     private bool isGoingDown;
