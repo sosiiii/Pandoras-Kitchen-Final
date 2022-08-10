@@ -4,14 +4,13 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/UI/Promt", fileName = "New Zeus Promt")]
-public class Promt : MonoBehaviour
+public class Promt : ScriptableObject
 {
-    [field: SerializeField] public PromptContext Sprite { get; private set; }
+    [field: SerializeField] public PromptContext Context { get; private set; }
 
     [field: SerializeField] private List<string> AllPrompts;
 
-    public Stack<string> PromptPool;
-
+    private Stack<string> PromptPool;
 
     public string GetRandomPrompt()
     {
@@ -19,14 +18,6 @@ public class Promt : MonoBehaviour
             PromptPool = new Stack<string>(AllPrompts.OrderBy(i => Random.value));
         return PromptPool.Pop();
     }
-
-
-
-
-
-
-
-
 }
 
 public enum PromptContext
@@ -35,5 +26,6 @@ public enum PromptContext
     NotCompletedOrder,
     WrongOrderTurnIn,
     NewOrderGenerated,
-    RandomSmallTalk
+    RandomSmallTalk,
+    PlayerDeath
 }
