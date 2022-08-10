@@ -53,6 +53,15 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
+            var enemyHealth = enemy.GetComponent<EnemyHealth>();
+
+            if (enemyHealth == null)
+            {
+                continue;
+            }
+
+            enemyHealth.EnemyTakeDamage(1);
+
             var SquidScript = enemy.GetComponent<SquidScript>();
 
             if (SquidScript == null)

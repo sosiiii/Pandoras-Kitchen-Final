@@ -33,7 +33,6 @@ public class SquidScript : MonoBehaviour
     public float direction = 1;
     [SerializeField] private LayerMask ground;
 
-
     [Header("Items")]
     [SerializeField] private Item deadEnemyItem;
     [SerializeField] private ItemObject itemObjectPrefab;

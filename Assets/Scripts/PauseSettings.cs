@@ -24,18 +24,19 @@ public class PauseSettings : MonoBehaviour
         if (isGamePaused)
         {
             Unpause();
+            pauseCanvas.gameObject.SetActive(false);
         }
 
         else
         {
             Pause();
+            pauseCanvas.gameObject.SetActive(true);
         }
     }
 
     public void Pause()
     {
         Time.timeScale = 0f;
-        pauseCanvas.gameObject.SetActive(true);
         isGamePaused = true;
         AudioListener.pause = true;
 
@@ -51,7 +52,6 @@ public class PauseSettings : MonoBehaviour
     public void Unpause()
     {
         Time.timeScale = 1f;
-        pauseCanvas.gameObject.SetActive(false);
         isGamePaused = false;
         AudioListener.pause = false;
 
