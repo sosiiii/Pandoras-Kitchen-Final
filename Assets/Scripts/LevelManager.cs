@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,26 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Canvas gameCanvas;
     [SerializeField] Canvas scoreCanvas;
 
+    [SerializeField] private Transform respawnPoint;
+
     void Start()
     {
         timer = FindObjectOfType<Timer>();
+    }
+
+    private void OnEnable()
+    {
+        Player.playerDeath += PlayerDeath;
+    }
+
+    private void PlayerDeath(GameObject obj)
+    {
+        obj.transform.position = respawnPoint.position;
+    }
+
+    private void OnDisable()
+    {
+        Player.playerDeath -= PlayerDeath;
     }
 
     void Update()

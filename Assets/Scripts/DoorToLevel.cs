@@ -11,6 +11,8 @@ public class DoorToLevel : MonoBehaviour
     bool isPlayerNearby = false;
     bool isDoorOpen = false;
 
+    private int doorStatus;
+
     private SpriteRenderer doorSpriteRenderer;
 
     [SerializeField] Sprite doorOpenSprite;
@@ -18,28 +20,32 @@ public class DoorToLevel : MonoBehaviour
 
     private void Awake()
     {
-        int doorStatus = PlayerPrefs.GetInt(levelName);
+        doorSpriteRenderer = GetComponent<SpriteRenderer>();
+        doorStatus = PlayerPrefs.GetInt(levelName);
+        Debug.Log("Doors are " + PlayerPrefs.GetInt("Level_6"));
+    }
 
-        if (doorStatus == 1)
+    private void Start()
+    {
+        if (isAlwaysOpen)
         {
             isDoorOpen = true;
         }
 
         else
         {
-            isDoorOpen = false;
+            if (doorStatus == 1)
+            {
+                isDoorOpen = true;
+            }
+
+            else
+            {
+                isDoorOpen = false;
+            }
         }
 
-        if (isAlwaysOpen)
-        {
-            isDoorOpen = true;
-        }
-
-        doorSpriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void Start()
-    {
+        //Change sprite of door
         if (isDoorOpen == true)
         {
             doorSpriteRenderer.sprite = doorOpenSprite;

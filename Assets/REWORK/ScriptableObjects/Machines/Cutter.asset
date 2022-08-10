@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55cf15fcdad44dd866c0825ec29173f, type: 3}
   m_Name: Cutter
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 2dcf30c160e20c544a6badcf90857719, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: de6622d941697ef4cae2fa7dba0cb8aa, type: 3}
   <Type>k__BackingField: 1
   <CraftingTime>k__BackingField: 5
-  <MaxRecipeLength>k__BackingField: 3
-  <CraftingRecipes>k__BackingField: []
+  <MaxRecipeLength>k__BackingField: 1
+  <CraftingRecipes>k__BackingField:
+  - {fileID: 11400000, guid: 5d9a982836e1647be87518a74ec1a4d3, type: 2}
   <OnlyProcessesEnemies>k__BackingField: 0
   <Trash>k__BackingField: {fileID: 11400000, guid: 128f2c2a368a74138a3feb8c494e3337, type: 2}

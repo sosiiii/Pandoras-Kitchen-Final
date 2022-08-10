@@ -4,40 +4,23 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Player player;
-    public List<Transform> spawnPoints = new List<Transform>();
+    public Player playerOne;
+    public Player playerTwo;
+    public List<DoorToLevel> doors = new List<DoorToLevel>();
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("LastPlayedScene") == 0)
+        /*if (PlayerPrefs.GetInt("LastPlayedScene") == 0)
         {
-            Instantiate(player, spawnPoints[0].transform.position, Quaternion.identity);
+            Instantiate(player, doors[0].gameObject.transform.GetChild(0).gameObject.transform, Quaternion.identity);
         }
 
         if (PlayerPrefs.GetInt("LastPlayedScene") == 1)
         {
             Instantiate(player, spawnPoints[1].transform.position, Quaternion.identity);
-        }
+        }*/
 
-        if (PlayerPrefs.GetInt("LastPlayedScene") == 2)
-        {
-            Instantiate(player, spawnPoints[2].transform.position, Quaternion.identity);
-        }
-
-        if (PlayerPrefs.GetInt("LastPlayedScene") == 3)
-        {
-            Instantiate(player, spawnPoints[3].transform.position, Quaternion.identity);
-        }
-
-        if (PlayerPrefs.GetInt("LastPlayedScene") == 4)
-        {
-            Instantiate(player, spawnPoints[4].transform.position, Quaternion.identity);
-        }
-
-        if (PlayerPrefs.GetInt("LastPlayedScene") == 5)
-        {
-            Instantiate(player, spawnPoints[5].transform.position, Quaternion.identity);
-        }
-
+        Instantiate(playerOne, doors[PlayerPrefs.GetInt("LastPlayedScene")].transform.GetChild(0).transform.position, Quaternion.identity);
+        Instantiate(playerTwo, doors[PlayerPrefs.GetInt("LastPlayedScene")].transform.GetChild(0).transform.position, Quaternion.identity);
     }
 }

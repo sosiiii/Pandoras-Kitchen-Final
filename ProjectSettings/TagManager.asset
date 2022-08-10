@@ -17,8 +17,8 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - Enemies
-  - 
+  - CollEnemies
+  - NonCollEnemies
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 2934478243
+    locked: 0
+  - name: Enemy
+    uniqueID: 509106977
     locked: 0
   - name: Players
     uniqueID: 4256642513

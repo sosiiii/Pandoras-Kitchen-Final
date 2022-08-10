@@ -5,19 +5,10 @@ using UnityEngine;
 public class LastPlayedScene : MonoBehaviour
 {
     public int sceneIndex;
-    public bool setNewIndexScene;
     public int lastPlayedSceneStatus;
 
     private void Awake()
     {
-        if (setNewIndexScene)
-        {
-            PlayerPrefs.SetInt("LastPlayedScene", sceneIndex);
-        }
-    }
-
-    private void Start()
-    {
-        Debug.Log(PlayerPrefs.GetInt("LastPlayedScene"));
+        PlayerPrefs.SetInt("LastPlayedScene", sceneIndex);
     }
 }

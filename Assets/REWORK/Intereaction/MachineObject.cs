@@ -41,10 +41,7 @@ public class MachineObject : Interactable
 
         _animator = GetComponent<Animator>();
 
-        switch (Machine.MaxRecipeLength)
-        {
-            
-        }
+        SpriteRenderer.sprite = Machine.Sprite;
     }
 
     public override void Interact(PlayerInteraction playerInteraction)
