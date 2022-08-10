@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     //public Elevator elevator;
 
     //Horizontal
+    [Header("Behaviour")]
+    public int HP;
+
     [Header("Move")]
     private float _horizontalMove;
     [SerializeField] private float horizontalSpeed;
