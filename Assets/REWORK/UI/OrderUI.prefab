@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52fbc2377e2442ab49801eff32e649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiOrderPrefab: {fileID: 7504559014099099165, guid: ac45bfd5df88a494383deaf65fddea78, type: 3}
+  orderObjectItemPrefab: {fileID: 0}
 --- !u!114 &197206286666870676
 MonoBehaviour:
   m_ObjectHideFlags: 0

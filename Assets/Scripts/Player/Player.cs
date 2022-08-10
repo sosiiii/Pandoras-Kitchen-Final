@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using REWORK;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKillable
 {
     public static Action<GameObject> playerDeath;
     //public Elevator elevator;
@@ -147,4 +148,15 @@ public class Player : MonoBehaviour
             _animator.SetBool("IsJumping", true);
         }
     }*/
+    public void Kill()
+    {
+        DeathLogic();
+    }
+
+    private void DeathLogic()
+    {
+        _rigidbody2D.velocity = Vector2.zero;
+        playerDeath?.Invoke(gameObject);
+        //Make player wait for some time
+    }
 }

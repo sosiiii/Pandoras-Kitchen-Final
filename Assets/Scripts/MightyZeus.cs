@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using woska_scripts;
+using Random = UnityEngine.Random;
 
 public class MightyZeus : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class MightyZeus : MonoBehaviour
 
     private void OrderFinished(PromptContext promptContext)
     {
+        if(Random.value > 0.6f) return;
         var prompt = orderFinished.Find(prompt => prompt.Context == promptContext);
         
         var randomPrompt = prompt.GetRandomPrompt();
