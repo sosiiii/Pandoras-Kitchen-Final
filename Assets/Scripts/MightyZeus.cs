@@ -12,7 +12,7 @@ public class MightyZeus : MonoBehaviour
     private void OnEnable()
     {
         OrderController.orderFinished += OrderFinished;
-        OrderGenerator.orderGenerated += OrderFinished;
+        //OrderGenerator.orderGenerated += OrderFinished;
     }
 
     private void OrderFinished()
@@ -20,17 +20,5 @@ public class MightyZeus : MonoBehaviour
         var randomPrompt = orderFinished.GetRandomPrompt();
         Debug.Log(randomPrompt);
         zeusWantsToSpeak?.Invoke(randomPrompt);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
