@@ -73,6 +73,7 @@ public class SlimeController : MonoBehaviour
 
     private IEnumerator Wait()
     {
+        _animator.SetBool("Jump", false);
         yield return new WaitForSeconds(Random.Range(1f, 3f));
         state = SlimeState.Jump;
         EnterJump();
@@ -86,13 +87,38 @@ public class SlimeController : MonoBehaviour
 
     private void EnterJump()
     {
-        _animator.SetTrigger("Jump");
-
         var whatSide = Random.Range(0, 2);
+
+        if (whatSide == 0)
+        {
+            transform.eulerAngles = new Vector2(0, 180);
+        }
+
+        else if (whatSide == 1)
+        {
+            transform.eulerAngles = new Vector2(0, 0);
+        }
 
         whatSide = whatSide == 0 ? 1 : -1;
 
+        _animator.SetBool("Jump", true);
         _rigidbody2D.AddForce(Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(jumpSideValueMin, jumpSideValueMax), ForceMode2D.Impulse);
         state = SlimeState.InAir;
     }
+
+    /*private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _animator.SetBool("Jump", false);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            _animator.SetBool("Jump", true);
+        }
+    }*/
 }
