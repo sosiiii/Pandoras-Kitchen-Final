@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4774225635949049077
 Transform:
   m_ObjectHideFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1360489053
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9ebd6fc5d582e6446a1841125580a12f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d850acff6a67c4439c5eeb1b837d0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpValue: 16
+  jumpValue: 5
+  jumpSideValueMin: 2
+  jumpSideValueMax: 5
   physicsMaterial2D: {fileID: 6200000, guid: 2319711bccc328f469383270d62f0e60, type: 2}
   k_GroundedRadius: 0.2
   m_GroundCheck: {fileID: 4774225636299632108}
@@ -115,7 +117,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4774225635949049076}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2319711bccc328f469383270d62f0e60, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

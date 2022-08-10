@@ -63,7 +63,7 @@ public class Score : MonoBehaviour
             yield return new WaitForSeconds(1f);
             stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true);
 
-            //level is won
+            //unlock next level
             winSystem.LevelIsWon();
         }
     }

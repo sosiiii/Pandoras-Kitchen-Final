@@ -13,6 +13,8 @@ public class SlimeController : MonoBehaviour
     private SlimeState state = SlimeState.Idle;
 
     [SerializeField] private float jumpValue;
+    [SerializeField] private float jumpSideValueMin;
+    [SerializeField] private float jumpSideValueMax;
     [SerializeField] PhysicsMaterial2D physicsMaterial2D;
 
     private bool grounded;
@@ -20,11 +22,13 @@ public class SlimeController : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
+    Animator _animator;
     Rigidbody2D _rigidbody2D;
     CapsuleCollider2D _capsuleCollider2D;
 
     void Awake()
     {
+        _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
@@ -76,16 +80,19 @@ public class SlimeController : MonoBehaviour
 
     private void EnterIdle()
     {
+        _capsuleCollider2D.sharedMaterial = null;
         StartCoroutine(Wait());
     }
 
     private void EnterJump()
     {
+        _animator.SetTrigger("Jump");
+
         var whatSide = Random.Range(0, 2);
 
         whatSide = whatSide == 0 ? 1 : -1;
 
-        _rigidbody2D.AddForce(Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(2, 10), ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(jumpSideValueMin, jumpSideValueMax), ForceMode2D.Impulse);
         state = SlimeState.InAir;
     }
 }

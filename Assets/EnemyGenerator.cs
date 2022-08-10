@@ -6,7 +6,9 @@ using Random = UnityEngine.Random;
 
 public class EnemyGenerator : MonoBehaviour
 {
+
     //[SerializeField] private SquidBase enemy;
+
     [SerializeField] private int maxEnemies = 4;
     
     void Start()
