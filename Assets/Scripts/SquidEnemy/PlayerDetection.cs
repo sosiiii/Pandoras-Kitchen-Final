@@ -10,20 +10,13 @@ public class PlayerDetection : MonoBehaviour
     void Start()
     {
         Debug.Log("Hello");
-        Timer = StarterTimer;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && Timer <= 0)
+        if (collision.CompareTag("Player"))
         {
             Debug.Log("Collision");
-            Timer = StarterTimer;
             collision.GetComponent<Player>().HP--;
         }
-    }
-
-    void Update()
-    {
-        Timer -= Time.deltaTime;
     }
 }

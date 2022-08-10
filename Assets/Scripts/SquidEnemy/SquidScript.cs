@@ -33,6 +33,9 @@ public class SquidScript : MonoBehaviour, IDamagable
     public float direction = 1;
     [SerializeField] private LayerMask ground;
 
+    [Header("Damage")]
+    public GameObject DemageActivate;
+
     [Header("Items")]
     [SerializeField] private Item deadEnemyItem;
     [SerializeField] private ItemObject itemObjectPrefab;
@@ -130,6 +133,7 @@ public class SquidScript : MonoBehaviour, IDamagable
         
         rb.velocity = new Vector2(dir.x * knockbackForce, knockbackForceUp);
         transform.right = dir * Vector2.right;
+        DemageActivate.SetActive(true);
     }
 
     public void Damage(float attackDemage, Vector3 knockbackDir)
