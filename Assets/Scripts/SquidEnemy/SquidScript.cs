@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class SquidScript : MonoBehaviour
 {
-
-    public enum SquidStates{
+    public enum SquidStates {
         Patrol,
         Knockback,
         RunAway,
+        Damaged,
     }
     private SquidStates state;
 
@@ -33,6 +33,9 @@ public class SquidScript : MonoBehaviour
     public float direction = 1;
     [SerializeField] private LayerMask ground;
 
+    [Header("Damage")]
+    public GameObject DemageActivate;
+    [SerializeField] private float AggresiveTime;
 
     [Header("Items")]
     [SerializeField] private Item deadEnemyItem;
@@ -47,7 +50,6 @@ public class SquidScript : MonoBehaviour
     private void Start()
     {
         state = SquidStates.Patrol;
-
     }
 
     
@@ -64,6 +66,7 @@ public class SquidScript : MonoBehaviour
                 if (GroundCheck())
                 {
                     state = SquidStates.Patrol;
+                    StartCoroutine(AggresiveToPatrol());
                 }
                 break;
         }
@@ -130,6 +133,13 @@ public class SquidScript : MonoBehaviour
         }
         
         rb.velocity = new Vector2(dir.x * knockbackForce, knockbackForceUp);
-        transform.right = -dir * Vector2.right;
+        transform.right = dir * Vector2.right;
+    }
+
+    private IEnumerator AggresiveToPatrol()
+    {
+        DemageActivate.SetActive(true);
+        yield return new WaitForSeconds(AggresiveTime);
+        DemageActivate.SetActive(false);
     }
 }
