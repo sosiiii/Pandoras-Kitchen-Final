@@ -8,17 +8,12 @@ public class OrderController : MonoBehaviour
 {
 
     public static Action orderFinished;
+    public static Action orderNotFinished;
+    public static Action wrongOrderTurnedIn;
 
     [SerializeField] private OrderObject orderObjectItemPrefab;
     
     private List<OrderObject> _activeOrders = new List<OrderObject>();
-
-    private readonly int scoreForCompletedOrder = 50;
-    private readonly int penaltyForNotCompletedORder = -20;
-    private readonly int penaltyForTurningInBadOrder = -50;
-
-    private int currentScore = 0;
-
     Score score;
     
     private void Awake()
@@ -43,19 +38,13 @@ public class OrderController : MonoBehaviour
         orderUI.InitOrder(order);
         _activeOrders.Add(orderUI);
     }
-
-    private void AddScore(int amount)
-    {
-        currentScore += amount;
-        if (currentScore < 0) currentScore = 0;
-    }
     private void OrderNotCompleted(OrderObject orderObject)
     {
         // Lower score
         _activeOrders.Remove(orderObject);
         score.DecreaseScore();
         
-        orderFinished?.Invoke();
+        orderNotFinished?.Invoke();
         //AddScore(scoreForCompletedOrder);
     }
 
@@ -83,12 +72,14 @@ public class OrderController : MonoBehaviour
             //Score up
             score.IncreaseScore();
             //AddScore(scoreForCompletedOrder);
+            orderFinished?.Invoke();
         }
         else
         {
             //Score down
             score.DecreaseScore();
             //AddScore(_penaltyForTurningInBadOrder);
+            wrongOrderTurnedIn?.Invoke();
         }
     }
 }

@@ -6,18 +6,40 @@ using woska_scripts;
 
 public class MightyZeus : MonoBehaviour
 {
-    [SerializeField] private Promt orderFinished;
+    [SerializeField] private List<Promt> orderFinished;
 
     public static Action<String> zeusWantsToSpeak;
     private void OnEnable()
     {
-        OrderController.orderFinished += OrderFinished;
-        //OrderGenerator.orderGenerated += OrderFinished;
+        //OrderController.orderFinished += OrderFinished;
+        
+        OrderGenerator.orderGenerated += _ => OrderFinished(PromptContext.NewOrderGenerated);
+        
+        OrderController.orderFinished += () => OrderFinished(PromptContext.CompletedOrder);
+        OrderController.wrongOrderTurnedIn += () => OrderFinished(PromptContext.WrongOrderTurnIn);
+        OrderController.orderNotFinished += () => OrderFinished(PromptContext.NotCompletedOrder);
+        
+
+        Player.playerDeath += _ => OrderFinished(PromptContext.PlayerDeath);
     }
 
-    private void OrderFinished()
+    private void OnDisable()
     {
-        var randomPrompt = orderFinished.GetRandomPrompt();
+        OrderGenerator.orderGenerated -= _ => OrderFinished(PromptContext.NewOrderGenerated);
+        
+        OrderController.orderFinished -= () => OrderFinished(PromptContext.CompletedOrder);
+        OrderController.wrongOrderTurnedIn -= () => OrderFinished(PromptContext.WrongOrderTurnIn);
+        OrderController.orderNotFinished -= () => OrderFinished(PromptContext.NotCompletedOrder);
+        
+
+        Player.playerDeath -= _ => OrderFinished(PromptContext.PlayerDeath);
+    }
+
+    private void OrderFinished(PromptContext promptContext)
+    {
+        var prompt = orderFinished.Find(prompt => prompt.Context == promptContext);
+        
+        var randomPrompt = prompt.GetRandomPrompt();
         Debug.Log(randomPrompt);
         zeusWantsToSpeak?.Invoke(randomPrompt);
     }
