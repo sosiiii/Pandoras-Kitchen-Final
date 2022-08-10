@@ -113,17 +113,23 @@ public class SquidScript : MonoBehaviour
         itemObject.Init(deadEnemyItem);
         Destroy(gameObject);
     }
-    public void Damaged(float attackDemage, Transform player)
+    public void Damaged(float attackDemage, Vector3 knockbackDir)
     {
         state = SquidStates.Knockback;
-        var dir = (transform.position - player.transform.position).normalized.x;
-
-        Debug.Log(dir);
-
+        
         HP -= attackDemage;
 
-        Vector2 knockbackDirection = new Vector2(transform.position.x - player.transform.position.x, 0).normalized;
-        rb.velocity = new Vector2(knockbackDirection.x * knockbackForce, knockbackForceUp);
-        transform.right = knockbackDirection.x * Vector2.right;
+        var dir = Vector2.zero;
+        if (knockbackDir == Vector3.right)
+        {
+            dir = Vector2.right;
+        }
+        else
+        {
+            dir = Vector2.left;
+        }
+        
+        rb.velocity = new Vector2(dir.x * knockbackForce, knockbackForceUp);
+        transform.right = -dir * Vector2.right;
     }
 }

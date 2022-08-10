@@ -60,7 +60,13 @@ public class PlayerCombat : MonoBehaviour
                 continue;
             }
 
-            SquidScript.Damaged(attackDamage, player);
+            var direction = (SquidScript.transform.position - transform.position).x;
+            var dirVector = (direction * Vector2.right).normalized;
+            
+            Debug.Log(dirVector);
+            
+
+            SquidScript.Damaged(attackDamage, dirVector);
         }
     }
 
