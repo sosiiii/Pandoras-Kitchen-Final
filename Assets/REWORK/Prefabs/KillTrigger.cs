@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace REWORK.Prefabs
 {
@@ -11,6 +12,7 @@ namespace REWORK.Prefabs
             if(!col.TryGetComponent(out IKillable killable)) return;
             
             killable.Kill();
+            
         }
     }
 }
