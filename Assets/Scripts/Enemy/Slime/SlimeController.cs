@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeController : MonoBehaviour
+public class SlimeController : MonoBehaviour, IDamagable
 {
     public enum SlimeState {
         Idle,
@@ -15,22 +15,19 @@ public class SlimeController : MonoBehaviour
     [SerializeField] private float jumpValue;
     [SerializeField] private float jumpSideValueMin;
     [SerializeField] private float jumpSideValueMax;
-    [SerializeField] PhysicsMaterial2D physicsMaterial2D;
 
-    private bool grounded;
-    [SerializeField] private float k_GroundedRadius = 0.2f;
-    [SerializeField] private Transform m_GroundCheck;
-    [SerializeField] private LayerMask m_WhatIsGround;
+    public bool grounded;
+    [SerializeField] private float groundedRadius = 0.2f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask whatIsGround;
 
     Animator _animator;
     Rigidbody2D _rigidbody2D;
-    CapsuleCollider2D _capsuleCollider2D;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     private void Start()
@@ -49,11 +46,19 @@ public class SlimeController : MonoBehaviour
                 if (grounded)
                 {
                     state = SlimeState.Idle;
-                    _capsuleCollider2D.sharedMaterial = physicsMaterial2D;
                     EnterIdle();
                 }
                 break;
+        }
 
+        if (grounded)
+        {
+            _animator.SetBool("Jump", false);
+        }
+
+        else if (!grounded)
+        {
+            _animator.SetBool("Jump", true);
         }
     }
 
@@ -61,7 +66,7 @@ public class SlimeController : MonoBehaviour
     {
         grounded = false;
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
@@ -73,7 +78,6 @@ public class SlimeController : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        _animator.SetBool("Jump", false);
         yield return new WaitForSeconds(Random.Range(1f, 3f));
         state = SlimeState.Jump;
         EnterJump();
@@ -81,7 +85,6 @@ public class SlimeController : MonoBehaviour
 
     private void EnterIdle()
     {
-        _capsuleCollider2D.sharedMaterial = null;
         StartCoroutine(Wait());
     }
 
@@ -101,24 +104,17 @@ public class SlimeController : MonoBehaviour
 
         whatSide = whatSide == 0 ? 1 : -1;
 
-        _animator.SetBool("Jump", true);
         _rigidbody2D.AddForce(Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(jumpSideValueMin, jumpSideValueMax), ForceMode2D.Impulse);
         state = SlimeState.InAir;
     }
 
-    /*private void OnCollisionStay2D(Collision2D collision)
+    /*public void Damage(float attackDemage, Vector3 knockbackDir)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _animator.SetBool("Jump", false);
-        }
+        Damaged(attackDemage, knockbackDir);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public Vector3 GetPosition()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _animator.SetBool("Jump", true);
-        }
+        return transform.position;
     }*/
 }

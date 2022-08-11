@@ -154,9 +154,10 @@ MonoBehaviour:
   jumpSideValueMin: 4
   jumpSideValueMax: 10
   physicsMaterial2D: {fileID: 6200000, guid: 2319711bccc328f469383270d62f0e60, type: 2}
-  k_GroundedRadius: 0.2
-  m_GroundCheck: {fileID: 5569963363860473325}
-  m_WhatIsGround:
+  grounded: 0
+  groundedRadius: 0.2
+  groundCheck: {fileID: 5569963363860473325}
+  whatIsGround:
     serializedVersion: 2
     m_Bits: 64
 --- !u!70 &5569963364344036601

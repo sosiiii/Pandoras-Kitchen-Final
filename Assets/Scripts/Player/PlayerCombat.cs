@@ -60,8 +60,6 @@ public class PlayerCombat : MonoBehaviour
                 continue;
             }
 
-
-
             var direction = (enemyHealth.GetPosition() - transform.position).x;
             var dirVector = (direction * Vector2.right).normalized;
             
