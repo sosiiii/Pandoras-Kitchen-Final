@@ -7,16 +7,21 @@ public class PlayerDetection : MonoBehaviour
     [Header("Timer")]
     [SerializeField] private float Timer;
     [SerializeField] private float StarterTimer;
-    void Start()
-    {
-        Debug.Log("Hello");
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Collision");
-            collision.GetComponent<Player>().HP--;
+            NoMovement();
+            collision.GetComponent<Player>().HP = 0;
         }
+    }
+
+    IEnumerator NoMovement()
+    {
+        GetComponent<SquidScript>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<SquidScript>().enabled = true;
     }
 }

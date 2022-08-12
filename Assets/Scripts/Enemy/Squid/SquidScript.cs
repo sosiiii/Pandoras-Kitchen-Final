@@ -17,6 +17,10 @@ public class SquidScript : MonoBehaviour, IDamagable
     public float HP;
     public float speed = 1;
 
+    [Header("RunAway")]
+    [SerializeField] float SpeedUp;
+    [SerializeField] float SpeedUpTime;
+
     [Header("Knockback")]
     public float knockbackForce;
     public float knockbackForceUp;
@@ -118,7 +122,9 @@ public class SquidScript : MonoBehaviour, IDamagable
     public void Damaged(float attackDemage, Vector3 knockbackDir)
     {
         state = SquidStates.Knockback;
-        
+
+        StartCoroutine(RunAway());
+
         HP -= attackDemage;
 
         var dir = Vector2.zero;
@@ -136,6 +142,13 @@ public class SquidScript : MonoBehaviour, IDamagable
         DemageActivate.SetActive(true);
     }
 
+    private IEnumerator RunAway()
+    {
+        float startSpeed = speed;
+        speed = SpeedUp;
+        yield return new WaitForSeconds(SpeedUpTime);
+        speed = startSpeed;
+    }
     public void Damage(float attackDemage, Vector3 knockbackDir)
     {
         Damaged(attackDemage, knockbackDir);
