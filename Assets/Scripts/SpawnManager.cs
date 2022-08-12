@@ -10,17 +10,10 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        /*if (PlayerPrefs.GetInt("LastPlayedScene") == 0)
-        {
-            Instantiate(player, doors[0].gameObject.transform.GetChild(0).gameObject.transform, Quaternion.identity);
-        }
-
-        if (PlayerPrefs.GetInt("LastPlayedScene") == 1)
-        {
-            Instantiate(player, spawnPoints[1].transform.position, Quaternion.identity);
-        }*/
-
+        //spawn player one
         Instantiate(playerOne, doors[PlayerPrefs.GetInt("LastPlayedScene")].transform.GetChild(0).transform.position, Quaternion.identity);
+
+        //spawn player two
         Instantiate(playerTwo, doors[PlayerPrefs.GetInt("LastPlayedScene")].transform.GetChild(0).transform.position, Quaternion.identity);
     }
 }

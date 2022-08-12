@@ -12,10 +12,19 @@ public class SlimeController : MonoBehaviour, IDamagable
 
     private SlimeState state = SlimeState.Idle;
 
+    [Header("Health")]
+    public float HP;
+
+    [Header("Jump")]
     [SerializeField] private float jumpValue;
     [SerializeField] private float jumpSideValueMin;
     [SerializeField] private float jumpSideValueMax;
 
+    [Header("Items")]
+    [SerializeField] private Item deadEnemyItem;
+    [SerializeField] private ItemObject itemObjectPrefab;
+
+    [Header("Ground")]
     public bool grounded;
     [SerializeField] private float groundedRadius = 0.2f;
     [SerializeField] private Transform groundCheck;
@@ -60,6 +69,8 @@ public class SlimeController : MonoBehaviour, IDamagable
         {
             _animator.SetBool("Jump", true);
         }
+
+        Death();
     }
 
     private void FixedUpdate()
@@ -108,13 +119,29 @@ public class SlimeController : MonoBehaviour, IDamagable
         state = SlimeState.InAir;
     }
 
-    /*public void Damage(float attackDemage, Vector3 knockbackDir)
+    public void Damaged(float attackDamage)
     {
-        Damaged(attackDemage, knockbackDir);
+        HP -= attackDamage;
+    }
+
+    public void Damage(float attackDamage, Vector3 knockbackDir)
+    {
+        Damaged(attackDamage);
     }
 
     public Vector3 GetPosition()
     {
         return transform.position;
-    }*/
+    }
+
+    private void Death()
+    {
+        if (HP <= 0)
+        {
+            var itemObject = Instantiate(itemObjectPrefab, transform.position, Quaternion.identity);
+
+            itemObject.Init(deadEnemyItem);
+            Destroy(gameObject);
+        }
+    }
 }
