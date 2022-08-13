@@ -19,6 +19,8 @@ public class NewElevator : MonoBehaviour
 
     private bool isGoingDown;
 
+    private int NextIndex => (currentFloorIndex + 2) % floors.Count;
+
     private void OnValidate()
     {        
         cabin.transform.position = floors[currentFloorIndex].transform.position;
@@ -48,10 +50,12 @@ public class NewElevator : MonoBehaviour
                 isGoingDown = true;
             else if (currentFloorIndex == floors.Count - 1)
                 isGoingDown = false;
-            
-            
-            var nextFloor = isGoingDown ? currentFloorIndex + 1 : currentFloorIndex - 1;
 
+            var nextFloor = isGoingDown ? currentFloorIndex + 1 : currentFloorIndex - 1;;
+            if (loop)
+            {
+                nextFloor = NextIndex;
+            }
             yield return StartCoroutine(ElevatorChangeFloor(floors[currentFloorIndex], floors[nextFloor]));
 
             currentFloorIndex = nextFloor;
@@ -63,6 +67,7 @@ public class NewElevator : MonoBehaviour
         var start = current.position;
         var end = next.position;
         float t = 0;
+        var timeWait = 0.01f;
         while(t < 1)
         {
             cabin.position = Vector3.Lerp(start,end,t);

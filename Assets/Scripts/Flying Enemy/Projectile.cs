@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
     {
         if(col.gameObject.TryGetComponent(out IKillable killable))
             killable.Kill();
+        
         Destroy(gameObject);
     }
 }

@@ -42,7 +42,7 @@ public class MightyZeus : MonoBehaviour
         var prompt = orderFinished.Find(prompt => prompt.Context == promptContext);
         
         var randomPrompt = prompt.GetRandomPrompt();
-        Debug.Log(randomPrompt);
+        //Debug.Log(randomPrompt);
         zeusWantsToSpeak?.Invoke(randomPrompt);
     }
 }

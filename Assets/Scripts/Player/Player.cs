@@ -37,8 +37,12 @@ public class Player : MonoBehaviour, IKillable
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
-    //private Animator _animator;
+    private Animator _animator;
     private Rigidbody2D _rigidbody2D;
+    
+    private float _timeLeftGround;
+    [SerializeField, Range(0f, 1f)] private float coyoteTime = 0.1f;
+    private bool HasCoyoteTime => !m_Grounded && _timeLeftGround + coyoteTime > Time.time;
 
     /*private void Awake()
     {
@@ -51,34 +55,55 @@ public class Player : MonoBehaviour, IKillable
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        //_animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         _rigidbody2D.velocity = new Vector2(_horizontalMove * horizontalSpeed, _rigidbody2D.velocity.y);
-
+        
+        
+        SetAnimation();
         JumpPhysics();
         FlipPlayer();
     }
 
+    private void SetAnimation()
+    {
+        if (!m_Grounded)
+        {
+            _animator.SetFloat("speed-y", _rigidbody2D.velocity.y);
+        }
+        else
+            _animator.SetBool("Running", _rigidbody2D.velocity.x != 0);
+    }
+
     private void FixedUpdate()
     {
-        //bool wasGrounded = m_Grounded;
+        var previousGrounded = m_Grounded;
         m_Grounded = false;
-
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
+                break;
                 /*if (!wasGrounded)
                 {
                     OnLandEvent.Invoke();
                 }*/
             }
         }
+
+        if (!previousGrounded && m_Grounded)
+        {
+            Debug.Log("I landed!");
+        }
+        else if(previousGrounded && !m_Grounded)
+            _timeLeftGround = Time.time;
+        _animator.SetBool("OnGround", m_Grounded);
+
     }
 
     public void MovePlayer(InputAction.CallbackContext context)
@@ -90,17 +115,10 @@ public class Player : MonoBehaviour, IKillable
 
     private void FlipPlayer()
     {
-        if (_horizontalMove > 0f)
-        {
-            transform.eulerAngles = new Vector2(0, 0);
-            playerIsFlipped = false;
-        }
-
-        else if (_horizontalMove < 0f)
-        {
-            transform.eulerAngles = new Vector2(0, 180);
-            playerIsFlipped = true;
-        }
+        if(_horizontalMove > 0)
+            transform.right = Vector3.right;
+        else if(_horizontalMove < 0)
+            transform.right = Vector3.right * -1;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -109,11 +127,18 @@ public class Player : MonoBehaviour, IKillable
         {
             return;
         }
-
-        if (m_Grounded)
+        
+        if (m_Grounded || HasCoyoteTime)
         {
-            _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            _timeLeftGround = float.MinValue;
+
+            _animator.SetTrigger("Jump");
         }
+    }
+
+    public void JumpAnimEnded()
+    {
+        _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
     }
 
     private void JumpPhysics()
@@ -157,6 +182,12 @@ public class Player : MonoBehaviour, IKillable
     {
         _rigidbody2D.velocity = Vector2.zero;
         playerDeath?.Invoke(gameObject);
+        GetComponent<PlayerInteraction>().InventorySlot.RemoveItem();
         //Make player wait for some time
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
     }
 }

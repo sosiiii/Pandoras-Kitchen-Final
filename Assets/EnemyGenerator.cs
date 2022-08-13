@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 public class EnemyGenerator : MonoBehaviour
 {
 
-    //[SerializeField] private SquidBase enemy;
+    [SerializeField] private GameObject enemyPrefab;
 
     [SerializeField] private int maxEnemies = 4;
-    
+
+    private int _enemiesAlive = 0;
+
     void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -20,9 +22,16 @@ public class EnemyGenerator : MonoBehaviour
     {
         while (true)
         {
-            //yield return new WaitUntil(()=>SquidBase.enemiesCount < maxEnemies);
-            //Instantiate(enemy, transform.position, quaternion.identity);
+            yield return new WaitUntil(()=>_enemiesAlive < maxEnemies);
+            Instantiate(enemyPrefab, transform.position, quaternion.identity);
+            _enemiesAlive++;
             yield return new WaitForSeconds(Random.Range(8f, 16f));   
         }
+    }
+
+
+    private void OnEnemyDeath()
+    {
+        _enemiesAlive--;
     }
 }

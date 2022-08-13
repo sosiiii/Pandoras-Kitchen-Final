@@ -9,7 +9,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Transform player;
 
-    Animator anim;
+    [SerializeField] Animator anim;
 
     public Transform attackPoint;
     public float attackRange;
@@ -22,7 +22,6 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         player = this.transform;
-        anim = GetComponent<Animator>();
     }
 
     private void Update()

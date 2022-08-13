@@ -132,6 +132,7 @@ public class SlimeController : MonoBehaviour, IDamagable
     public Vector3 GetPosition()
     {
         return transform.position;
+<<<<<<< Updated upstream
     }
 
     private void Death()
@@ -143,5 +144,16 @@ public class SlimeController : MonoBehaviour, IDamagable
             itemObject.Init(deadEnemyItem);
             Destroy(gameObject);
         }
+=======
+    }*/
+    public void Damage(float attackDemage, Vector3 knockbackDir)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public Vector3 GetPosition()
+    {
+        throw new System.NotImplementedException();
+>>>>>>> Stashed changes
     }
 }

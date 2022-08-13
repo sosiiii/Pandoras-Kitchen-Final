@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using REWORK;
 using UnityEngine;
 
 namespace Flying_Enemy
 {
-    public class EnemyAI : MonoBehaviour
+    public class EnemyAI : MonoBehaviour, IKillable, IDamagable
     {
         public enum EnemyStates
         {
@@ -16,6 +17,7 @@ namespace Flying_Enemy
             AttackPlayer,
             Reload,
         }
+        [Header("Behavior")] 
         [SerializeField] private float playerDetectionRadius = 1f;
 
         [SerializeField] private float followPlayerRadius = 2f;
@@ -24,6 +26,14 @@ namespace Flying_Enemy
 
         [SerializeField] private LayerMask playerLayer;
         [SerializeField] private LayerMask obstaclesLayer;
+
+        [SerializeField] private int maxHealth = 3;
+        [SerializeField] private float speed = 2f;
+        
+        [Header("Items")]
+        [SerializeField] private Item deadEnemyItem;
+        [SerializeField] private ItemObject itemObjectPrefab;
+        
 
 
         private Collider2D[] _playersInDetectionZone = new Collider2D[2];
@@ -35,14 +45,22 @@ namespace Flying_Enemy
         private Collider2D Target => _playersInDetectionZone.FirstOrDefault(item => item != null);
         private Vector3 TargetPosition => Target.transform.position;
 
-        [SerializeField] private float speed = 2f;
+        private SpriteRenderer _spriteRenderer;
+        
+        
 
-
+        [Header("Projectile")]
         [SerializeField] private Projectile projectilePrefab;
         [SerializeField] private float startAngle;
         [SerializeField] private float endAngle;
         [SerializeField] private int numberOfBullets;
         [SerializeField] private float reloadWaitTime;
+
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
         private void Start()
         {
             _startPosition = transform.position;
@@ -203,6 +221,47 @@ namespace Flying_Enemy
             Gizmos.DrawLine(transform.position, (Vector2)transform.position + MathHelpers.DegreeToVector2(startAngle)*3f);
             Gizmos.DrawLine(transform.position, (Vector2)transform.position + MathHelpers.DegreeToVector2(endAngle)*3f);
 
+        }
+
+        public void Kill()
+        {
+            Death();
+        }
+
+        private void Death()
+        {
+            var itemObject = Instantiate(itemObjectPrefab, transform.position, Quaternion.identity);
+                
+            itemObject.Init(deadEnemyItem);
+            Destroy(gameObject);
+        }
+
+        IEnumerator ColorHit()
+        {
+            var blinkWaitTime = new WaitForSeconds(0.1f);
+
+            _spriteRenderer.color = Color.red;
+            yield return blinkWaitTime;
+            _spriteRenderer.color = Color.white;
+
+        }
+
+        public void Damage(float attackDemage, Vector3 knockbackDir)
+        {
+            maxHealth--;
+            StartCoroutine(ColorHit());
+
+            if (maxHealth <= 0)
+            {
+                Death();
+                return;
+            }
+            
+        }
+
+        public Vector3 GetPosition()
+        {
+            return transform.position;
         }
     }
     

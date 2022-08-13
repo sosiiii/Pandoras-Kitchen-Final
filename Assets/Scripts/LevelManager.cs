@@ -26,7 +26,15 @@ public class LevelManager : MonoBehaviour
 
     private void PlayerDeath(GameObject obj)
     {
-        obj.transform.position = respawnPoint.position;
+        StartCoroutine(RespawnPlayer(obj));
+    }
+
+    IEnumerator RespawnPlayer(GameObject gameObject)
+    {
+        gameObject.SetActive(false);
+        gameObject.transform.position = respawnPoint.position;
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(true);
     }
 
     private void OnDisable()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SquidScript : MonoBehaviour, IDamagable
 {
@@ -50,8 +51,17 @@ public class SquidScript : MonoBehaviour, IDamagable
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
+
+    private SpriteRenderer _spriteRenderer;
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private void Start()
     {
+        transform.right *= Random.value > 0.5 ? 1 : -1;
         state = SquidStates.Patrol;
 
     }
@@ -122,10 +132,16 @@ public class SquidScript : MonoBehaviour, IDamagable
     public void Damaged(float attackDemage, Vector3 knockbackDir)
     {
         state = SquidStates.Knockback;
-
-        StartCoroutine(RunAway());
-
         HP -= attackDemage;
+        if (HP <= 0)
+        {
+            Death();
+            return;
+        }
+
+        StartCoroutine(ColorHit());
+        StartCoroutine(RunAway());
+        
 
         var dir = Vector2.zero;
         if (knockbackDir == Vector3.right)
@@ -148,6 +164,15 @@ public class SquidScript : MonoBehaviour, IDamagable
         speed = SpeedUp;
         yield return new WaitForSeconds(SpeedUpTime);
         speed = startSpeed;
+    }
+    IEnumerator ColorHit()
+    {
+        var blinkWaitTime = new WaitForSeconds(0.1f);
+
+        _spriteRenderer.color = Color.red;
+        yield return blinkWaitTime;
+        _spriteRenderer.color = Color.white;
+
     }
     public void Damage(float attackDemage, Vector3 knockbackDir)
     {
