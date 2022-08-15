@@ -17,7 +17,16 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
     [Header("Behaviuor")]
     public float HP;
     public float speed = 1;
-    public int attackDamage;
+    [SerializeField]private int attackDamage;
+
+    public int attackdamage
+    {
+        get
+        {
+            return this.attackDamage;
+        }
+    }
+
 
     [Header("RunAway")]
     [SerializeField] float SpeedUp;

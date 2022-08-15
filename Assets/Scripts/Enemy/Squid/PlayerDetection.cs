@@ -10,7 +10,7 @@ public class PlayerDetection : MonoBehaviour
     private int attackDamage;
     private void Start()
     {
-        attackDamage = GetComponentInParent<SquidScript>().attackDamage;
+        attackDamage = GetComponentInParent<SquidScript>().attackdamage;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
