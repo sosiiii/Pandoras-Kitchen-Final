@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fe52f7c0dcbf54696477a6b9bd24ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 100
+  timeValue: 150
   timerText: {fileID: 0}
   timeSlider: {fileID: 0}
   fillImage: {fileID: 0}
