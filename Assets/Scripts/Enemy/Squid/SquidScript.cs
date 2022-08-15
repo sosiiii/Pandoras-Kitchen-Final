@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SquidScript : MonoBehaviour, IDamagable
+public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
 {
 
     public enum SquidStates{
@@ -125,7 +125,8 @@ public class SquidScript : MonoBehaviour, IDamagable
     private void Death()
     {
         var itemObject = Instantiate(itemObjectPrefab, transform.position, Quaternion.identity);
-                
+        
+        DeathAction?.Invoke();
         itemObject.Init(deadEnemyItem);
         Destroy(gameObject);
     }
@@ -183,4 +184,6 @@ public class SquidScript : MonoBehaviour, IDamagable
     {
         return transform.position;
     }
+
+    public Action DeathAction { get; set; }
 }

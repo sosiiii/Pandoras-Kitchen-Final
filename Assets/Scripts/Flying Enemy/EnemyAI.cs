@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Flying_Enemy
 {
-    public class EnemyAI : MonoBehaviour, IKillable, IDamagable
+    public class EnemyAI : MonoBehaviour, IKillable, IDamagable, IOnDeath
     {
         public enum EnemyStates
         {
@@ -231,7 +231,8 @@ namespace Flying_Enemy
         private void Death()
         {
             var itemObject = Instantiate(itemObjectPrefab, transform.position, Quaternion.identity);
-                
+            
+            DeathAction?.Invoke();
             itemObject.Init(deadEnemyItem);
             Destroy(gameObject);
         }
@@ -263,6 +264,8 @@ namespace Flying_Enemy
         {
             return transform.position;
         }
+
+        public Action DeathAction { get; set; }
     }
     
 }

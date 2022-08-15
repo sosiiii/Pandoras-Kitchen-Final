@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SlimeController : MonoBehaviour, IDamagable
 {
-    public enum SlimeState {
+    public enum SlimeState
+    {
         Idle,
         Jump,
         InAir
@@ -12,20 +13,16 @@ public class SlimeController : MonoBehaviour, IDamagable
 
     private SlimeState state = SlimeState.Idle;
 
-    [Header("Health")]
-    public float HP;
+    [Header("Health")] public float HP;
 
-    [Header("Jump")]
-    [SerializeField] private float jumpValue;
+    [Header("Jump")] [SerializeField] private float jumpValue;
     [SerializeField] private float jumpSideValueMin;
     [SerializeField] private float jumpSideValueMax;
 
-    [Header("Items")]
-    [SerializeField] private Item deadEnemyItem;
+    [Header("Items")] [SerializeField] private Item deadEnemyItem;
     [SerializeField] private ItemObject itemObjectPrefab;
 
-    [Header("Ground")]
-    public bool grounded;
+    [Header("Ground")] public bool grounded;
     [SerializeField] private float groundedRadius = 0.2f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask whatIsGround;
@@ -57,6 +54,7 @@ public class SlimeController : MonoBehaviour, IDamagable
                     state = SlimeState.Idle;
                     EnterIdle();
                 }
+
                 break;
         }
 
@@ -82,7 +80,7 @@ public class SlimeController : MonoBehaviour, IDamagable
         {
             if (colliders[i].gameObject != gameObject)
             {
-                grounded = true; 
+                grounded = true;
             }
         }
     }
@@ -115,7 +113,9 @@ public class SlimeController : MonoBehaviour, IDamagable
 
         whatSide = whatSide == 0 ? 1 : -1;
 
-        _rigidbody2D.AddForce(Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(jumpSideValueMin, jumpSideValueMax), ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(
+            Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(jumpSideValueMin, jumpSideValueMax),
+            ForceMode2D.Impulse);
         state = SlimeState.InAir;
     }
 
@@ -132,7 +132,6 @@ public class SlimeController : MonoBehaviour, IDamagable
     public Vector3 GetPosition()
     {
         return transform.position;
-<<<<<<< Updated upstream
     }
 
     private void Death()
@@ -144,16 +143,5 @@ public class SlimeController : MonoBehaviour, IDamagable
             itemObject.Init(deadEnemyItem);
             Destroy(gameObject);
         }
-=======
-    }*/
-    public void Damage(float attackDemage, Vector3 knockbackDir)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public Vector3 GetPosition()
-    {
-        throw new System.NotImplementedException();
->>>>>>> Stashed changes
     }
 }

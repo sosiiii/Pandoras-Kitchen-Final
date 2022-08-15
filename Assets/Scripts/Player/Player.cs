@@ -40,9 +40,7 @@ public class Player : MonoBehaviour, IKillable
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
     
-    private float _timeLeftGround;
-    [SerializeField, Range(0f, 1f)] private float coyoteTime = 0.1f;
-    private bool HasCoyoteTime => !m_Grounded && _timeLeftGround + coyoteTime > Time.time;
+
 
     /*private void Awake()
     {
@@ -100,8 +98,6 @@ public class Player : MonoBehaviour, IKillable
         {
             Debug.Log("I landed!");
         }
-        else if(previousGrounded && !m_Grounded)
-            _timeLeftGround = Time.time;
         _animator.SetBool("OnGround", m_Grounded);
 
     }
@@ -127,20 +123,11 @@ public class Player : MonoBehaviour, IKillable
         {
             return;
         }
+        if(!m_Grounded) return;
         
-        if (m_Grounded || HasCoyoteTime)
-        {
-            _timeLeftGround = float.MinValue;
-
-            _animator.SetTrigger("Jump");
-        }
-    }
-
-    public void JumpAnimEnded()
-    {
         _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-    }
 
+    }
     private void JumpPhysics()
     {
         if (_rigidbody2D.velocity.y >= 0)

@@ -7,6 +7,7 @@ using woska_scripts;
 public class OrderController : MonoBehaviour
 {
 
+    public static Action orderRemoved;
     public static Action orderFinished;
     public static Action orderNotFinished;
     public static Action wrongOrderTurnedIn;
@@ -45,6 +46,7 @@ public class OrderController : MonoBehaviour
         score.DecreaseScore();
         
         orderNotFinished?.Invoke();
+        orderRemoved?.Invoke();
         //AddScore(scoreForCompletedOrder);
     }
 
@@ -81,5 +83,7 @@ public class OrderController : MonoBehaviour
             //AddScore(_penaltyForTurningInBadOrder);
             wrongOrderTurnedIn?.Invoke();
         }
+        orderRemoved?.Invoke();
+
     }
 }

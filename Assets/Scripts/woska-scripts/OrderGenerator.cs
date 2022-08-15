@@ -19,13 +19,13 @@ namespace woska_scripts
 
         private void OnEnable()
         {
-            OrderController.orderFinished += OrderFinished;
+            OrderController.orderRemoved += OrderFinished;
             
         }
 
         private void OnDisable()
         {
-            OrderController.orderFinished -= OrderFinished;
+            OrderController.orderRemoved -= OrderFinished;
         }
 
         private void Start()
@@ -43,7 +43,7 @@ namespace woska_scripts
                     yield return new WaitForSeconds(3f);
                 }
 
-                yield return new WaitUntil(() => CanGenerate == false);
+                yield return new WaitUntil(() => CanGenerate);
             }
 
             //Reached maximum of orders 
