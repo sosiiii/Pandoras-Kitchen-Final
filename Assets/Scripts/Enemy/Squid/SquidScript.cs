@@ -17,6 +17,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
     [Header("Behaviuor")]
     public float HP;
     public float speed = 1;
+    public int attackDamage;
 
     [Header("RunAway")]
     [SerializeField] float SpeedUp;
@@ -186,6 +187,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
         yield return new WaitForSeconds(0.2f);
         DemageActivate.SetActive(true);
         yield return new WaitForSeconds(SpeedUpTime);
+        DemageActivate.SetActive(false);
         anim.speed = startANimSpeed;
         
         speed = startSpeed;
