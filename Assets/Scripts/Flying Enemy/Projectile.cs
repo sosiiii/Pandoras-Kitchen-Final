@@ -15,6 +15,11 @@ public class Projectile : MonoBehaviour
         transform.right = direction;
     }
 
+    private void Start()
+    {
+        Destroy(gameObject, 10f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,9 +27,12 @@ public class Projectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.TryGetComponent(out IKillable killable))
+        if(col.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            Destroy(gameObject);
+        else if (col.gameObject.TryGetComponent(out IKillable killable))
+        {
             killable.Kill();
-        
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    void Damage(float attackDemage, Vector3 knockbackDir);
+    void Damage(float attackDamage, Vector3 knockbackDir);
 
     Vector3 GetPosition();
 }

@@ -148,8 +148,9 @@ namespace Flying_Enemy
 
         private void Fire()
         {
-            var angleStep = (endAngle - startAngle) / numberOfBullets;
-            var angle = startAngle;
+            var angleStep = 360 / numberOfBullets;
+            var angle = 0;
+            
 
             for (int i = 0; i < numberOfBullets; i++)
             {

@@ -17,6 +17,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
     [Header("Behaviuor")]
     public float HP;
     public float speed = 1;
+    public int attackDamage;
 
     [Header("RunAway")]
     [SerializeField] float SpeedUp;
@@ -54,9 +55,13 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
 
     private SpriteRenderer _spriteRenderer;
 
+    Animator anim;
+    public AudioManager audioManager;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -70,26 +75,9 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
 
     private void Update()
     {
-        switch (state)
-        {
-            case SquidStates.Patrol:
-                Patrol();
-                break;
-
-            case SquidStates.Knockback:
-                if (GroundCheck())
-                {
-                    state = SquidStates.Patrol;
-                }
-                break;
-        }
-
-
-
-        if (HP <= 0)
-        {
-            //Death();
-        }
+   
+       Patrol();
+        
     }
     private bool GroundCheck()
     {
@@ -108,13 +96,18 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
     {
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetector.position, Vector2.down, 2f, ground);
-        RaycastHit2D wallInfo = Physics2D.Raycast(transform.position, transform.right, 0.5f, ground);
+        RaycastHit2D wallInfo = Physics2D.Raycast(transform.position, transform.right, 0.5f * transform.localScale.x, ground);
         Debug.DrawRay(transform.position, transform.right, Color.red);
         if (wallInfo.collider != null || groundInfo.collider == false)
         {
             transform.right *= -1;
         }
         rb.velocity = new Vector2(transform.right.x, rb.velocity.y) * speed;
+
+        if (wallInfo.collider != null)
+        {
+            audioManager.PlaySound(0);
+        }
     }
 
     private void OnDrawGizmos()
@@ -153,22 +146,55 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
         {
             dir = Vector2.left;
         }
+
+        rb.AddForce(new Vector2(0,knockbackForceUp),ForceMode2D.Impulse);
+        Debug.Log("Knockbacking"); 
+        transform.right = dir * Vector2.right; 
         
-        rb.velocity = new Vector2(dir.x * knockbackForce, knockbackForceUp);
-        transform.right = dir * Vector2.right;
-        DemageActivate.SetActive(true);
     }
 
     private IEnumerator RunAway()
     {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject closestPlayer;
+        closestPlayer = players[0]; 
+        foreach (GameObject player in players)
+        {
+            if (Vector3.Distance(transform.position, player.transform.position)< Vector3.Distance(transform.position, closestPlayer.transform.position))
+            {
+                closestPlayer = player;
+            }
+        }
+        //otocenie
+        if (transform.position.x > closestPlayer.transform.position.x )
+        {
+            if (transform.localEulerAngles.y > 1)
+            {
+                transform.right *= -1;
+            }
+        }
+        else if (transform.position.x < closestPlayer.transform.position.x)
+        {
+            if (transform.localEulerAngles.y < 1)
+            {
+                transform.right *= -1;
+            }
+        }
         float startSpeed = speed;
+        float startANimSpeed = anim.speed;
         speed = SpeedUp;
+        anim.speed *= 2;
+        yield return new WaitForSeconds(0.2f);
+        DemageActivate.SetActive(true);
         yield return new WaitForSeconds(SpeedUpTime);
+        DemageActivate.SetActive(false);
+        anim.speed = startANimSpeed;
+        
         speed = startSpeed;
     }
     IEnumerator ColorHit()
     {
-        var blinkWaitTime = new WaitForSeconds(0.1f);
+        var blinkWaitTime = new WaitForSeconds(0.2f);
 
         _spriteRenderer.color = Color.red;
         yield return blinkWaitTime;

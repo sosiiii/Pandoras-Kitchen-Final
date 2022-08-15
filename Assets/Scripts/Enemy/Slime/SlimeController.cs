@@ -27,13 +27,21 @@ public class SlimeController : MonoBehaviour, IDamagable
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask whatIsGround;
 
+    public Transform attackPoint;
+    private float attackDelay;
+    public float attackRange;
+    public int attackDamage;
+    public LayerMask playerLayer;
+
     Animator _animator;
     Rigidbody2D _rigidbody2D;
+    SpriteRenderer _spriteRenderer;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -66,8 +74,11 @@ public class SlimeController : MonoBehaviour, IDamagable
         else if (!grounded)
         {
             _animator.SetBool("Jump", true);
+            Hit();
         }
 
+        attackDelay -= Time.deltaTime;
+       
         Death();
     }
 
@@ -81,6 +92,27 @@ public class SlimeController : MonoBehaviour, IDamagable
             if (colliders[i].gameObject != gameObject)
             {
                 grounded = true;
+            }
+        }
+    }
+
+    public void Hit()
+    {
+        if (attackDelay <= 0f)
+        {
+            Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+
+            foreach (Collider2D player in hitPlayers)
+            {
+                var playerHealth = player.GetComponent<Player>();
+
+                if (playerHealth == null)
+                {
+                    continue;
+                }
+
+                playerHealth.Damaged(attackDamage);
+                attackDelay = 1f;
             }
         }
     }
@@ -122,6 +154,18 @@ public class SlimeController : MonoBehaviour, IDamagable
     public void Damaged(float attackDamage)
     {
         HP -= attackDamage;
+
+        StartCoroutine(ColorHit());        
+    }
+
+    IEnumerator ColorHit()
+    {
+        var blinkWaitTime = new WaitForSeconds(0.2f);
+
+        _spriteRenderer.color = Color.red;
+        yield return blinkWaitTime;
+        _spriteRenderer.color = Color.white;
+
     }
 
     public void Damage(float attackDamage, Vector3 knockbackDir)
@@ -143,5 +187,12 @@ public class SlimeController : MonoBehaviour, IDamagable
             itemObject.Init(deadEnemyItem);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

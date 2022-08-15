@@ -111,9 +111,9 @@ MonoBehaviour:
   deadEnemyItem: {fileID: 11400000, guid: c8faaa2ad59fd4c119d465b3881169f3, type: 2}
   itemObjectPrefab: {fileID: 4198291713372462698, guid: de7c61c6c914e4d039e3ab6484c059e9, type: 3}
   projectilePrefab: {fileID: 2126362253614887396, guid: 6ef0dd23b5ff7455a93e000cb920b78c, type: 3}
-  startAngle: 180
+  startAngle: 360
   endAngle: 0
-  numberOfBullets: 1
+  numberOfBullets: 8
   reloadWaitTime: 2
 --- !u!58 &789311087
 CircleCollider2D:

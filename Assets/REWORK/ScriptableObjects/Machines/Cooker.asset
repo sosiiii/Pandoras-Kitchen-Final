@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55cf15fcdad44dd866c0825ec29173f, type: 3}
   m_Name: Cooker
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 5421f663867bc20469c511e08c9eb97e, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 9530228fb34c54a3a852cdcd0109612d, type: 3}
   <Type>k__BackingField: 0
   <CraftingTime>k__BackingField: 20
   <MaxRecipeLength>k__BackingField: 3
