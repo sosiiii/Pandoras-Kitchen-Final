@@ -13,15 +13,15 @@ public class PlayerDetection : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Collision");
-            NoMovement();
-            collision.GetComponent<Player>().HP = 0;
+            //NoMovement();
+            collision.GetComponent<Player>().Kill();
         }
     }
 
     IEnumerator NoMovement()
     {
-        GetComponent<SquidScript>().enabled = false;
+        GetComponent<SquidScript>().speed = 0;
         yield return new WaitForSeconds(0.5f);
-        GetComponent<SquidScript>().enabled = true;
+        GetComponent<SquidScript>().speed = 2;
     }
 }
