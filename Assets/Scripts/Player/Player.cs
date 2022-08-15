@@ -9,13 +9,15 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IKillable
 {
-    public static Action<GameObject> playerDeath;
+    public static Action<GameObject, bool> playerDeath;
     //public Elevator elevator;
 
     //Horizontal
     [Header("Behaviour")]
     public float HP;
     private float maxHP;
+
+    [SerializeField] private bool wasda;
 
     [Header("Move")]
     private float _horizontalMove;
@@ -138,8 +140,9 @@ public class Player : MonoBehaviour, IKillable
         _spriteRenderer.color = Color.white;
         _rigidbody2D.velocity = Vector2.zero;
         GetComponent<PlayerInteraction>().InventorySlot.RemoveItem();
+        GetComponent<PlayerCombat>().attacking = false;
         HP = maxHP;
-        playerDeath?.Invoke(gameObject);
+        playerDeath?.Invoke(gameObject, wasda);
         //Make player wait for some time
     }
 

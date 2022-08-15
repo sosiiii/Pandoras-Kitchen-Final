@@ -14,6 +14,9 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private Transform respawnPoint;
 
+    [SerializeField] private GameObject wasdaPlayer;
+    [SerializeField] private GameObject arrowsPlayer;
+    
     void Start()
     {
         timer = FindObjectOfType<Timer>();
@@ -24,17 +27,19 @@ public class LevelManager : MonoBehaviour
         Player.playerDeath += PlayerDeath;
     }
 
-    private void PlayerDeath(GameObject obj)
+    private void PlayerDeath(GameObject obj, bool wasda)
     {
-        StartCoroutine(RespawnPlayer(obj));
+        StartCoroutine(RespawnPlayer(obj, wasda));
     }
 
-    IEnumerator RespawnPlayer(GameObject gameObject)
+    IEnumerator RespawnPlayer(GameObject player, bool wasda)
     {
-        gameObject.SetActive(false);
-        gameObject.transform.position = respawnPoint.position;
+        Destroy(player);
         yield return new WaitForSeconds(1f);
-        gameObject.SetActive(true);
+        if(wasda)
+            Instantiate(wasdaPlayer, respawnPoint.position, Quaternion.identity);
+        else
+            Instantiate(arrowsPlayer, respawnPoint.position, Quaternion.identity);
     }
 
     private void OnDisable()

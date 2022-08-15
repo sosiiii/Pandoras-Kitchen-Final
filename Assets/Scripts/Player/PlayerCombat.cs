@@ -38,6 +38,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void EnemyDetection(InputAction.CallbackContext context)
     {
+        Debug.Log(attacking + " " + _interaction.InventorySlot.IsFree);
         if (context.performed && !attacking)
         {
             if(_interaction.InventorySlot.IsFree)

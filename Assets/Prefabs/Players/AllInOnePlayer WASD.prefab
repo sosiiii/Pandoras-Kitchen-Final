@@ -254,7 +254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   HP: 5
+=======
+  HP: 1
+  wasda: 1
+>>>>>>> Stashed changes
   horizontalSpeed: 10
   playerIsFlipped: 0
   jumpPower: 20
@@ -476,7 +481,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attacking: 0
-  attackDelay: 1
+  attackDelay: 0.5
 --- !u!70 &1109741527894977741
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -491,7 +496,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.033297442, y: -0.110589825}
-  m_Size: {x: 0.5837759, y: 0.6497812}
+  m_Size: {x: 0.5837759, y: 0.76}
   m_Direction: 0
 --- !u!114 &6738857705090920961
 MonoBehaviour:

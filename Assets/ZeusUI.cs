@@ -44,7 +44,7 @@ public class ZeusUI : MonoBehaviour
         while (prompts.Count > 0)
         {
             promptPrefab.GetComponentInChildren<TextMeshProUGUI>().text = prompts.Pop();
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(2f);
         }
         promptPrefab.SetActive(false);
         isRunning = false;

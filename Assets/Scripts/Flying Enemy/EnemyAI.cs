@@ -46,6 +46,8 @@ namespace Flying_Enemy
         private Vector3 TargetPosition => Target.transform.position;
 
         private SpriteRenderer _spriteRenderer;
+
+        private Animator _animator;
         
         
 
@@ -59,6 +61,7 @@ namespace Flying_Enemy
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -72,15 +75,19 @@ namespace Flying_Enemy
             {
                 case EnemyStates.LookForPlayer:
                     PerformDetection();
+                    _animator.SetBool("Idle", true);
                     break;
                 case EnemyStates.FollowPlayer:
                     FollowPlayer();
+                    _animator.SetBool("Idle", false);
                     break;
                 case EnemyStates.ReturnToStart:
                     ReturnToStart();
+                    _animator.SetBool("Idle", false);
                     break;
                 case EnemyStates.AttackPlayer:
                     Attack();
+                    _animator.SetBool("Idle", false);
                     break;
                         
             }
@@ -148,18 +155,36 @@ namespace Flying_Enemy
 
         private void Fire()
         {
-            var angleStep = 360 / numberOfBullets;
-            var angle = 0;
+            var p1 = new Vector2(0.45f, 0.45f).normalized;
+            var p2 = new Vector2(-0.45f, 0.45f).normalized;
+            var p3 = new Vector2(0.45f, -0.45f).normalized;
+            var p4 = new Vector2(-0.45f, -0.45f).normalized;
             
+            var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(Vector2.right);
 
-            for (int i = 0; i < numberOfBullets; i++)
-            {
-                var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-                projectile.Init(MathHelpers.DegreeToVector2(angle));
-                angle += angleStep;
-            }
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(Vector2.left);
+
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(Vector2.up);
+
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(Vector2.down);
+
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(p1);
             
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(p2);
             
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(p3);
+            
+            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.Init(p4);
+
+
         }
 
         private void RemovePlayerNotInLineOfSight()

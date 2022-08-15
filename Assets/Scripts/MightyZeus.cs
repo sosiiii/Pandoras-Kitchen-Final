@@ -21,7 +21,7 @@ public class MightyZeus : MonoBehaviour
         OrderController.orderNotFinished += () => OrderFinished(PromptContext.NotCompletedOrder);
         
 
-        Player.playerDeath += _ => OrderFinished(PromptContext.PlayerDeath);
+        Player.playerDeath += (a,b) => OrderFinished(PromptContext.PlayerDeath);
     }
 
     private void OnDisable()
@@ -33,7 +33,7 @@ public class MightyZeus : MonoBehaviour
         OrderController.orderNotFinished -= () => OrderFinished(PromptContext.NotCompletedOrder);
         
 
-        Player.playerDeath -= _ => OrderFinished(PromptContext.PlayerDeath);
+        Player.playerDeath -= (a,b) => OrderFinished(PromptContext.PlayerDeath);
     }
 
     private void OrderFinished(PromptContext promptContext)
