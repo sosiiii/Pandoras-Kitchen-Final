@@ -30,9 +30,9 @@ public class Player : MonoBehaviour, IKillable
 
     /*[Header("Events")]
     [SerializeField] private UnityEvent OnLandEvent;*/
-
+    
+    public bool m_Grounded { get; private set; }
     [Header("Ground")]
-    private bool m_Grounded;
     public float k_GroundedRadius = 0.2f;
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;

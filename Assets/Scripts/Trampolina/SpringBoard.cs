@@ -23,7 +23,11 @@ public class SpringBoard : MonoBehaviour
         if(col.gameObject.layer != LayerMask.NameToLayer("Players"))
             return;
 
-        var rigidBody = col.GetComponent<Rigidbody2D>();
+        var player = col.GetComponent<Player>();
+        
+        if(player.m_Grounded) return;
+        
+        var rigidBody = player.GetComponent<Rigidbody2D>();
         var velocity = rigidBody.velocity;
         
         velocity.y = strength;
