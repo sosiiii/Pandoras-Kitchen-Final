@@ -6686,7 +6686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2393216401728192736, guid: 582a417f92053474f85073da76da964c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.18
+      value: 5.321
       objectReference: {fileID: 0}
     - target: {fileID: 2393216401728192736, guid: 582a417f92053474f85073da76da964c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7258,7 +7258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2393216401728192736, guid: 582a417f92053474f85073da76da964c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8200002
+      value: -1.675
       objectReference: {fileID: 0}
     - target: {fileID: 2393216401728192736, guid: 582a417f92053474f85073da76da964c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7970,7 +7970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2393216401728192736, guid: 582a417f92053474f85073da76da964c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.18
+      value: 5.321
       objectReference: {fileID: 0}
     - target: {fileID: 2393216401728192736, guid: 582a417f92053474f85073da76da964c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8580,14 +8580,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1109741527894977741, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
-      propertyPath: m_Size.y
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 5046962738398537999, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
-      propertyPath: attackDelay
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289744, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_Name
       value: AllInOnePlayer WASD
@@ -10195,10 +10187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2403277044652384114, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
-      propertyPath: m_Size.y
-      value: 0.76
-      objectReference: {fileID: 0}
     - target: {fileID: 5628766329388478817, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -10246,10 +10234,6 @@ PrefabInstance:
     - target: {fileID: 5628766329388478831, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
       propertyPath: m_Name
       value: AllInOnePlayer ARROWS
-      objectReference: {fileID: 0}
-    - target: {fileID: 7509425179258673840, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
-      propertyPath: attackDelay
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
@@ -11068,6 +11052,7 @@ GameObject:
   - component: {fileID: 1765556863}
   - component: {fileID: 1765556865}
   - component: {fileID: 1765556864}
+  - component: {fileID: 1765556866}
   m_Layer: 5
   m_Name: ScoreImage
   m_TagString: Untagged
@@ -11091,7 +11076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -211.59998, y: -265.90002}
+  m_AnchoredPosition: {x: -211.59998, y: -260}
   m_SizeDelta: {x: 139.48279, y: 130.159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765556864
@@ -11132,6 +11117,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765556862}
   m_CullTransparentMesh: 1
+--- !u!95 &1765556866
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765556862}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 512a26c11120d144bb63cccdb7927d43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1813398372
 GameObject:
   m_ObjectHideFlags: 0
