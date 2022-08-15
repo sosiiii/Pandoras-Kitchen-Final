@@ -446,7 +446,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attacking: 0
-  attackDelay: 1
+  attackDelay: 0.4
 --- !u!70 &2403277044652384114
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -460,8 +460,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.033297442, y: -0.1111052}
-  m_Size: {x: 0.5837759, y: 0.6417422}
+  m_Offset: {x: 0.033297442, y: -0.1105898}
+  m_Size: {x: 0.5837759, y: 0.76}
   m_Direction: 0
 --- !u!114 &5255056115871860728
 MonoBehaviour:
