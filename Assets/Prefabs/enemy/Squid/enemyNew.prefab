@@ -326,6 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 2
   speed: 1
+  SpeedUp: 5
+  SpeedUpTime: 1
   knockbackForce: 10
   knockbackForceUp: 10
   groundDetector: {fileID: 4855279494493793777}

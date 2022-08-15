@@ -235,7 +235,6 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  coyoteTime: 0.1
 --- !u!114 &5628766329388478840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5628766329388478817}
     m_Modifications:
+    - target: {fileID: -5249673627655007644, guid: 0e8ad9e4352cf4a6aa5521fd1fc93c7c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3c1738493747ea043b93ee1213e0a77b, type: 2}
     - target: {fileID: 486634510369097479, guid: 0e8ad9e4352cf4a6aa5521fd1fc93c7c, type: 3}
       propertyPath: m_RootOrder
       value: 4

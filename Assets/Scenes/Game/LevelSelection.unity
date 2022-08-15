@@ -2041,6 +2041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 8597122627708220587, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220597, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -9182,7 +9186,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8597122627592832413, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_text
-      value: TEST
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220585, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: levelName
@@ -9372,6 +9376,10 @@ PrefabInstance:
     - target: {fileID: 8597122627708220587, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_Name
       value: Door_Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597122627708220587, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220597, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_RootOrder
