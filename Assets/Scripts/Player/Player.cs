@@ -14,7 +14,8 @@ public class Player : MonoBehaviour, IKillable
 
     //Horizontal
     [Header("Behaviour")]
-    public int HP;
+    public float HP;
+    private float maxHP;
 
     [Header("Move")]
     private float _horizontalMove;
@@ -22,14 +23,10 @@ public class Player : MonoBehaviour, IKillable
 
     public bool playerIsFlipped;
 
-    //Jump
     [Header("Jump")]
     [SerializeField] private float jumpPower;
     [SerializeField] private float gravityScale = 10;
     [SerializeField] private float fallingGravityScale = 40;
-
-    /*[Header("Events")]
-    [SerializeField] private UnityEvent OnLandEvent;*/
 
     [Header("Ground")]
     private bool m_Grounded;
@@ -37,29 +34,22 @@ public class Player : MonoBehaviour, IKillable
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
-    private Animator _animator;
-    private Rigidbody2D _rigidbody2D;
-    
-
-
-    /*private void Awake()
-    {
-        if (OnLandEvent == null)
-        {
-            OnLandEvent = new UnityEvent();
-        }
-    }*/
+    Animator _animator;
+    Rigidbody2D _rigidbody2D;
+    SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        maxHP = HP;
+
         _animator = GetComponent<Animator>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         _rigidbody2D.velocity = new Vector2(_horizontalMove * horizontalSpeed, _rigidbody2D.velocity.y);
-        
         
         SetAnimation();
         JumpPhysics();
@@ -72,8 +62,11 @@ public class Player : MonoBehaviour, IKillable
         {
             _animator.SetFloat("speed-y", _rigidbody2D.velocity.y);
         }
+
         else
+        {
             _animator.SetBool("Running", _rigidbody2D.velocity.x != 0);
+        }
     }
 
     private void FixedUpdate()
@@ -87,10 +80,6 @@ public class Player : MonoBehaviour, IKillable
             {
                 m_Grounded = true;
                 break;
-                /*if (!wasGrounded)
-                {
-                    OnLandEvent.Invoke();
-                }*/
             }
         }
 
@@ -140,26 +129,6 @@ public class Player : MonoBehaviour, IKillable
         }
     }
 
-    /*public void OnLanding()
-    {
-        _animator.SetBool("IsJumping", false);
-    }*/
-
-    /*private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _animator.SetBool("IsJumping", false);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            _animator.SetBool("IsJumping", true);
-        }
-    }*/
     public void Kill()
     {
         DeathLogic();
@@ -170,11 +139,33 @@ public class Player : MonoBehaviour, IKillable
         _rigidbody2D.velocity = Vector2.zero;
         playerDeath?.Invoke(gameObject);
         GetComponent<PlayerInteraction>().InventorySlot.RemoveItem();
+        HP = maxHP;
         //Make player wait for some time
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
+    }
+
+    public void Damaged(float attackDamage)
+    {
+        HP -= attackDamage;
+
+        StartCoroutine(ColorHit());
+
+        if (HP <= 0)
+        {
+            DeathLogic();
+        }
+    }
+
+    IEnumerator ColorHit()
+    {
+        var blinkWaitTime = new WaitForSeconds(0.2f);
+
+        _spriteRenderer.color = Color.red;
+        yield return blinkWaitTime;
+        _spriteRenderer.color = Color.white;
     }
 }
