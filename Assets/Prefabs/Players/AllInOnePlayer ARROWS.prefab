@@ -224,12 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   HP: 5
-=======
-  HP: 3
   wasda: 0
->>>>>>> Stashed changes
   horizontalSpeed: 10
   playerIsFlipped: 0
   jumpPower: 20
@@ -465,11 +461,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<< Updated upstream
   m_Offset: {x: 0.033297442, y: -0.1105898}
-=======
-  m_Offset: {x: 0.033297442, y: -0.1111052}
->>>>>>> Stashed changes
   m_Size: {x: 0.5837759, y: 0.76}
   m_Direction: 0
 --- !u!114 &5255056115871860728

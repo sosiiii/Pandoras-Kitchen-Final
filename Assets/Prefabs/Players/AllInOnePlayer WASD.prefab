@@ -254,12 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ed90b6bdbaa2e48983d3d68576c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   HP: 5
-=======
-  HP: 1
   wasda: 1
->>>>>>> Stashed changes
   horizontalSpeed: 10
   playerIsFlipped: 0
   jumpPower: 20
