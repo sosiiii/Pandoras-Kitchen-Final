@@ -137,9 +137,9 @@ public class Player : MonoBehaviour, IKillable
     {
         _spriteRenderer.color = Color.white;
         _rigidbody2D.velocity = Vector2.zero;
-        playerDeath?.Invoke(gameObject);
         GetComponent<PlayerInteraction>().InventorySlot.RemoveItem();
         HP = maxHP;
+        playerDeath?.Invoke(gameObject);
         //Make player wait for some time
     }
 

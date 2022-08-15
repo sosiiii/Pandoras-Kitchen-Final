@@ -8,9 +8,10 @@ using UnityEngine.UI;
 public class ZeusUI : MonoBehaviour
 {
     [SerializeField] private GameObject promptPrefab;
+    
+    private bool isRunning = false;
 
-
-    private IEnumerator _enumerator;
+    private Stack<string> prompts = new Stack<string>();
 
     private void OnEnable()
     {
@@ -29,22 +30,26 @@ public class ZeusUI : MonoBehaviour
 
     private void ZeusWantsToSpeak(string obj)
     {
+        prompts.Push(obj);
+
+        if (!isRunning)
+            StartCoroutine(SpeechBubble());
+
+    }
+
+    private IEnumerator SpeechBubble()
+    {
+        isRunning = true;
         promptPrefab.SetActive(true);
-        promptPrefab.GetComponentInChildren<TextMeshProUGUI>().text = obj;
-        Invoke(nameof(HidePrompt), 1f);
-        _enumerator = SpeechBubble(obj);
-        
-    }
-
-    private IEnumerator SpeechBubble(string prompt)
-    {
-        
-    }
-
-    private void HidePrompt()
-    {
+        while (prompts.Count > 0)
+        {
+            promptPrefab.GetComponentInChildren<TextMeshProUGUI>().text = prompts.Pop();
+            yield return new WaitForSeconds(10f);
+        }
         promptPrefab.SetActive(false);
-    } 
+        isRunning = false;
+    }
+    
 
     // Start is called before the first frame update
     void Start()
