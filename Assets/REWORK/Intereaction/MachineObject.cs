@@ -32,6 +32,10 @@ public class MachineObject : Interactable
 
 
     [SerializeField] private ProgressBar _progressBar;
+
+
+    private float maxTime = 0;
+    private float currentTime = 0f;
     
     
     
@@ -71,6 +75,9 @@ public class MachineObject : Interactable
                 {
                     if(!FreeInputSlot) return;
                     InsertToSlot(slot.RemoveItem());
+                    //Increase time
+                    maxTime += Machine.CraftingTime;
+                    currentTime += (float)Machine.CraftingTime;
                 }
 
                 State = MachineStates.Working;
@@ -101,18 +108,18 @@ public class MachineObject : Interactable
 
     }
     private IEnumerator MachineWorking()
-    {
-        var currentTime = (float)Machine.CraftingTime;
-
+    { 
+        currentTime = (float)Machine.CraftingTime;
+        maxTime = Machine.CraftingTime;
         var timeDecrese = 1f;
         var wait = new WaitForSeconds(timeDecrese);
-        _progressBar.UpdateBar(currentTime,Machine.CraftingTime);
+        _progressBar.UpdateBar(currentTime,maxTime);
         while (currentTime > 0)
         {
             yield return wait;
             currentTime -= timeDecrese;
             
-            _progressBar.UpdateBar(currentTime,Machine.CraftingTime);
+            _progressBar.UpdateBar(currentTime,maxTime);
         }
         _progressBar.StopTimer();
         ExitWorking();

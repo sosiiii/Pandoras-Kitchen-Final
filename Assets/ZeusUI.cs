@@ -9,6 +9,9 @@ public class ZeusUI : MonoBehaviour
 {
     [SerializeField] private GameObject promptPrefab;
 
+
+    private IEnumerator _enumerator;
+
     private void OnEnable()
     {
         MightyZeus.zeusWantsToSpeak += ZeusWantsToSpeak;
@@ -29,6 +32,13 @@ public class ZeusUI : MonoBehaviour
         promptPrefab.SetActive(true);
         promptPrefab.GetComponentInChildren<TextMeshProUGUI>().text = obj;
         Invoke(nameof(HidePrompt), 1f);
+        _enumerator = SpeechBubble(obj);
+        
+    }
+
+    private IEnumerator SpeechBubble(string prompt)
+    {
+        
     }
 
     private void HidePrompt()

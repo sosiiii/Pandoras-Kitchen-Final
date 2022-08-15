@@ -19,6 +19,13 @@ public class PlayerCombat : MonoBehaviour
     public bool attacking;
     public float attackDelay;
 
+    private PlayerInteraction _interaction;
+
+    private void Awake()
+    {
+        _interaction = GetComponent<PlayerInteraction>();
+    }
+
     void Start()
     {
         player = this.transform;
@@ -33,7 +40,8 @@ public class PlayerCombat : MonoBehaviour
     {
         if (context.performed && !attacking)
         {
-            StartCoroutine(Attack());;
+            if(_interaction.InventorySlot.IsFree)
+                StartCoroutine(Attack());;
         }
     }
 
