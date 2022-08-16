@@ -10,10 +10,10 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        //spawn player one
+        // Spawn player number one
         Instantiate(playerOne, doors[PlayerPrefs.GetInt("LastPlayedScene")].transform.GetChild(0).transform.position, Quaternion.identity);
 
-        //spawn player two
+        // Spawn player number two
         Instantiate(playerTwo, doors[PlayerPrefs.GetInt("LastPlayedScene")].transform.GetChild(0).transform.position, Quaternion.identity);
     }
 }

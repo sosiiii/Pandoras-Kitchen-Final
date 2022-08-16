@@ -40,12 +40,9 @@ public class Player : MonoBehaviour, IKillable
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
 
-
-
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
-    SpriteRenderer _spriteRenderer;
-
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
@@ -59,7 +56,6 @@ public class Player : MonoBehaviour, IKillable
     private void Update()
     {
         _rigidbody2D.velocity = new Vector2(_horizontalMove * horizontalSpeed, _rigidbody2D.velocity.y);
-        
         
         SetAnimation();
         JumpPhysics();

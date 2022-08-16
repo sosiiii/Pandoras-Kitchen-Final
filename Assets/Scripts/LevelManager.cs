@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject wasdaPlayer;
     [SerializeField] private GameObject arrowsPlayer;
-    
+
     void Start()
     {
         timer = FindObjectOfType<Timer>();

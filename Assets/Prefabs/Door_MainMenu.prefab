@@ -129,7 +129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: menu
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7207b09f2b4e68e4bb461b0338627aee, type: 2}
   m_sharedMaterial: {fileID: 9153090091651950005, guid: 7207b09f2b4e68e4bb461b0338627aee, type: 2}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df976c5828ff4d4dba105616cd8a201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: MainMenu
+  levelName: Level_1
   isAlwaysOpen: 1
   doorOpenSprite: {fileID: 8322971191178876770, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
   doorCloseSprite: {fileID: -8425966301496999361, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
@@ -427,7 +427,19 @@ MonoBehaviour:
     m_ActionId: 6f7fb764-e389-4462-8d95-6a8541c419f3
     m_ActionName: Gameplay1/Combat[/Keyboard/rightCtrl]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8597122627708220585}
+        m_TargetAssemblyTypeName: DoorToLevel, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 135d709f-133d-4b07-9c84-476b18a9e285
     m_ActionName: Gameplay1/OpenDoor[/Keyboard/rightShift]
   m_NeverAutoSwitchControlSchemes: 0
