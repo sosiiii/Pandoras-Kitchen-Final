@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d3c85085a84bc9b05d2cd9ab4759d8, type: 3}
-  m_Name: Goo
+  m_Name: Tenticle
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: c6faa539f03e14f65b304129148d51b7, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 501d3c3aa896943b58786bcd4c4588b3, type: 3}

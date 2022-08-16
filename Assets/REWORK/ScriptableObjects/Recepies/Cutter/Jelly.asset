@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19286c1874544029830f3da7b1bbdc11, type: 3}
+  m_Name: Jelly
+  m_EditorClassIdentifier: 
+  <ItemsNeeded>k__BackingField:
+  - {fileID: 11400000, guid: e9313de61bdb07b40a155bbc7e73ca89, type: 2}
+  <Result>k__BackingField: {fileID: 11400000, guid: f3c9a5e5b2f6d40aab7e547544f05ff9, type: 2}
+  <CraftingTime>k__BackingField: 25
