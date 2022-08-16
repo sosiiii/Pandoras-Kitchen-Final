@@ -10,5 +10,7 @@ public class LastPlayedScene : MonoBehaviour
     private void Awake()
     {
         PlayerPrefs.SetInt("LastPlayedScene", sceneIndex);
+
+        lastPlayedSceneStatus = PlayerPrefs.GetInt("LastPlayedScene");
     }
 }
