@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using REWORK;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class SlimeController : MonoBehaviour, IDamagable
+public class SlimeController : MonoBehaviour, IDamagable, IOnDeath, IKillable
 {
     public enum SlimeState
     {
@@ -177,6 +180,7 @@ public class SlimeController : MonoBehaviour, IDamagable
         {
             var itemObject = Instantiate(itemObjectPrefab, transform.position, Quaternion.identity);
 
+            DeathAction?.Invoke();
             itemObject.Init(deadEnemyItem);
             Destroy(gameObject);
         }
@@ -187,5 +191,12 @@ public class SlimeController : MonoBehaviour, IDamagable
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public Action DeathAction { get; set; }
+    public void Kill()
+    {
+        HP -= 1000;
+        Death();
     }
 }

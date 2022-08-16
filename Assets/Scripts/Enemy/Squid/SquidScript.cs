@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using REWORK;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
+public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
 {
 
     public enum SquidStates{
@@ -221,4 +222,8 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
     }
 
     public Action DeathAction { get; set; }
+    public void Kill()
+    {
+        Death();
+    }
 }
