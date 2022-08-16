@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject wasdaPlayer;
     [SerializeField] private GameObject arrowsPlayer;
-    
+
     void Start()
     {
         timer = FindObjectOfType<Timer>();
