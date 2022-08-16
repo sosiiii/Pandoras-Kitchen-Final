@@ -14,8 +14,11 @@ public class Player : MonoBehaviour, IKillable
 
     //Horizontal
     [Header("Behaviour")]
-    public float HP;
-    private float maxHP;
+    public int HP;
+    private int maxHP;
+    [SerializeField] PlayerHearts playerHearts;
+    bool immune = false;
+    [SerializeField] float immunityDuration = 1f;
 
     [SerializeField] private bool wasda;
 
@@ -36,6 +39,8 @@ public class Player : MonoBehaviour, IKillable
     public float k_GroundedRadius = 0.2f;
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
+
+
 
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
@@ -151,8 +156,10 @@ public class Player : MonoBehaviour, IKillable
         Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
     }
 
-    public void Damaged(float attackDamage)
+    public void Damaged(int attackDamage)
     {
+        if (immune) return;
+
         HP -= attackDamage;
 
         StartCoroutine(ColorHit());
@@ -161,6 +168,19 @@ public class Player : MonoBehaviour, IKillable
         {
             DeathLogic();
         }
+
+        else
+        {
+            playerHearts.UpdateLifeVisual(HP);
+            immune = true;
+
+            Invoke("ResetImmunity", immunityDuration);
+        }
+    }
+
+    public void ResetImmunity()
+    {
+        immune = false;
     }
 
     IEnumerator ColorHit()

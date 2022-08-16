@@ -28,7 +28,6 @@ public class SlimeController : MonoBehaviour, IDamagable
     [SerializeField] private LayerMask whatIsGround;
 
     public Transform attackPoint;
-    private float attackDelay;
     public float attackRange;
     public int attackDamage;
     public LayerMask playerLayer;
@@ -76,8 +75,6 @@ public class SlimeController : MonoBehaviour, IDamagable
             _animator.SetBool("Jump", true);
             Hit();
         }
-
-        attackDelay -= Time.deltaTime;
        
         Death();
     }
@@ -98,22 +95,18 @@ public class SlimeController : MonoBehaviour, IDamagable
 
     public void Hit()
     {
-        if (attackDelay <= 0f)
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+
+        foreach (Collider2D player in hitPlayers)
         {
-            Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+            var playerHealth = player.GetComponent<Player>();
 
-            foreach (Collider2D player in hitPlayers)
+            if (playerHealth == null)
             {
-                var playerHealth = player.GetComponent<Player>();
-
-                if (playerHealth == null)
-                {
-                    continue;
-                }
-
-                playerHealth.Damaged(attackDamage);
-                attackDelay = 1f;
+                continue;
             }
+
+            playerHealth.Damaged(attackDamage);
         }
     }
 
@@ -151,7 +144,7 @@ public class SlimeController : MonoBehaviour, IDamagable
         state = SlimeState.InAir;
     }
 
-    public void Damaged(float attackDamage)
+    public void Damaged(int attackDamage)
     {
         HP -= attackDamage;
 
@@ -168,7 +161,7 @@ public class SlimeController : MonoBehaviour, IDamagable
 
     }
 
-    public void Damage(float attackDamage, Vector3 knockbackDir)
+    public void Damage(int attackDamage, Vector3 knockbackDir)
     {
         Damaged(attackDamage);
     }

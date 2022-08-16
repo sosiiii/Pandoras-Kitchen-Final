@@ -1412,8 +1412,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 850649740}
-  - {fileID: 2137769433}
   - {fileID: 1327377936}
+  - {fileID: 2137769433}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2663,7 +2663,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
 --- !u!4 &850649740 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8638513678998397159, guid: 17a57808a712c4f049c2ac3d0dc41d8a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 850649739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &850982591
@@ -8478,7 +8478,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
 --- !u!4 &1327377936 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 819069272548900579, guid: 87ff7b04022d44aabb248e304e3473fe, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1327377935}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1494186904
@@ -13666,7 +13666,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3faf84589c44cbf9d6a475fc30c04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
   maxEnemies: 4
+  minSpawnTime: 5
+  maxSpawnTime: 10
 --- !u!1001 &2137769432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13726,7 +13729,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
 --- !u!4 &2137769433 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8463675218762560192, guid: 376ce3ac8d60940b2bc649684462bfa1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 2137769432}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2138375585

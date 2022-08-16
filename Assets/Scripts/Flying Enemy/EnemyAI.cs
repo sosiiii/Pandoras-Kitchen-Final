@@ -273,7 +273,7 @@ namespace Flying_Enemy
 
         }
 
-        public void Damage(float attackDemage, Vector3 knockbackDir)
+        public void Damage(int attackDemage, Vector3 knockbackDir)
         {
             maxHealth--;
             StartCoroutine(ColorHit());

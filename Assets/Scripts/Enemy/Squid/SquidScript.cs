@@ -132,7 +132,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
         itemObject.Init(deadEnemyItem);
         Destroy(gameObject);
     }
-    public void Damaged(float attackDemage, Vector3 knockbackDir)
+    public void Damaged(int attackDemage, Vector3 knockbackDir)
     {
         state = SquidStates.Knockback;
         HP -= attackDemage;
@@ -210,7 +210,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath
         _spriteRenderer.color = Color.white;
 
     }
-    public void Damage(float attackDemage, Vector3 knockbackDir)
+    public void Damage(int attackDemage, Vector3 knockbackDir)
     {
         Damaged(attackDemage, knockbackDir);
     }

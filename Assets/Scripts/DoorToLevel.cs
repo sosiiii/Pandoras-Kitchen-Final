@@ -22,7 +22,6 @@ public class DoorToLevel : MonoBehaviour
     {
         doorSpriteRenderer = GetComponent<SpriteRenderer>();
         doorStatus = PlayerPrefs.GetInt(levelName);
-        Debug.Log("Doors are " + PlayerPrefs.GetInt("Level_6"));
     }
 
     private void Start()
