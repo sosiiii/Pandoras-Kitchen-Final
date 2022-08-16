@@ -207,8 +207,6 @@ GameObject:
   - component: {fileID: 3174088050764051378}
   - component: {fileID: 731574412510042234}
   - component: {fileID: 4849218847613410744}
-  - component: {fileID: 1272339133118055284}
-  - component: {fileID: 7571858557805744156}
   m_Layer: 18
   m_Name: Player WASD - LevelSelection
   m_TagString: Player
@@ -340,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 3
-  playerHearts: {fileID: 7571858557805744156}
+  playerHearts: {fileID: 0}
   immunityDuration: 1
   wasda: 1
   horizontalSpeed: 10
@@ -412,7 +410,7 @@ MonoBehaviour:
     m_ActionName: Gameplay/Jump[/Keyboard/w]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1272339133118055284}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: HandleInput
         m_Mode: 0
@@ -440,7 +438,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1272339133118055284}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: HandleThrow
         m_Mode: 0
@@ -581,37 +579,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.033297442, y: -0.110589825}
   m_Size: {x: 0.5837759, y: 0.76}
   m_Direction: 0
---- !u!114 &1272339133118055284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3174088050764051365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e126bf9f448a4e3f937f092ec91cc96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRadius: 1
-  itemObjectPrefab: {fileID: 4198291713372462698, guid: de7c61c6c914e4d039e3ab6484c059e9, type: 3}
---- !u!114 &7571858557805744156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3174088050764051365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb38950eacf06e14f96eab8be8a1cd62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartsImages:
-  - {fileID: 1364752540269772846}
-  - {fileID: 6606098445809318789}
-  - {fileID: 1804470410777439791}
-  heartHolder: {fileID: 3502628618841019250}
 --- !u!1 &3460977015638997847
 GameObject:
   m_ObjectHideFlags: 0

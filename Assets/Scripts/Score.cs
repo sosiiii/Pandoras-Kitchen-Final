@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Score : MonoBehaviour
     [SerializeField] private int twoStarsScore;
     [SerializeField] private int threeStarsScore;
 
+    public List<Image> starsImages = new List<Image>();
+
     [Header("Results")]
     [SerializeField] private TextMeshProUGUI scoreTextResults;
     public List<GameObject> stars = new List<GameObject>();
@@ -23,11 +26,6 @@ public class Score : MonoBehaviour
     private void Awake()
     {
         winSystem = FindObjectOfType<WinSystem>();
-    }
-
-    private void Start()
-    {
-        score = 0;
     }
 
     //Increase score when order is finished
@@ -40,12 +38,31 @@ public class Score : MonoBehaviour
     public void DecreaseScore()
     {
         score -= scoreToAddRemove;
+
+        if (score <= 0)
+        {
+            score = 0;
+        }
     }
 
     void Update()
     {
         scoreText.text = score.ToString();
         scoreTextResults.text = score.ToString();
+
+        ShowStarsInGame();
+    }
+
+    public void ShowStarsInGame()
+    {
+        if (score >= oneStarScore) { starsImages[0].color = Color.white; }
+        else { starsImages[0].color = Color.black; }
+
+        if (score >= twoStarsScore) { starsImages[1].color = Color.white; }
+        else { starsImages[1].color = Color.black; }
+
+        if (score >= threeStarsScore) { starsImages[2].color = Color.white; }
+        else { starsImages[2].color = Color.black; }
     }
 
     public IEnumerator ShowScoreResults()
@@ -56,15 +73,15 @@ public class Score : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             stars[1].GetComponent<Animator>().SetBool("SecondShowStar", true);
+
+            //unlock next level
+            winSystem.LevelIsWon();
         }
 
         if (score >= threeStarsScore)
         {
             yield return new WaitForSeconds(1f);
             stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true);
-
-            //unlock next level
-            winSystem.LevelIsWon();
         }
     }
 }

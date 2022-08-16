@@ -94,6 +94,7 @@ public class Player : MonoBehaviour, IKillable
         if (!previousGrounded && m_Grounded)
         {
             Debug.Log("I landed!");
+            _animator.SetTrigger("Landed");
         }
         _animator.SetBool("OnGround", m_Grounded);
 
