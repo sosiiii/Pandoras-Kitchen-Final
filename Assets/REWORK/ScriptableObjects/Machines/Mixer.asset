@@ -19,6 +19,6 @@ MonoBehaviour:
   <CraftingRecipes>k__BackingField:
   - {fileID: 11400000, guid: 69db43ac1418e4410b0436152b0c185d, type: 2}
   - {fileID: 11400000, guid: 7eab5377ddb914fd490774149848f383, type: 2}
-  - {fileID: 11400000, guid: 5d9a982836e1647be87518a74ec1a4d3, type: 2}
+  - {fileID: 11400000, guid: e5174165b417047f9894f16ab7d1b409, type: 2}
   <OnlyProcessesEnemies>k__BackingField: 0
   <Trash>k__BackingField: {fileID: 11400000, guid: 128f2c2a368a74138a3feb8c494e3337, type: 2}
