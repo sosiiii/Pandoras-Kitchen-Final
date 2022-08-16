@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using REWORK;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Flying_Enemy
 {
@@ -16,12 +17,14 @@ namespace Flying_Enemy
             ReturnToStart,
             AttackPlayer,
             Reload,
+            GetToSweetSpot
         }
         [Header("Behavior")] 
         [SerializeField] private float playerDetectionRadius = 1f;
 
         [SerializeField] private float followPlayerRadius = 2f;
-        [SerializeField] private float attackPlayerRadius = 3f;
+        [SerializeField] private float maxPlayerAttackRadius = 3f;
+        [SerializeField] private float minPlayerAttackRadius = 2.8f;
 
 
         [SerializeField] private LayerMask playerLayer;
@@ -48,13 +51,22 @@ namespace Flying_Enemy
         private SpriteRenderer _spriteRenderer;
 
         private Animator _animator;
+
+        private Transform _startPos;
+
+        private Vector3 _endPosition;
+
+        private bool onWayToEndPos;
+
+        [SerializeField] private float patrolDistance;
+
+        private bool InSweetSpot(float distance) =>
+            distance <= maxPlayerAttackRadius && distance >= minPlayerAttackRadius;
         
         
 
         [Header("Projectile")]
         [SerializeField] private Projectile projectilePrefab;
-        [SerializeField] private float startAngle;
-        [SerializeField] private float endAngle;
         [SerializeField] private int numberOfBullets;
         [SerializeField] private float reloadWaitTime;
 
@@ -62,11 +74,14 @@ namespace Flying_Enemy
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
+            _startPos = transform.GetChild(0);
         }
 
         private void Start()
         {
             _startPosition = transform.position;
+            _endPosition = _startPosition + Vector3.right * patrolDistance;
+            onWayToEndPos = true;
         }
 
         private void Update()
@@ -78,6 +93,11 @@ namespace Flying_Enemy
                     _animator.SetBool("Idle", true);
                     break;
                 case EnemyStates.FollowPlayer:
+                    if (Target == null)
+                    {
+                        _enemyStates = EnemyStates.ReturnToStart;
+                        return;
+                    }
                     FollowPlayer();
                     _animator.SetBool("Idle", false);
                     break;
@@ -86,15 +106,29 @@ namespace Flying_Enemy
                     _animator.SetBool("Idle", false);
                     break;
                 case EnemyStates.AttackPlayer:
+                    if (Target == null)
+                    {
+                        _enemyStates = EnemyStates.ReturnToStart;
+                        return;
+                    }
                     Attack();
                     _animator.SetBool("Idle", false);
                     break;
-                        
             }
         }
 
         private void PerformDetection()
         {
+            if(onWayToEndPos)
+                transform.position = Vector2.MoveTowards(transform.position,_endPosition,speed * Time.deltaTime);
+            else
+                transform.position = Vector2.MoveTowards(transform.position,_startPosition,speed * Time.deltaTime);
+
+            if (transform.position == _startPosition)
+                onWayToEndPos = true;
+            else if (transform.position == _endPosition)
+                onWayToEndPos = false;
+
             _playersInDetectionZone = new Collider2D[2];
             
             var playerDetected = Physics2D.OverlapCircleNonAlloc(transform.position, playerDetectionRadius, _playersInDetectionZone, playerLayer);
@@ -126,7 +160,7 @@ namespace Flying_Enemy
                 return;
             }
             
-            if (Vector2.Distance(transform.position, TargetPosition) <= attackPlayerRadius)
+            if (Vector2.Distance(transform.position, TargetPosition) <= maxPlayerAttackRadius)
             {
                 _enemyStates = EnemyStates.AttackPlayer;
             }
@@ -136,11 +170,14 @@ namespace Flying_Enemy
 
         private void Attack()
         {
-            if (Vector2.Distance(transform.position, TargetPosition) > attackPlayerRadius)
+            var distance = Vector2.Distance(transform.position, TargetPosition);
+            if (distance > maxPlayerAttackRadius)
             {
                 _enemyStates = EnemyStates.FollowPlayer;
                 return;
             }
+ 
+
             Fire();
             StartCoroutine(Reload());
             _enemyStates = EnemyStates.Reload;
@@ -148,43 +185,48 @@ namespace Flying_Enemy
 
         private void ReturnToStart()
         {
-            transform.position = Vector2.MoveTowards(transform.position,_startPosition,speed * Time.deltaTime);
+            var distToStart = Vector2.Distance(transform.position, _startPosition);
+            var distToEnd = Vector2.Distance(transform.position, _endPosition);
+
+            var target = distToStart < distToEnd ? _startPosition : _endPosition;
+            
+            transform.position = Vector2.MoveTowards(transform.position,target,speed * Time.deltaTime);
             if (transform.position == _startPosition)
+            {
                 _enemyStates = EnemyStates.LookForPlayer;
+                onWayToEndPos = true;
+                
+            }
+            else if (transform.position == _endPosition)
+            {
+                _enemyStates = EnemyStates.LookForPlayer;
+                onWayToEndPos = false;
+            }
+                
         }
 
         private void Fire()
         {
-            var p1 = new Vector2(0.45f, 0.45f).normalized;
-            var p2 = new Vector2(-0.45f, 0.45f).normalized;
-            var p3 = new Vector2(0.45f, -0.45f).normalized;
-            var p4 = new Vector2(-0.45f, -0.45f).normalized;
+            float angleStep = 360f / numberOfBullets;
+            float angle = 0f;
             
-            var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(Vector2.right);
-
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(Vector2.left);
-
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(Vector2.up);
-
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(Vector2.down);
-
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(p1);
+            var floatRadius = 10f;
+            var startPos = _startPos.position;
             
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(p2);
-            
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(p3);
-            
-            projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(p4);
+            for (int i = 0; i < numberOfBullets; i++)
+            {
+                var vectorDir = Vector3.zero;
+                vectorDir.x = startPos.x + Mathf.Sin((angle * Mathf.PI) / 180) * floatRadius;
+                vectorDir.y = startPos.y + Mathf.Cos((angle * Mathf.PI) / 180) * floatRadius;
+                
+                
 
+                
+                var projectile = Instantiate(projectilePrefab, startPos, Quaternion.identity);
+                projectile.Init((startPos-vectorDir).normalized);
 
+                angle += angleStep;
+            }
         }
 
         private void RemovePlayerNotInLineOfSight()
@@ -213,6 +255,10 @@ namespace Flying_Enemy
 
         private void OnDrawGizmos()
         {
+            
+            Gizmos.DrawWireSphere(_startPosition, 0.5f);
+            Gizmos.DrawWireSphere(_endPosition, 0.5f);
+
             var position = transform.position;
 
             switch (_enemyStates)
@@ -229,7 +275,7 @@ namespace Flying_Enemy
                 
                 case EnemyStates.AttackPlayer:
                     Gizmos.color = Color.red;
-                    Gizmos.DrawWireSphere(position,attackPlayerRadius);
+                    Gizmos.DrawWireSphere(position,maxPlayerAttackRadius);
                     break;
             }
 
@@ -243,10 +289,6 @@ namespace Flying_Enemy
             
             Gizmos.color = Color.blue;
             
-            
-            Gizmos.DrawLine(transform.position, (Vector2)transform.position + MathHelpers.DegreeToVector2(startAngle)*3f);
-            Gizmos.DrawLine(transform.position, (Vector2)transform.position + MathHelpers.DegreeToVector2(endAngle)*3f);
-
         }
 
         public void Kill()
