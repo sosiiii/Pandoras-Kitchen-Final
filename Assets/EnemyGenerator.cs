@@ -29,12 +29,11 @@ public class EnemyGenerator : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(()=>_enemiesAlive < maxEnemies);
+            yield return _waitForSeconds;
             var enemy = Instantiate(enemyPrefab, transform.position, quaternion.identity);
 
             enemy.GetComponent<IOnDeath>().DeathAction += OnEnemyDeath;
             _enemiesAlive++;
-            
-            yield return _waitForSeconds;
         }
     }
 

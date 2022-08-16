@@ -68,12 +68,16 @@ public class Player : MonoBehaviour, IKillable
 
     private void SetAnimation()
     {
+        
         if (!m_Grounded)
         {
             _animator.SetFloat("speed-y", _rigidbody2D.velocity.y);
         }
         else
+        {
             _animator.SetBool("Running", _rigidbody2D.velocity.x != 0);
+            _animator.SetFloat("speed-y", 0);
+        }
     }
 
     private void FixedUpdate()
