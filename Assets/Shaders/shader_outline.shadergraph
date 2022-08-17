@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 3,
+    "m_SGVersion": 2,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "2f7cfd28a36745a7bdcb10dbee8fa471",
     "m_Properties": [
@@ -16,12 +16,6 @@
     "m_Keywords": [
         {
             "m_Id": "0ee445f840034af9a1e3670f8740f167"
-        }
-    ],
-    "m_Dropdowns": [],
-    "m_CategoryData": [
-        {
-            "m_Id": "4fc0c8be64644541b2e7f2fb60e39315"
         }
     ],
     "m_Nodes": [
@@ -937,11 +931,10 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"fileID\":10210,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
             "m_Guid": ""
-        },
-        "preventRotation": true
+        }
     },
     "m_Path": "Shader Graphs",
-    "m_GraphPrecision": 1,
+    "m_ConcretePrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -1180,12 +1173,9 @@
     "m_DefaultReferenceName": "_CORNERSON",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_KeywordType": 0,
     "m_KeywordDefinition": 0,
     "m_KeywordScope": 0,
-    "m_KeywordStages": 63,
     "m_Entries": [],
     "m_Value": 0,
     "m_IsEditable": true
@@ -1473,9 +1463,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -2057,9 +2045,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -2255,8 +2241,7 @@
         "m_SerializableColors": []
     },
     "m_TextureType": 0,
-    "m_NormalMapSpace": 0,
-    "m_EnableGlobalMipBias": true
+    "m_NormalMapSpace": 0
 }
 
 {
@@ -2363,9 +2348,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -2625,17 +2608,11 @@
     "m_ActiveSubTarget": {
         "m_Id": "8242ab382f414abc91e1134f8d34da0f"
     },
-    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 0,
-    "m_ZTestMode": 4,
-    "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_RenderFace": 2,
+    "m_TwoSided": false,
     "m_AlphaClip": false,
-    "m_CastShadows": true,
-    "m_ReceiveShadows": true,
-    "m_CustomEditorGUI": "",
-    "m_SupportVFX": false
+    "m_CustomEditorGUI": ""
 }
 
 {
@@ -3257,9 +3234,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -3388,9 +3363,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -4090,9 +4063,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -4765,9 +4736,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {
@@ -4870,8 +4839,6 @@
     "m_DefaultReferenceName": "_Color",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -4882,7 +4849,6 @@
         "b": 1.0,
         "a": 1.0
     },
-    "isMainColor": false,
     "m_ColorMode": 1
 }
 
@@ -4988,8 +4954,6 @@
     "m_DefaultReferenceName": "_Texture2D",
     "m_OverrideReferenceName": "_MainTex",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -4998,8 +4962,6 @@
         "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"691cdda00cd2b4178ab1575d18c9a9d3\",\"type\":3}}",
         "m_Guid": ""
     },
-    "isMainTexture": false,
-    "useTilingAndOffset": false,
     "m_Modifiable": true,
     "m_DefaultType": 0
 }
@@ -5221,8 +5183,6 @@
     "m_DefaultReferenceName": "_Thicness",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -5231,7 +5191,7 @@
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 5.0
+        "y": 20.0
     }
 }
 
@@ -5396,9 +5356,7 @@
         2000440914,
         -119038927,
         627041757
-    ],
-    "m_Dropdowns": [],
-    "m_DropdownSelectedEntries": []
+    ]
 }
 
 {

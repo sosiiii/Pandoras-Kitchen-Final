@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DontDestroyOnLoadScript : MonoBehaviour
 {
@@ -15,4 +16,6 @@ public class DontDestroyOnLoadScript : MonoBehaviour
         yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
     }
+    
+    
 }

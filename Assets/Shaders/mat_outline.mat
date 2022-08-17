@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _CORNERSON: 1
-    - _Thicness: 5
+    - _Thicness: 20
     m_Colors:
-    - _Color: {r: 4, g: 0, b: 0, a: 1}
+    - _Color: {r: 7.129739, g: 7.129739, b: 7.129739, a: 1}
   m_BuildTextureStacks: []
