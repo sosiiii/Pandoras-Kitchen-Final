@@ -2670,7 +2670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52fbc2377e2442ab49801eff32e649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderObjectItemPrefab: {fileID: 0}
+  orderObjectItemPrefab: {fileID: 7504559014099099165, guid: ac45bfd5df88a494383deaf65fddea78, type: 3}
 --- !u!114 &5044729252691287190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3524,7 +3524,7 @@ GameObject:
   m_Layer: 0
   m_Name: RespawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
