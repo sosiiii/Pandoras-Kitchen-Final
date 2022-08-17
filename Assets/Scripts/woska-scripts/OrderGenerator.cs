@@ -60,6 +60,7 @@ namespace woska_scripts
         
         private void OrderFinished()
         {
+            Debug.Log(_currentNumberOfActiveOrders);
             _currentNumberOfActiveOrders--;
         }
         
