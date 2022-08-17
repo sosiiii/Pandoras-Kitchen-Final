@@ -198,7 +198,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -295,8 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: a8a9145683b43b74cb5575e085e4d8fa, type: 3}
-  - {fileID: 8300000, guid: 3df0680ffa53c9a46bb1d89150f68782, type: 3}
   - {fileID: 8300000, guid: e551db0f5163e79459c1605066bac588, type: 3}
   - {fileID: 8300000, guid: d5158d28fa37149418ee2e60a76928bc, type: 3}
 --- !u!1 &6982275024262290076
@@ -472,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 2
   speed: 1
+  attackDamage: 0
   SpeedUp: 2.5
   SpeedUpTime: 4
   knockbackForce: 0
@@ -485,6 +484,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   DemageActivate: {fileID: 520219476}
+  Attacking: 0
   deadEnemyItem: {fileID: 11400000, guid: 7852d076086444b72aa1e615d0dda8ce, type: 2}
   itemObjectPrefab: {fileID: 4198291713372462698, guid: de7c61c6c914e4d039e3ab6484c059e9, type: 3}
   k_GroundedRadius: 0.2

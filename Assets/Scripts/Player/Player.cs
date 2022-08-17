@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour, IKillable
 {
@@ -42,7 +43,10 @@ public class Player : MonoBehaviour, IKillable
 
     private Animator _animator;
     private Rigidbody2D _rigidbody2D;
+
     private SpriteRenderer _spriteRenderer;
+
+    public AudioManager audioManager;
 
     private void Start()
     {
@@ -94,7 +98,10 @@ public class Player : MonoBehaviour, IKillable
         if (!previousGrounded && m_Grounded)
         {
             Debug.Log("I landed!");
+
             _animator.SetTrigger("Landed");
+
+            audioManager.PlaySound(Random.Range(2, 4));
         }
         _animator.SetBool("OnGround", m_Grounded);
 
@@ -120,7 +127,9 @@ public class Player : MonoBehaviour, IKillable
             return;
         }
         if(!m_Grounded) return;
-        
+
+        audioManager.PlaySound(Random.Range(0, 2));
+
         _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 
     }
