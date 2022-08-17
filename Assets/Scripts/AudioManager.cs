@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public List<AudioClip> clips;
 
     private AudioSource audioSource;
@@ -13,11 +11,13 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        PlaySound(0);
     }
 
     public void PlaySound(int ID)
     {
         audioSource.clip = clips[ID];
+        audioSource.pitch = Random.Range(0.8f, 1.2f);
         audioSource.Play();
     }
 }

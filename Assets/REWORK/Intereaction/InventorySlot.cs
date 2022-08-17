@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,10 @@ namespace Intereaction
 
         public Vector3 Position => transform.position;
 
+        [SerializeField] private bool animate = false;
+
+        private float animDuration;
+
         private void Awake()
         {
             _frameHolder = transform.GetChild(0).gameObject;
@@ -25,6 +30,12 @@ namespace Intereaction
             _itemImage.sprite = null;
         }
 
+        private void Update()
+        {
+            if(!animate) return;
+            transform.DOMove(Vector3.one, animDuration, false).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+            //Twee
+        }
 
         public void AddItem(Item itemObject)
         {
