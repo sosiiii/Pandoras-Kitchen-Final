@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,6 +8,8 @@ public class ItemObject : Interactable
 {
     [SerializeField] private Item _itemData;
     [SerializeField] private float throwForce = 50f;
+
+    [SerializeField] private float DespawnTime = 10;
 
     private Rigidbody2D _rigidbody2D;
 
@@ -24,6 +27,7 @@ public class ItemObject : Interactable
 
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
+        StartCoroutine(Despawn());
     }
 
     public void Init(Item item)
@@ -48,4 +52,12 @@ public class ItemObject : Interactable
         playerInteraction.InventorySlot.AddItem(_itemData);
         Destroy(gameObject);
     }
+
+    private IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(DespawnTime);
+        Destroy(gameObject);
+    }
+
+
 }
