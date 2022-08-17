@@ -38,6 +38,7 @@ public class SlimeController : MonoBehaviour, IDamagable, IOnDeath, IKillable
     Animator _animator;
     Rigidbody2D _rigidbody2D;
     SpriteRenderer _spriteRenderer;
+    public AudioManager audioManager;
 
     void Awake()
     {
@@ -84,6 +85,7 @@ public class SlimeController : MonoBehaviour, IDamagable, IOnDeath, IKillable
 
     private void FixedUpdate()
     {
+        var prevGrounded = grounded;
         grounded = false;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
@@ -93,6 +95,11 @@ public class SlimeController : MonoBehaviour, IDamagable, IOnDeath, IKillable
             {
                 grounded = true;
             }
+        }
+
+        if (prevGrounded == false && grounded == true)
+        {
+            audioManager.PlaySound(1);
         }
     }
 
@@ -141,6 +148,7 @@ public class SlimeController : MonoBehaviour, IDamagable, IOnDeath, IKillable
 
         whatSide = whatSide == 0 ? 1 : -1;
 
+        audioManager.PlaySound(0);
         _rigidbody2D.AddForce(
             Vector2.up * jumpValue + Vector2.right * whatSide * Random.Range(jumpSideValueMin, jumpSideValueMax),
             ForceMode2D.Impulse);

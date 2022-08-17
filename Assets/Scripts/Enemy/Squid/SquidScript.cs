@@ -51,6 +51,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
 
     [Header("Damage")]
     public GameObject DemageActivate;
+    [SerializeField] bool Attacking;
 
     [Header("Items")]
     [SerializeField] private Item deadEnemyItem;
@@ -108,16 +109,18 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetector.position, Vector2.down, 2f, ground);
         RaycastHit2D wallInfo = Physics2D.Raycast(transform.position, transform.right, 0.5f * transform.localScale.x, ground);
         Debug.DrawRay(transform.position, transform.right, Color.red);
+
+        if (wallInfo.collider != null && Attacking)
+        {
+            Debug.Log("Sound");
+            audioManager.PlaySound(0);
+        }
+
         if (wallInfo.collider != null || groundInfo.collider == false)
         {
             transform.right *= -1;
         }
         rb.velocity = new Vector2(transform.right.x, rb.velocity.y) * speed;
-
-        if (wallInfo.collider != null)
-        {
-            audioManager.PlaySound(0);
-        }
     }
 
     private void OnDrawGizmos()
@@ -135,6 +138,8 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
     }
     public void Damaged(int attackDemage, Vector3 knockbackDir)
     {
+        Debug.Log("Thread");
+        audioManager.PlaySound(1);
         state = SquidStates.Knockback;
         HP -= attackDemage;
         if (HP <= 0)
@@ -167,16 +172,16 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject closestPlayer;
-        closestPlayer = players[0]; 
+        closestPlayer = players[0];
         foreach (GameObject player in players)
         {
-            if (Vector3.Distance(transform.position, player.transform.position)< Vector3.Distance(transform.position, closestPlayer.transform.position))
+            if (Vector3.Distance(transform.position, player.transform.position) < Vector3.Distance(transform.position, closestPlayer.transform.position))
             {
                 closestPlayer = player;
             }
         }
         //otocenie
-        if (transform.position.x > closestPlayer.transform.position.x )
+        if (transform.position.x > closestPlayer.transform.position.x)
         {
             if (transform.localEulerAngles.y > 1)
             {
@@ -193,11 +198,15 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
         float startSpeed = speed;
         float startANimSpeed = anim.speed;
         speed = SpeedUp;
-        anim.speed *= 2;
+        //anim.speed *= 2;
         yield return new WaitForSeconds(0.2f);
         DemageActivate.SetActive(true);
+        Attacking = true;
+        anim.SetBool("Attacking", true);
         yield return new WaitForSeconds(SpeedUpTime);
         DemageActivate.SetActive(false);
+        Attacking = false;
+        anim.SetBool("Attacking", false);
         anim.speed = startANimSpeed;
         
         speed = startSpeed;
