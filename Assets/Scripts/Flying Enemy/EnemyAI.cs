@@ -176,9 +176,10 @@ namespace Flying_Enemy
                 _enemyStates = EnemyStates.FollowPlayer;
                 return;
             }
+            
+            _animator.SetTrigger("Attack");
  
-
-            Fire();
+            
             StartCoroutine(Reload());
             _enemyStates = EnemyStates.Reload;
         }
@@ -205,7 +206,7 @@ namespace Flying_Enemy
                 
         }
 
-        private void Fire()
+        public void Fire()
         {
             float angleStep = 360f / numberOfBullets;
             float angle = 0f;
@@ -293,6 +294,8 @@ namespace Flying_Enemy
 
         public void Kill()
         {
+            Destroy(gameObject);
+            return;
             Death();
         }
 

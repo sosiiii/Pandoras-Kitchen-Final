@@ -18,7 +18,9 @@ namespace Intereaction
 
         [SerializeField] private bool animate = false;
 
-        private float animDuration;
+        private float animDuratio = 1f;
+
+        private Vector3 animPos;
 
         private void Awake()
         {
@@ -28,15 +30,16 @@ namespace Intereaction
             
             _frameHolder.SetActive(false);
             _itemImage.sprite = null;
+
+            animPos = transform.position + Vector3.up * 1f;
         }
 
-        private void Update()
+        private void Start()
         {
             if(!animate) return;
-            transform.DOMove(Vector3.one, animDuration, false).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
-            //Twee
+            
+            transform.DOMove(animPos, animDuratio, false).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
         }
-
         public void AddItem(Item itemObject)
         {
             ItemData = itemObject;

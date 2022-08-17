@@ -466,6 +466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OutputSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 6172393586112021279, guid: ea53be71ae7494405b34719239654cd1, type: 3}
+      propertyPath: animate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea53be71ae7494405b34719239654cd1, type: 3}
 --- !u!224 &9000259581492674473 stripped

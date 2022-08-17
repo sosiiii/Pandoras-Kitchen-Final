@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 6927058015612289744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1599998, y: -2.2, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 6927058014103591831}
   - {fileID: 6927058014834637023}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  audioManager: {fileID: 5434517337169560384}
+  audioManager: {fileID: 0}
 --- !u!114 &6927058015612289735
 MonoBehaviour:
   m_ObjectHideFlags: 0

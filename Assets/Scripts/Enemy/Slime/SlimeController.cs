@@ -204,6 +204,8 @@ public class SlimeController : MonoBehaviour, IDamagable, IOnDeath, IKillable
     public Action DeathAction { get; set; }
     public void Kill()
     {
+        Destroy(gameObject);
+        return;
         HP -= 1000;
         Death();
     }

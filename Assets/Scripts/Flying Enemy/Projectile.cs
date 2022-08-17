@@ -19,6 +19,8 @@ public class Projectile : MonoBehaviour
     public void Init(Vector2 direction)
     {
         _rigidbody2D.velocity = direction * speed;
+
+        transform.right = direction;
     }
 
     private void Start()

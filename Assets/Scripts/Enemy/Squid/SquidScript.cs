@@ -232,6 +232,8 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
     public Action DeathAction { get; set; }
     public void Kill()
     {
+        Destroy(gameObject);
+        return;
         Death();
     }
 }
