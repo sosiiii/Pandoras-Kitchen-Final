@@ -198,15 +198,14 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
         float startSpeed = speed;
         float startANimSpeed = anim.speed;
         speed = SpeedUp;
-        //anim.speed *= 2;
         yield return new WaitForSeconds(0.2f);
         DemageActivate.SetActive(true);
         Attacking = true;
         anim.SetBool("Attacking", true);
         yield return new WaitForSeconds(SpeedUpTime);
         DemageActivate.SetActive(false);
-        Attacking = false;
         anim.SetBool("Attacking", false);
+        Attacking = false;
         anim.speed = startANimSpeed;
         
         speed = startSpeed;
