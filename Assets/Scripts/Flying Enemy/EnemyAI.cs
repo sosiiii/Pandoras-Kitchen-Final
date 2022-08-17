@@ -294,6 +294,7 @@ namespace Flying_Enemy
 
         public void Kill()
         {
+            DeathAction?.Invoke();
             Destroy(gameObject);
             return;
             Death();
