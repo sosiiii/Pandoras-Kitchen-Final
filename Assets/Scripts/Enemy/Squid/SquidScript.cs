@@ -196,7 +196,6 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
             }
         }
         float startSpeed = speed;
-        float startANimSpeed = anim.speed;
         speed = SpeedUp;
         yield return new WaitForSeconds(0.2f);
         DemageActivate.SetActive(true);
@@ -205,9 +204,7 @@ public class SquidScript : MonoBehaviour, IDamagable, IOnDeath, IKillable
         yield return new WaitForSeconds(SpeedUpTime);
         DemageActivate.SetActive(false);
         anim.SetBool("Attacking", false);
-        Attacking = false;
-        anim.speed = startANimSpeed;
-        
+        Attacking = false;        
         speed = startSpeed;
     }
     IEnumerator ColorHit()
