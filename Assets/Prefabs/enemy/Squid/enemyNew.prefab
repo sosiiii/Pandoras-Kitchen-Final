@@ -379,7 +379,7 @@ SpriteRenderer:
   m_SortingLayerID: -1360489053
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: dcfe8b3487cd9cf4b8638b76007b7463, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f8729b64bd29aa49944e77ec348584d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -403,7 +403,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06193778, y: 0.021144047}
+  m_Offset: {x: 0.0123637915, y: 0.019844592}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -414,7 +414,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85521406, y: 0.7156286}
+  m_Size: {x: 0.8514036, y: 0.7182275}
   m_EdgeRadius: 0
 --- !u!50 &6982275024262290077
 Rigidbody2D:
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c737bd12dbf854a99d5899639f5a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2
+  HP: 20
   speed: 1
   attackDamage: 0
   SpeedUp: 2.5
