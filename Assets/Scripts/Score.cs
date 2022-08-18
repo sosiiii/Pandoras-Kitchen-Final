@@ -8,7 +8,8 @@ public class Score : MonoBehaviour
 {
     [Header("Game")]
     public int score;
-    [SerializeField] int scoreToAddRemove;
+    [SerializeField] int scoreToAdd;
+    [SerializeField] int scoreToRemove;
     [SerializeField] private TextMeshProUGUI scoreText;
 
     [SerializeField] private int oneStarScore;
@@ -31,13 +32,13 @@ public class Score : MonoBehaviour
     //Increase score when order is finished
     public void IncreaseScore()
     {
-        score += scoreToAddRemove;
+        score += scoreToAdd;
     }
 
     //Decrease score when order is failed
     public void DecreaseScore()
     {
-        score -= scoreToAddRemove;
+        score -= scoreToRemove;
 
         if (score <= 0)
         {
