@@ -116,7 +116,7 @@ public class PlayerInteraction : MonoBehaviour
             
             var colliderPos = collider.transform.position;
             
-            Gizmos.DrawLine(_interactionPoint, colliderPos);
+            Gizmos.DrawLine(_interactionPoint, colliderPos); 
         }
         return;
         Gizmos.color = Color.black;

@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 6982275024262290051}
   - component: {fileID: 2033165921}
   m_Layer: 8
-  m_Name: enemyNew
+  m_Name: Squid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
