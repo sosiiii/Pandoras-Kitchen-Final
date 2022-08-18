@@ -16,11 +16,6 @@ public class CookingProcessUI : MonoBehaviour
         stepIndex = 0;
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void NewStep()
     {
         if (stepIndex >= cookingSteps.Count - 1) { SceneManager.LoadScene("TUTORIAL"); return;  }

@@ -463,7 +463,7 @@ MonoBehaviour:
   player: {fileID: 6927058015612289758}
   anim: {fileID: 2428626349130356478}
   attackPoint: {fileID: 6927058014834637023}
-  attackRange: 0.3
+  attackRange: 0.6
   attackDamage: 1
   enemyLayer:
     serializedVersion: 2
