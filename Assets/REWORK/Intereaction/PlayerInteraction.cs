@@ -118,7 +118,7 @@ public class PlayerInteraction : MonoBehaviour
             
             Gizmos.DrawLine(_interactionPoint, colliderPos);
         }
-        
+        return;
         Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(InventorySlot.Position, 0.2f);
     }
