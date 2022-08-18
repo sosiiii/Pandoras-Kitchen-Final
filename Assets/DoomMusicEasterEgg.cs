@@ -7,7 +7,7 @@ public class DoomMusicEasterEgg : MonoBehaviour
 {
     [SerializeField] AudioClip doomSound;
     [SerializeField] bool shouldWork = true;
-
+    [SerializeField] GameObject RED;
 
     public void EasterEgg(InputAction.CallbackContext context)
     {
@@ -15,6 +15,8 @@ public class DoomMusicEasterEgg : MonoBehaviour
         {
             GetComponent<AudioSource>().clip = doomSound;
             GetComponent<AudioSource>().Play();
+            //RED.SetActive(true);
+            
         }
     }
 }
