@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DoomMusicEasterEgg : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] AudioClip doomSound;
+    [SerializeField] bool shouldWork = true;
+    [SerializeField] GameObject RED;
 
-    // Update is called once per frame
-    void Update()
+    public void EasterEgg(InputAction.CallbackContext context)
     {
-        
+        if (context.performed && shouldWork)
+        {
+            GetComponent<AudioSource>().clip = doomSound;
+            GetComponent<AudioSource>().Play();
+            //RED.SetActive(true);
+            
+        }
     }
 }
