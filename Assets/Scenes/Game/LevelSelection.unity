@@ -22199,6 +22199,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8597122627708220585, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+      propertyPath: levelName
+      value: Level1Woska
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597122627708220585, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: doorOpenSprite
       value: 
       objectReference: {fileID: 21300000, guid: b8eb7cc57e15d8c4f9ba15b7ae3e0af4, type: 3}

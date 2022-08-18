@@ -1174,7 +1174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  scoreToAddRemove: 30
+  scoreToAdd: 0
+  scoreToRemove: 0
   scoreText: {fileID: 4953647965386448023}
   oneStarScore: 30
   twoStarsScore: 60
@@ -4891,6 +4892,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4953647964587034993}
     m_Modifications:
+    - target: {fileID: 3896682706125339355, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 313.369
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896682706125339355, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 106.675
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896682706125339355, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 477.17502
+      objectReference: {fileID: 0}
     - target: {fileID: 3896682707132255138, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
       propertyPath: m_Name
       value: ZeusUI

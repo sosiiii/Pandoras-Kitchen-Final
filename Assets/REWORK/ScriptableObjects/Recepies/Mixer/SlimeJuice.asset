@@ -15,4 +15,4 @@ MonoBehaviour:
   <ItemsNeeded>k__BackingField:
   - {fileID: 11400000, guid: e9313de61bdb07b40a155bbc7e73ca89, type: 2}
   <Result>k__BackingField: {fileID: 11400000, guid: 086ed16c470314717b25ea1b9fa758b2, type: 2}
-  <CraftingTime>k__BackingField: 25
+  <CraftingTime>k__BackingField: 40

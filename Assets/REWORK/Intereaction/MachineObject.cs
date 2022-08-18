@@ -36,6 +36,8 @@ public class MachineObject : Interactable
 
     private float maxTime = 0;
     private float currentTime = 0f;
+
+    [SerializeField] private Sprite _slicerSprite;
     
     
     
@@ -46,6 +48,7 @@ public class MachineObject : Interactable
         _animator = GetComponent<Animator>();
 
         SpriteRenderer.sprite = Machine.Sprite;
+        Debug.Log(SpriteRenderer.sprite);
     }
 
     public override void Interact(PlayerInteraction playerInteraction)
@@ -71,6 +74,7 @@ public class MachineObject : Interactable
                 {
                     // Handle input
                     _workProgress--;
+                    StartCoroutine(ChangeSprite());
                 }
                 //If player has full hands and item is valid and has free slots ---> handle
                 else if (!slot.IsFree)
@@ -129,6 +133,13 @@ public class MachineObject : Interactable
         ExitWorking();
     }
 
+    private IEnumerator ChangeSprite()
+    {
+        SpriteRenderer.sprite = _slicerSprite;
+        yield return new WaitForSeconds(0.2f);
+        SpriteRenderer.sprite = Machine.Sprite;
+
+    }
     private IEnumerator MachineMakeWork()
     {
         _workProgress = Machine.CraftingTime;

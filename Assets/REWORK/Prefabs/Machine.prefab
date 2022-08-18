@@ -258,6 +258,7 @@ MonoBehaviour:
   - {fileID: 1004398685847505251}
   - {fileID: 6115392432597637169}
   _progressBar: {fileID: 6156215691051378764}
+  _slicerSprite: {fileID: 21300000, guid: f20b9c26ffc3640c6ad8be674adbce3c, type: 3}
 --- !u!1001 &105414886183623470
 PrefabInstance:
   m_ObjectHideFlags: 0

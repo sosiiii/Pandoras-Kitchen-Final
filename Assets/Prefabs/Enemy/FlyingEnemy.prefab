@@ -139,7 +139,7 @@ MonoBehaviour:
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 192
-  maxHealth: 3
+  maxHealth: 1
   speed: 2
   deadEnemyItem: {fileID: 11400000, guid: c8faaa2ad59fd4c119d465b3881169f3, type: 2}
   itemObjectPrefab: {fileID: 4198291713372462698, guid: de7c61c6c914e4d039e3ab6484c059e9, type: 3}
