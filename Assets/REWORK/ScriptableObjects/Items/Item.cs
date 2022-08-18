@@ -7,6 +7,9 @@ public class Item : ScriptableObject
     [field: SerializeField] public Sprite Sprite { get; private set; }
 
     private string _name => name;
+    
+    [field: SerializeField] public bool IsEnemy { get; private set; }
+
 
 
 
