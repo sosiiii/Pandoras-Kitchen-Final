@@ -61,6 +61,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (!InventorySlot.IsFree)
             {
+                if(Physics2D.OverlapCircle(InventorySlot.Position, 0.2f, LayerMask.GetMask("Ground"))) return;
                 var item = InventorySlot.RemoveItem();
 
                 var itemObject = Instantiate(itemObjectPrefab, InventorySlot.Position, Quaternion.identity);
@@ -88,6 +89,8 @@ public class PlayerInteraction : MonoBehaviour
         
         if (!InventorySlot.IsFree)
         {
+            if(Physics2D.OverlapCircle(InventorySlot.Position, 0.2f, LayerMask.GetMask("Ground"))) return;
+
             var item = InventorySlot.RemoveItem();
 
             var itemObject = Instantiate(itemObjectPrefab, InventorySlot.Position, Quaternion.identity);
@@ -115,5 +118,8 @@ public class PlayerInteraction : MonoBehaviour
             
             Gizmos.DrawLine(_interactionPoint, colliderPos);
         }
+        
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(InventorySlot.Position, 0.2f);
     }
 }
