@@ -102,6 +102,16 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public void DropItem()
+    {
+        if(InventorySlot.IsFree) return;
+        var item = InventorySlot.RemoveItem();
+
+        var itemObject = Instantiate(itemObjectPrefab, InventorySlot.Position, Quaternion.identity);
+                
+        itemObject.Init(item);
+    }
+
 
     private void OnDrawGizmos()
     {
@@ -126,5 +136,10 @@ public class PlayerInteraction : MonoBehaviour
         else
             Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(InventorySlot.Position, 0.2f);
+    }
+
+    private void OnDestroy()
+    {
+        if(_current != null) _current.ToggleHighlight(false);
     }
 }
