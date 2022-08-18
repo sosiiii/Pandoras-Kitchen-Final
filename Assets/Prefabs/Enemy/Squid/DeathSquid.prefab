@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6831201223619431255}
   - component: {fileID: 290248810112218915}
   m_Layer: 13
-  m_Name: DeadSlime
+  m_Name: DeathSquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 707215399
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d36e32964ed7cbb47adb828969cd812c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c7c21c2cba455846bf7379896ed3d64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 2.4}
+    oldSize: {x: 4.2, y: 4.2}
     newSize: {x: 2.1, y: 2.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   <Priority>k__BackingField: 0
   _itemData: {fileID: 11400000, guid: e9313de61bdb07b40a155bbc7e73ca89, type: 2}
   throwForce: 10
+  DespawnTime: 10
 --- !u!50 &290248810112218915
 Rigidbody2D:
   serializedVersion: 4
