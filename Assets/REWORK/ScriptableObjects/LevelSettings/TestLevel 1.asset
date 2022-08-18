@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: TestLevel 1
   m_EditorClassIdentifier: 
   <OrderPool>k__BackingField:
-  - {fileID: 11400000, guid: 560adb463bc194f7aae41fedb4c33248, type: 2}
-  - {fileID: 11400000, guid: 339e5e162cb594d80ab0152bbb22f55d, type: 2}
-  - {fileID: 11400000, guid: 5d9a982836e1647be87518a74ec1a4d3, type: 2}
-  - {fileID: 11400000, guid: 69db43ac1418e4410b0436152b0c185d, type: 2}
+  - {fileID: 11400000, guid: 00acaf65660a14daf89dbeb4219a45c5, type: 2}
+  - {fileID: 11400000, guid: 7eab5377ddb914fd490774149848f383, type: 2}
   <MaxActiveOrders>k__BackingField: 3
