@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[Serializable] 
 [CreateAssetMenu(menuName = "Scriptable Objects/Crafting/Level Settings", fileName = "New Level Settings")]
 public class LevelSettings : ScriptableObject
 {
