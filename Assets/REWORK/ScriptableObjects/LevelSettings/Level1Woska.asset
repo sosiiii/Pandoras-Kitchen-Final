@@ -15,4 +15,4 @@ MonoBehaviour:
   <OrderPool>k__BackingField:
   - {fileID: 11400000, guid: e5174165b417047f9894f16ab7d1b409, type: 2}
   - {fileID: 11400000, guid: 755587886678a4d87b79898d9c722ce7, type: 2}
-  <MaxActiveOrders>k__BackingField: 3
+  <MaxActiveOrders>k__BackingField: 1

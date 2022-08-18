@@ -46,7 +46,8 @@ public class Player : MonoBehaviour, IKillable
 
     private SpriteRenderer _spriteRenderer;
 
-    public AudioManager audioManager;
+    public AudioClip[] playerJumpAudioClips;
+    public AudioClip[] playerLandAudioClips;
 
     private void Start()
     {
@@ -68,7 +69,6 @@ public class Player : MonoBehaviour, IKillable
 
     private void SetAnimation()
     {
-        
         if (!m_Grounded)
         {
             _animator.SetFloat("speed-y", _rigidbody2D.velocity.y);
@@ -91,7 +91,6 @@ public class Player : MonoBehaviour, IKillable
             {
                 m_Grounded = true;
                 break;
-
             }
         }
 
@@ -101,7 +100,7 @@ public class Player : MonoBehaviour, IKillable
 
             _animator.SetTrigger("Landed");
 
-            audioManager.PlaySound(Random.Range(2, 4));
+            AudioSource.PlayClipAtPoint(playerLandAudioClips[Random.Range(0, playerLandAudioClips.Length)], Camera.main.transform.position);
         }
         _animator.SetBool("OnGround", m_Grounded);
 
@@ -128,7 +127,7 @@ public class Player : MonoBehaviour, IKillable
         }
         if(!m_Grounded) return;
 
-        audioManager.PlaySound(Random.Range(0, 2));
+        AudioSource.PlayClipAtPoint(playerJumpAudioClips[Random.Range(0, playerJumpAudioClips.Length)], Camera.main.transform.position);
 
         _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 
