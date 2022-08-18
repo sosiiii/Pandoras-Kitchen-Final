@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Canvas scoreCanvas;
 
     [SerializeField] private Transform respawnPoint;
+    [SerializeField] private Transform respawnPointArrows;
 
     [SerializeField] private GameObject wasdaPlayer;
     [SerializeField] private GameObject arrowsPlayer;
@@ -39,7 +40,7 @@ public class LevelManager : MonoBehaviour
         if(wasda)
             Instantiate(wasdaPlayer, respawnPoint.position, Quaternion.identity);
         else
-            Instantiate(arrowsPlayer, respawnPoint.position, Quaternion.identity);
+            Instantiate(arrowsPlayer, respawnPointArrows.position, Quaternion.identity);
     }
 
     private void OnDisable()
