@@ -40,7 +40,7 @@ namespace woska_scripts
                 {
                     _currentNumberOfActiveOrders++;
                     GenerateRandomOrder();
-                    yield return new WaitForSeconds(3f);
+                    yield return new WaitForSeconds(Random.Range(_levelSettings.MinGenerationTime, _levelSettings.MaxGenerationTime));
                 }
 
                 yield return new WaitUntil(() => CanGenerate);
@@ -60,8 +60,8 @@ namespace woska_scripts
         
         private void OrderFinished()
         {
-            Debug.Log(_currentNumberOfActiveOrders);
             _currentNumberOfActiveOrders--;
+            Debug.Log("Current number of orders: " + _currentNumberOfActiveOrders);
         }
         
         

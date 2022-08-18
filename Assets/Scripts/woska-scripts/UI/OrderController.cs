@@ -82,6 +82,7 @@ public class OrderController : MonoBehaviour
             score.DecreaseScore();
             //AddScore(_penaltyForTurningInBadOrder);
             wrongOrderTurnedIn?.Invoke();
+            return;
         }
         orderRemoved?.Invoke();
 
