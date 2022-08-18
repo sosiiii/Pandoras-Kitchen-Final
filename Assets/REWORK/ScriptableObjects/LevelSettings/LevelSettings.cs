@@ -8,4 +8,7 @@ public class LevelSettings : ScriptableObject
 {
     [field: SerializeField] public List<CraftingRecipe> OrderPool { get; private set; }
     [field: SerializeField] public int MaxActiveOrders { get; private set; }
+
+    [field: SerializeField] public float MinGenerationTime { get; private set; } = 1f;
+    [field: SerializeField] public float MaxGenerationTime { get; private set; } = 5f;
 }

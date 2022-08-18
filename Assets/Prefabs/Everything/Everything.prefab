@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b0488e0006f1648805006003db5205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 0}
+  score: {fileID: 1961552339252983303}
 --- !u!1 &827741796810076019
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,18 +4801,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4953647964587034993}
     m_Modifications:
-    - target: {fileID: 2734807840926683686, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896682706125339354, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896682706125339355, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3896682707132255138, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
       propertyPath: m_Name
       value: ZeusUI
@@ -4900,10 +4888,6 @@ PrefabInstance:
     - target: {fileID: 3896682707132255139, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044729252691287188, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
-      propertyPath: m_Padding.m_Left
-      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72150ff1ff2604027a8d0bbea65abfb5, type: 3}
