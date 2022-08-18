@@ -58,6 +58,8 @@ public class MachineObject : Interactable
                 if(slot.IsFree) return;
                 if(!FreeInputSlot) return;
                 
+                if(Machine.CantProccessEnemies && slot.ItemData.IsEnemy) return;
+                
                 InsertToSlot(slot.RemoveItem());
                 
                 State = MachineStates.Working;
@@ -74,6 +76,8 @@ public class MachineObject : Interactable
                 else if (!slot.IsFree)
                 {
                     if(!FreeInputSlot) return;
+                    if(Machine.CantProccessEnemies && slot.ItemData.IsEnemy) return;
+
                     InsertToSlot(slot.RemoveItem());
                     //Increase time
                     maxTime += Machine.CraftingTime;

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d3c85085a84bc9b05d2cd9ab4759d8, type: 3}
   m_Name: DeadSquid
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 1c7c21c2cba455846bf7379896ed3d64, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: dcfe8b3487cd9cf4b8638b76007b7463, type: 3}
+  <IsEnemy>k__BackingField: 1
