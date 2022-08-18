@@ -1,5 +1,5 @@
 {
-    "name": "ProfiControls",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Gameplay",
@@ -219,7 +219,7 @@
                 {
                     "name": "",
                     "id": "ade0e136-9676-4699-bb5d-436d486b6b28",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/comma",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -230,7 +230,7 @@
                 {
                     "name": "",
                     "id": "2b705605-c34d-4b66-a7f2-ae22297c90e0",
-                    "path": "<Keyboard>/rightCtrl",
+                    "path": "<Keyboard>/period",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
