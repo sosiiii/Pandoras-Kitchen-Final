@@ -279,7 +279,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 8322971191178876770, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e4165593286e4212ba688376f19d34d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -307,7 +307,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.27, y: 1.43}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -351,8 +351,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: TutorialUI
   isAlwaysOpen: 1
+<<<<<<< Updated upstream
   doorOpenSprite: {fileID: 21300000, guid: b8eb7cc57e15d8c4f9ba15b7ae3e0af4, type: 3}
   doorCloseSprite: {fileID: -8425966301496999361, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
+=======
+  doorOpenSprite: {fileID: 21300000, guid: 5e4165593286e4212ba688376f19d34d, type: 3}
+  doorCloseSprite: {fileID: 21300000, guid: 9c5bd1ff79bc443b08c0473a499d102c, type: 3}
+>>>>>>> Stashed changes
 --- !u!114 &8597122627708220584
 MonoBehaviour:
   m_ObjectHideFlags: 0
