@@ -582,10 +582,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Generator
       objectReference: {fileID: 0}
-    - target: {fileID: 7578992429210818916, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7578992429210818918, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -629,22 +625,6 @@ PrefabInstance:
     - target: {fileID: 7578992429210818918, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578992429210818919, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
-      propertyPath: maxEnemies
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578992429210818919, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
-      propertyPath: enemyPrefab
-      value: 
-      objectReference: {fileID: 2637934778493240760, guid: 2bd68ff06549a45179f12ea3b7a14ac7, type: 3}
-    - target: {fileID: 7578992429210818919, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
-      propertyPath: maxSpawnTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578992429210818919, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
-      propertyPath: minSpawnTime
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
@@ -4356,6 +4336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: scoreToAdd
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4953647966416453236, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
