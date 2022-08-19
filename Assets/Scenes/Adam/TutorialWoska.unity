@@ -480,7 +480,7 @@ PrefabInstance:
     - target: {fileID: 4372001239410432689, guid: 9a08ead59ea8f4100bf3df0708414dab, type: 3}
       propertyPath: _levelSettings
       value: 
-      objectReference: {fileID: 11400000, guid: 4437c16a5c7c34d51b332db47935d099, type: 2}
+      objectReference: {fileID: 11400000, guid: dde74aa83edc14ff8a5a70ce19aeffea, type: 2}
     - target: {fileID: 4372001239410432692, guid: 9a08ead59ea8f4100bf3df0708414dab, type: 3}
       propertyPath: m_RootOrder
       value: 6

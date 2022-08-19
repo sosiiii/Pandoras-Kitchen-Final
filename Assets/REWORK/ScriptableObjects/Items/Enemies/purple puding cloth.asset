@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d3c85085a84bc9b05d2cd9ab4759d8, type: 3}
-  m_Name: 4.
+  m_Name: purple puding cloth
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 47833bb1b8392411195ba30f0d2b9858, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: fddd03ca9fad9496ca1f5c986a1a3c4a, type: 3}
   <IsEnemy>k__BackingField: 0

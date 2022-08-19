@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <OrderPool>k__BackingField:
   - {fileID: 11400000, guid: 7eab5377ddb914fd490774149848f383, type: 2}
-  <MaxActiveOrders>k__BackingField: 1
+  <MaxActiveOrders>k__BackingField: 10
+  <MinGenerationTime>k__BackingField: 1
+  <MaxGenerationTime>k__BackingField: 5

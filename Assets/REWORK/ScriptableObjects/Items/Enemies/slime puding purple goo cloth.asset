@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d3c85085a84bc9b05d2cd9ab4759d8, type: 3}
-  m_Name: 7.
+  m_Name: slime puding purple goo cloth
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 6a69d59a2b68b49be83ae0999bf1cb68, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 1b300896c4a034db285fa71492784a13, type: 3}
   <IsEnemy>k__BackingField: 0

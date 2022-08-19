@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d3c85085a84bc9b05d2cd9ab4759d8, type: 3}
-  m_Name: 3.
+  m_Name: slime juice purple goo
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: fb1f07b6e81f3446ca2456b3370d1f9f, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: a7b5e3eafe0424eb18d41442fdad6b53, type: 3}
   <IsEnemy>k__BackingField: 0

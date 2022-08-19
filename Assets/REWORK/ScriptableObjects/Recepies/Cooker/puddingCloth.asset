@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19286c1874544029830f3da7b1bbdc11, type: 3}
-  m_Name: EnemyFromGoo 1
+  m_Name: puddingCloth
   m_EditorClassIdentifier: 
   <ItemsNeeded>k__BackingField:
-  - {fileID: 11400000, guid: 79ba662e0ccbb42329d53e10c2a49331, type: 2}
-  - {fileID: 11400000, guid: 79ba662e0ccbb42329d53e10c2a49331, type: 2}
-  - {fileID: 11400000, guid: 79ba662e0ccbb42329d53e10c2a49331, type: 2}
-  <Result>k__BackingField: {fileID: 11400000, guid: e4a9fdd1fd28040bea6d4b8f9ac9c331, type: 2}
-  <CraftingTime>k__BackingField: 75
-  <ScoreForOrder>k__BackingField: 20
+  - {fileID: 11400000, guid: 47fa481b7222d41a9ba3d1e05780f4bc, type: 2}
+  - {fileID: 11400000, guid: f3c9a5e5b2f6d40aab7e547544f05ff9, type: 2}
+  <Result>k__BackingField: {fileID: 11400000, guid: 54d0496c69fac4350bf945b2977d777f, type: 2}
+  <CraftingTime>k__BackingField: 5
+  <ScoreForOrder>k__BackingField: 40

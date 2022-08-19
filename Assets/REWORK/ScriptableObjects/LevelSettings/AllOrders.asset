@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55cf15fcdad44dd866c0825ec29173f, type: 3}
-  m_Name: Cooker
+  m_Script: {fileID: 11500000, guid: be6997981bd9f410c86c25ae8672c9fb, type: 3}
+  m_Name: AllOrders
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 9530228fb34c54a3a852cdcd0109612d, type: 3}
-  <Type>k__BackingField: 0
-  <CraftingTime>k__BackingField: 15
-  <MaxRecipeLength>k__BackingField: 3
-  <CraftingRecipes>k__BackingField:
+  <OrderPool>k__BackingField:
   - {fileID: 11400000, guid: cac2a837c10974d4b9a043e9589cfedc, type: 2}
   - {fileID: 11400000, guid: c5f7c3a2f54a7409ea585e06a361c249, type: 2}
   - {fileID: 11400000, guid: abe4dfdbde41e45fc84a46ac7eaf3b7b, type: 2}
@@ -27,5 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00d7a32cfa829425290ec35d1fd6901d, type: 2}
   - {fileID: 11400000, guid: f4f7d6199b2aa40f89fd61711a4bcb44, type: 2}
   - {fileID: 11400000, guid: 876537ece2bab46c2a0355ca68cb3cc9, type: 2}
-  <CantProccessEnemies>k__BackingField: 1
-  <Trash>k__BackingField: {fileID: 11400000, guid: 128f2c2a368a74138a3feb8c494e3337, type: 2}
+  <MaxActiveOrders>k__BackingField: 1
+  <MinGenerationTime>k__BackingField: 1
+  <MaxGenerationTime>k__BackingField: 5
