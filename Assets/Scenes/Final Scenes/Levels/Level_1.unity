@@ -4877,6 +4877,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119401871253588081, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080103802}
+    - target: {fileID: 7119401871253588081, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenuScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119401871554717851, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080103802}
+    - target: {fileID: 7119401871554717851, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevelSelectionScene
+      objectReference: {fileID: 0}
     - target: {fileID: 7119401871561865254, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.77
@@ -4884,6 +4900,14 @@ PrefabInstance:
     - target: {fileID: 7119401871561865254, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119401872774532221, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080103802}
+    - target: {fileID: 7119401872774532221, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartScene
       objectReference: {fileID: 0}
     - target: {fileID: 7537833805031948325, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4893,12 +4917,47 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.14
       objectReference: {fileID: 0}
+    - target: {fileID: 7625410756795027218, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080103802}
+    - target: {fileID: 7625410756795027218, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625410756840724876, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080103802}
+    - target: {fileID: 7625410756840724876, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevelSelectionScene
+      objectReference: {fileID: 0}
     - target: {fileID: 7625410758155852855, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7625410758168215188, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080103802}
+    - target: {fileID: 7625410758168215188, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenuScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+--- !u!114 &2080103802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7479259291056865313, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+  m_PrefabInstance: {fileID: 2080103801}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5314252ff49c2b74a839bcb95fd3caf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2132156513
 GameObject:
   m_ObjectHideFlags: 0
