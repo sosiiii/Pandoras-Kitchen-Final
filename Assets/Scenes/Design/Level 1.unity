@@ -9979,7 +9979,7 @@ MonoBehaviour:
     m_ActionId: 83c861e0-080f-4f85-8724-c5a7a3baa83f
     m_ActionName: Gameplay/New action
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -9997,8 +9997,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doomSound: {fileID: 8300000, guid: ec9bb0f2cbde52249a4a5649040dba72, type: 3}
   shouldWork: 1
-  RED: {fileID: 0}
-  timer: 9
+  RED: {fileID: 1246493524}
+  timer: 9.7
 --- !u!4 &2106202723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5628766329388478817, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
