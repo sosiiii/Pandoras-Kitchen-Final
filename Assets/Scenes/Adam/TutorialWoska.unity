@@ -4052,6 +4052,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: scoreToAdd
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: scoreToRemove
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4953647966416453236, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CookingProcessUI : MonoBehaviour
 {
     [SerializeField] List<GameObject> cookingSteps = new List<GameObject>();
-    public int stepIndex = 0;
+    private int stepIndex = 0;
 
     [SerializeField] GameObject controlsUI;
     [SerializeField] GameObject cookingUI;
@@ -18,7 +18,7 @@ public class CookingProcessUI : MonoBehaviour
 
     public void NewStep()
     {
-        if (stepIndex >= cookingSteps.Count - 1) { SceneManager.LoadScene("TUTORIAL"); return;  }
+        if (stepIndex >= cookingSteps.Count - 1) { SceneManager.LoadScene("TutorialWoska"); return;  }
 
         stepIndex++;
         cookingSteps[stepIndex].SetActive(true);

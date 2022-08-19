@@ -53,6 +53,7 @@ public class OrderController : MonoBehaviour
     private void OrderTurnIn(Item item)
     {
         var foundMatchingOrder = false;
+        CraftingRecipe orderGoal = null;
         foreach (var uiOrder in _activeOrders)
         {
 
@@ -64,6 +65,7 @@ public class OrderController : MonoBehaviour
                 uiOrder.OrderWasTurnedIn();
                 
                 _activeOrders.Remove(uiOrder);
+                orderGoal = uiOrder.Order;
                 break;
             }
 
@@ -72,7 +74,8 @@ public class OrderController : MonoBehaviour
         if (foundMatchingOrder)
         {
             //Score up
-            score.IncreaseScore();
+            var scoreForOrder = orderGoal.ScoreForOrder;
+            score.IncreaseScore(scoreForOrder);
             //AddScore(scoreForCompletedOrder);
             orderFinished?.Invoke();
         }
