@@ -27,6 +27,7 @@ public class DoomMusicEasterEgg : MonoBehaviour
             REEED = true;
             myAudio.clip = doomSound;
             myAudio.Play();
+            Time.timeScale = 2;
         }
     }
 
