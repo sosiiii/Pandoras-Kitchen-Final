@@ -18,7 +18,7 @@ public class CookingProcessUI : MonoBehaviour
 
     public void NewStep()
     {
-        if (stepIndex >= cookingSteps.Count - 1) { SceneManager.LoadScene("TutorialWoska"); return;  }
+        if (stepIndex >= cookingSteps.Count - 1) { SceneManager.LoadScene("Tutorial"); return;  }
 
         stepIndex++;
         cookingSteps[stepIndex].SetActive(true);

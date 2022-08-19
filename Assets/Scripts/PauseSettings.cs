@@ -20,7 +20,6 @@ public class PauseSettings : MonoBehaviour
 
     private void Update()
     {
-        Time.timeScale = timeScale;
         if (!Keyboard.current.escapeKey.wasPressedThisFrame) return;
 
         if (isGamePaused)
@@ -53,8 +52,7 @@ public class PauseSettings : MonoBehaviour
 
     public void Unpause()
     {
-        Time.timeScale = timeScale;
-        Debug.Log(Time.timeScale);
+        Time.timeScale = 1f;
         isGamePaused = false;
         AudioListener.pause = false;
 
