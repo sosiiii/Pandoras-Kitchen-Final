@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PauseSettings : MonoBehaviour
 {
     [SerializeField] private Canvas pauseCanvas;
+    [SerializeField] private float timeScale = 0.8f;
     private bool isGamePaused;
 
     private void Awake()
@@ -19,6 +20,7 @@ public class PauseSettings : MonoBehaviour
 
     private void Update()
     {
+        Time.timeScale = timeScale;
         if (!Keyboard.current.escapeKey.wasPressedThisFrame) return;
 
         if (isGamePaused)
@@ -51,7 +53,8 @@ public class PauseSettings : MonoBehaviour
 
     public void Unpause()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = timeScale;
+        Debug.Log(Time.timeScale);
         isGamePaused = false;
         AudioListener.pause = false;
 
