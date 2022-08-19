@@ -153,7 +153,8 @@ public class Player : MonoBehaviour, IKillable
     {
         _spriteRenderer.color = Color.white;
         _rigidbody2D.velocity = Vector2.zero;
-        GetComponent<PlayerInteraction>().InventorySlot.RemoveItem();
+        
+        GetComponent<PlayerInteraction>().DropItem();
         GetComponent<PlayerCombat>().attacking = false;
         HP = maxHP;
         playerDeath?.Invoke(gameObject, wasda);

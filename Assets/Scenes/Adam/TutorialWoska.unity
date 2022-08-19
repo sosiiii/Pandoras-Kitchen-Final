@@ -396,6 +396,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3286754101213316652, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3891dc2f338434304b0a41ba3767ed33, type: 3}
     - target: {fileID: 7578992429210818916, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
       propertyPath: m_Name
       value: Enemy Generator
@@ -410,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578992429210818918, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.39
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 7578992429210818918, guid: 8921e7b3a64044b0285bc7097c85c80a, type: 3}
       propertyPath: m_LocalPosition.z

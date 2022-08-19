@@ -146,7 +146,7 @@ MonoBehaviour:
   patrolDistance: 3
   projectilePrefab: {fileID: 2126362253614887396, guid: 6ef0dd23b5ff7455a93e000cb920b78c, type: 3}
   numberOfBullets: 8
-  reloadWaitTime: 2
+  reloadWaitTime: 4
 --- !u!58 &789311087
 CircleCollider2D:
   m_ObjectHideFlags: 0
