@@ -12,6 +12,11 @@ public class CraftingRecipe : ScriptableObject
     
     [field: SerializeField] public int CraftingTime { get; private set; }
     
+    [field: SerializeField] public int ScoreForOrder { get; private set; }
+
+    
+    
+    
     
 
     public bool CanCraft(List<Item> availableItems)

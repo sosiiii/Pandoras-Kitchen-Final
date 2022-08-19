@@ -18,10 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/LevelSelection.unity
     guid: 1529ac58149e9da46a2a84fac0814364
   - enabled: 1
-    path: Assets/Scenes/Game/Levels/Tutorial/TutorialUI.unity
+    path: Assets/Scenes/Game/Tutorial/TutorialUI.unity
     guid: 8515369ce87cae74eaf787185e49800e
   - enabled: 1
-    path: Assets/Scenes/Game/Levels/Tutorial/TUTORIAL.unity
+    path: Assets/Scenes/Adam/TutorialWoska.unity
+    guid: 0bf28c8061ca84098b0b662eb5f4a621
+  - enabled: 1
+    path: Assets/Scenes/Game/Tutorial/TUTORIAL.unity
     guid: 045330c3517a64f9db839282e83e1d8b
   - enabled: 1
     path: Assets/Scenes/Game/Levels/Level_1.unity

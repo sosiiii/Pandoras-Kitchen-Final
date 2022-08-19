@@ -6460,7 +6460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8460696452196551114, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
       propertyPath: strength
-      value: 35
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 8647589137521560060, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
       propertyPath: m_RootOrder
