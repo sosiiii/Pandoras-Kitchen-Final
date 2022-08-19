@@ -76,8 +76,6 @@ public class DoorToLevel : MonoBehaviour
         Vector3 finalPos = transform.position - new Vector3(0.25f, 0, 0);
         finalPos.z = -10;
 
-
-
         while (Vector2.Distance(finalPos, Camera.main.transform.position) > 1 || Camera.main.orthographicSize > 0.1f)
         {
             Camera.main.transform.position = Vector3.Lerp(startPos, finalPos, time*30);

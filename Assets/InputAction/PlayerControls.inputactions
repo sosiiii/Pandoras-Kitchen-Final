@@ -102,7 +102,7 @@
                 {
                     "name": "",
                     "id": "aa9ee9ad-07f9-416d-ab35-b5bdae86dfcc",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -113,7 +113,7 @@
                 {
                     "name": "",
                     "id": "300bad6c-101b-41ff-ba21-0c3cd59bef42",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/g",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
@@ -124,7 +124,7 @@
                 {
                     "name": "",
                     "id": "8d3723e2-71b4-4684-96e5-af73e57456ec",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -260,7 +260,7 @@
                 {
                     "name": "",
                     "id": "5b323ec7-6c99-4ba3-a6eb-9e14a1e6a8e5",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/comma",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7207b09f2b4e68e4bb461b0338627aee, type: 2}
   m_sharedMaterial: {fileID: 9153090091651950005, guid: 7207b09f2b4e68e4bb461b0338627aee, type: 2}
@@ -156,8 +156,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.4
-  m_fontSizeBase: 4.4
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -349,9 +349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df976c5828ff4d4dba105616cd8a201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level_1
+  levelName: TutorialUI
   isAlwaysOpen: 1
-  doorOpenSprite: {fileID: 8322971191178876770, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
+  doorOpenSprite: {fileID: 21300000, guid: b8eb7cc57e15d8c4f9ba15b7ae3e0af4, type: 3}
   doorCloseSprite: {fileID: -8425966301496999361, guid: f0e96175de0de47478d23782871e1d0a, type: 3}
 --- !u!114 &8597122627708220584
 MonoBehaviour:
@@ -442,6 +442,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 135d709f-133d-4b07-9c84-476b18a9e285
     m_ActionName: Gameplay1/OpenDoor[/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 83c861e0-080f-4f85-8724-c5a7a3baa83f
+    m_ActionName: Gameplay/Doom[/Keyboard/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
