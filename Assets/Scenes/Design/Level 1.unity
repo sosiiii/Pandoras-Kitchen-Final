@@ -399,6 +399,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058015612289758, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9
       objectReference: {fileID: 0}
@@ -668,6 +676,14 @@ PrefabInstance:
     - target: {fileID: 5628766329388478817, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628766329388478817, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628766329388478817, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5628766329388478817, guid: a7023fcaeab071f4795b281ec4810d03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1252,6 +1268,10 @@ PrefabInstance:
     - target: {fileID: 2471793830955122724, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
       propertyPath: m_Name
       value: SpringBoardLengthOf2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460696452196551114, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
+      propertyPath: strength
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8647589137521560060, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
       propertyPath: m_RootOrder
@@ -6688,6 +6708,10 @@ PrefabInstance:
     - target: {fileID: 2471793830955122724, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
       propertyPath: m_Name
       value: SpringBoardLengthOf2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460696452196551114, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
+      propertyPath: strength
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8647589137521560060, guid: 90f78e4a7d6d645928dcea79cd6daa27, type: 3}
       propertyPath: m_RootOrder
