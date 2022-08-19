@@ -16,3 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00acaf65660a14daf89dbeb4219a45c5, type: 2}
   - {fileID: 11400000, guid: 7eab5377ddb914fd490774149848f383, type: 2}
   <MaxActiveOrders>k__BackingField: 3
+  <MinGenerationTime>k__BackingField: 4
+  <MaxGenerationTime>k__BackingField: 6

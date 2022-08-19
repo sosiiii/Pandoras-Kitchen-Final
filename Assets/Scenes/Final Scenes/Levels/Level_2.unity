@@ -8940,8 +8940,20 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: oneStarScore
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: scoreToRemove
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: twoStarsScore
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961552339252983303, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: threeStarsScore
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4953647964587034997, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_IsActive
@@ -9034,6 +9046,10 @@ PrefabInstance:
     - target: {fileID: 7119401871561865254, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119401871992756043, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
+      propertyPath: timeValue
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7119401872774532221, guid: 2a8aef64fb24e6944a6c4f84e51e436d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

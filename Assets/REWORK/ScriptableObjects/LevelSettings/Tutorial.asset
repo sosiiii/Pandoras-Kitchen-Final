@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be6997981bd9f410c86c25ae8672c9fb, type: 3}
-  m_Name: Level1Woska
+  m_Name: Tutorial
   m_EditorClassIdentifier: 
   <OrderPool>k__BackingField:
   - {fileID: 11400000, guid: e5174165b417047f9894f16ab7d1b409, type: 2}
   - {fileID: 11400000, guid: 755587886678a4d87b79898d9c722ce7, type: 2}
-  <MaxActiveOrders>k__BackingField: 1
+  - {fileID: 11400000, guid: f4f7d6199b2aa40f89fd61711a4bcb44, type: 2}
+  <MaxActiveOrders>k__BackingField: 3
+  <MinGenerationTime>k__BackingField: 4
+  <MaxGenerationTime>k__BackingField: 6
