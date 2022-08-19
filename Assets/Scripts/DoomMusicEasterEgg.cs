@@ -27,7 +27,6 @@ public class DoomMusicEasterEgg : MonoBehaviour
             REEED = true;
             myAudio.clip = doomSound;
             myAudio.Play();
-            Time.timeScale = 2;
         }
     }
 
@@ -42,6 +41,7 @@ public class DoomMusicEasterEgg : MonoBehaviour
         {
             RED.gameObject.SetActive(true);
             RED.color = new Color(255, 0, 0, Random.Range(0, 0.5f));
+            Time.timeScale = 2;
         }
 
     }
