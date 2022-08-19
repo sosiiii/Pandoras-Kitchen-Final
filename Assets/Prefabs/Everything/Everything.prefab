@@ -1251,7 +1251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreToRemove: 15
->>>>>>> Stashed changes
   scoreText: {fileID: 4953647965386448023}
   oneStarScore: 30
   twoStarsScore: 60
