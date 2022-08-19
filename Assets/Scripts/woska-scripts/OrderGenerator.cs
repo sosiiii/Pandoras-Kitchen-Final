@@ -10,7 +10,7 @@ namespace woska_scripts
 {
     public class OrderGenerator : MonoBehaviour
     {
-
+        private List<CraftingRecipe> loteria;
         public bool CanGenerate => _currentNumberOfActiveOrders < _levelSettings.MaxActiveOrders;
         private int _currentNumberOfActiveOrders = 0;
         public static Action<CraftingRecipe> orderGenerated;
@@ -27,10 +27,23 @@ namespace woska_scripts
         {
             OrderController.orderRemoved -= OrderFinished;
         }
-
+        void ResetLottery()
+        {
+            loteria = new List<CraftingRecipe>();
+            foreach (CraftingRecipe craftingRecipe in _levelSettings.OrderPool)
+            {
+                loteria.Add(craftingRecipe);
+            }
+            foreach (CraftingRecipe craftingRecipe in _levelSettings.OrderPool)
+            {
+                loteria.Add(craftingRecipe);
+            }
+        }
         private void Start()
         {
+            ResetLottery();
             StartCoroutine(Generate()); 
+
         }
         private IEnumerator Generate()
         {
@@ -39,7 +52,7 @@ namespace woska_scripts
                 while (CanGenerate)
                 {
                     _currentNumberOfActiveOrders++;
-                    GenerateRandomOrder();
+                    GetOrderFromOrderFromLottery();
                     yield return new WaitForSeconds(Random.Range(_levelSettings.MinGenerationTime, _levelSettings.MaxGenerationTime));
                 }
 
@@ -64,6 +77,17 @@ namespace woska_scripts
             Debug.Log("Current number of orders: " + _currentNumberOfActiveOrders);
         }
         
+        private void GetOrderFromOrderFromLottery()
+        {
+            if (loteria.Count <= 0)
+            {
+                ResetLottery();
+            }
+            var order = loteria[Random.Range(0, loteria.Count)];
+
+            orderGenerated?.Invoke(order);
+            loteria.Remove(order);
+        }
         
     }
 }
