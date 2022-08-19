@@ -8,7 +8,6 @@ public class Score : MonoBehaviour
 {
     [Header("Game")]
     public int score;
-    [SerializeField] int scoreToAdd;
     [SerializeField] int scoreToRemove;
     [SerializeField] private TextMeshProUGUI scoreText;
 
@@ -30,7 +29,7 @@ public class Score : MonoBehaviour
     }
 
     //Increase score when order is finished
-    public void IncreaseScore()
+    public void IncreaseScore(int scoreToAdd)
     {
         score += scoreToAdd;
     }
