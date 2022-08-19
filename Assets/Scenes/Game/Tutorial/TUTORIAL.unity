@@ -10324,6 +10324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 7625410757709222408}
+  timeScale: 1
 --- !u!114 &1961552338630195256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10337,7 +10338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  scoreToAdd: 0
   scoreToRemove: 0
   scoreText: {fileID: 4953647964776239784}
   oneStarScore: 30
