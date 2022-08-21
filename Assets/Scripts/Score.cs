@@ -20,6 +20,7 @@ public class Score : MonoBehaviour
     [Header("Results")]
     [SerializeField] private TextMeshProUGUI scoreTextResults;
     public List<GameObject> stars = new List<GameObject>();
+    [SerializeField] List<TextMeshProUGUI> starsScoreText = new List<TextMeshProUGUI>();
 
     WinSystem winSystem;
         
@@ -49,6 +50,10 @@ public class Score : MonoBehaviour
     {
         scoreText.text = score.ToString();
         scoreTextResults.text = score.ToString();
+
+        starsScoreText[0].text = oneStarScore.ToString();
+        starsScoreText[1].text = twoStarsScore.ToString();
+        starsScoreText[2].text = threeStarsScore.ToString();
 
         ShowStarsInGame();
     }

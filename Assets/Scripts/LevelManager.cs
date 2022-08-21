@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     private Timer timer;
+    private PauseSettings pauseSettings;
 
     [Header("Canvases")]
     [SerializeField] Canvas gameCanvas;
     [SerializeField] Canvas scoreCanvas;
+
+    public bool gameEnded = false;
 
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform respawnPointArrows;
@@ -21,6 +24,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         timer = FindObjectOfType<Timer>();
+        pauseSettings = FindObjectOfType<PauseSettings>();
     }
 
     private void OnEnable()
@@ -58,6 +62,8 @@ public class LevelManager : MonoBehaviour
         if (timer.timeValue <= 0)
         {
             // when is time less then 0 then show score canvas
+            gameEnded = true;
+            pauseSettings.Pause();
             gameCanvas.gameObject.SetActive(false);
             scoreCanvas.gameObject.SetActive(true);
         }
