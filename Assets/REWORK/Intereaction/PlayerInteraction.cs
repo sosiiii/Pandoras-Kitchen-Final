@@ -12,8 +12,8 @@ public class PlayerInteraction : MonoBehaviour
 {
 
     [SerializeField] private float interactionRadius = 1f;
-    
-    private Vector3 _interactionPoint => InventorySlot.Position;
+
+    private Vector3 _interactionPoint;
     private Interactable _current = null;
 
     private Collider2D[] _colliders;
@@ -22,6 +22,7 @@ public class PlayerInteraction : MonoBehaviour
 
 
     [SerializeField] private ItemObject itemObjectPrefab;
+    
 
     private void Awake()
     {
@@ -37,6 +38,14 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (InventorySlot.IsFree)
+        {
+            _interactionPoint = transform.position;
+        }
+        else
+        {
+            _interactionPoint = InventorySlot.Position;
+        }
         if(_current != null) _current.ToggleHighlight(false);
        
 
@@ -61,7 +70,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (!InventorySlot.IsFree)
             {
-                if(Physics2D.OverlapCircle(InventorySlot.Position, 0.2f, LayerMask.GetMask("Ground"))) 
+                if(Physics2D.OverlapCircle(_interactionPoint, 0.2f, LayerMask.GetMask("Ground"))) 
                     return;
                 
                 var item = InventorySlot.RemoveItem();
@@ -90,7 +99,7 @@ public class PlayerInteraction : MonoBehaviour
         
         if (!InventorySlot.IsFree)
         {
-            if(Physics2D.OverlapCircle(InventorySlot.Position, 0.2f, LayerMask.GetMask("Ground"))) 
+            if(Physics2D.OverlapCircle(_interactionPoint, 0.2f, LayerMask.GetMask("Ground"))) 
                 return;
 
             var item = InventorySlot.RemoveItem();
