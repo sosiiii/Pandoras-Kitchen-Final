@@ -13,7 +13,7 @@ public class PlayerInteraction : MonoBehaviour
 
     [SerializeField] private float interactionRadius = 1f;
     
-    private Vector3 _interactionPoint => transform.position;
+    private Vector3 _interactionPoint => InventorySlot.Position;
     private Interactable _current = null;
 
     private Collider2D[] _colliders;
@@ -117,7 +117,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         
-        Gizmos.DrawWireSphere(_interactionPoint, interactionRadius);
+        if(InventorySlot == null) return;
+            Gizmos.DrawWireSphere(_interactionPoint, interactionRadius);
         
         if(_colliders == null) return;
         foreach (var collider in _colliders)
