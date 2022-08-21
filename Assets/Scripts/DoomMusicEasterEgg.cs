@@ -14,6 +14,9 @@ public class DoomMusicEasterEgg : MonoBehaviour
     [SerializeField] GameObject first;
     [SerializeField] GameObject second;
     [SerializeField] Sprite NewZeusSprite;
+
+    PauseSettings pauseSettings;
+
     float startTimer;
     bool REEED;
     AudioSource myAudio;
@@ -21,11 +24,11 @@ public class DoomMusicEasterEgg : MonoBehaviour
 
     private void Start()
     {
-
         startTimer = timer;
-        
         myAudio = GetComponent<AudioSource>();
+        pauseSettings = FindObjectOfType<PauseSettings>();
     }
+
     public void EasterEgg(InputAction.CallbackContext context)
     {
         if (context.performed && shouldWork && started == true)
@@ -54,7 +57,10 @@ public class DoomMusicEasterEgg : MonoBehaviour
             RED.gameObject.SetActive(true);
             RED.color = new Color(255, 0, 0, Random.Range(0, 0.5f));
 
-            Time.timeScale = 1.5f;
+           if (pauseSettings.isGamePaused == false)
+           {
+                Time.timeScale = 1.5f;
+           }
 
             second.SetActive(false);
         }

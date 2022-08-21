@@ -9,7 +9,7 @@ public class PauseSettings : MonoBehaviour
 {
     [SerializeField] private Canvas pauseCanvas;
     [SerializeField] private float timeScale = 0.92f;
-    private bool isGamePaused;
+    public bool isGamePaused;
 
     LevelManager levelManager;
 
