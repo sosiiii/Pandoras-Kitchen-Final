@@ -8,30 +8,36 @@ using UnityEngine.UI;
 public class PauseSettings : MonoBehaviour
 {
     [SerializeField] private Canvas pauseCanvas;
-    [SerializeField] private float timeScale = 0.8f;
+    [SerializeField] private float timeScale = 0.92f;
     private bool isGamePaused;
+
+    LevelManager levelManager;
 
     private void Awake()
     {
         isGamePaused = false;
         Unpause();
         pauseCanvas.gameObject.SetActive(false);
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void Update()
     {
         if (!Keyboard.current.escapeKey.wasPressedThisFrame) return;
 
-        if (isGamePaused)
+        if (levelManager.gameEnded == false)
         {
-            Unpause();
-            pauseCanvas.gameObject.SetActive(false);
-        }
+            if (isGamePaused)
+            {
+                Unpause();
+                pauseCanvas.gameObject.SetActive(false);
+            }
 
-        else
-        {
-            Pause();
-            pauseCanvas.gameObject.SetActive(true);
+            else
+            {
+                Pause();
+                pauseCanvas.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -52,7 +58,7 @@ public class PauseSettings : MonoBehaviour
 
     public void Unpause()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = timeScale;
         isGamePaused = false;
         AudioListener.pause = false;
 
