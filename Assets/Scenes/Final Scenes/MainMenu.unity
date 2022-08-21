@@ -3963,7 +3963,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 230016875}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadLevelSelectionScene
+        m_MethodName: LoadControlsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
