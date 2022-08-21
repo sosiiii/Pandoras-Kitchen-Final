@@ -204,6 +204,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 827741796735066162, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4953647966416453236, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -275,6 +279,14 @@ PrefabInstance:
     - target: {fileID: 5952255491773140791, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
       propertyPath: m_Name
       value: GameCore
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119401871068288587, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119401871068288587, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0000001
       objectReference: {fileID: 0}
     - target: {fileID: 7119401871068288596, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
       propertyPath: orthographic size
