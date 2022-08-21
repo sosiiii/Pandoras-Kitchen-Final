@@ -54,7 +54,7 @@ public class DoomMusicEasterEgg : MonoBehaviour
             RED.gameObject.SetActive(true);
             RED.color = new Color(255, 0, 0, Random.Range(0, 0.5f));
 
-            Time.timeScale = 2;
+            Time.timeScale = 1.5f;
 
             second.SetActive(false);
         }

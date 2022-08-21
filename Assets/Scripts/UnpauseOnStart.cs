@@ -12,7 +12,7 @@ public class UnpauseOnStart : MonoBehaviour
 
     public void Unpause()
     {
-        Time.timeScale = 0.92f;
+        Time.timeScale = 0.9f;
         AudioListener.pause = false;
 
         //Disabling Player Controls

@@ -72,8 +72,20 @@ public class Score : MonoBehaviour
 
     public void ShowScoreResults()
     {
-        if (score >= oneStarScore) {stars[0].GetComponent<Animator>().SetBool("FirstShowStar", true);}
-        if (score >= twoStarsScore) { stars[1].GetComponent<Animator>().SetBool("SecondShowStar", true); winSystem.LevelIsWon(); }
-        if (score >= threeStarsScore) { stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true); }
+        if (score >= oneStarScore) 
+        {
+            stars[0].GetComponent<Animator>().SetBool("FirstShowStar", true);
+        }
+
+        if (score >= twoStarsScore) 
+        {
+            stars[1].GetComponent<Animator>().SetBool("SecondShowStar", true);
+            winSystem.LevelIsWon();
+        }
+
+        if (score >= threeStarsScore) 
+        { 
+            stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true);
+        }
     }
 }
