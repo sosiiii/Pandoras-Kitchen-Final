@@ -13,6 +13,8 @@ public class ItemObject : Interactable
 
     private Rigidbody2D _rigidbody2D;
 
+    [SerializeField] private LayerMask _groundLayer;
+
     private void OnValidate()
     {
 
@@ -34,6 +36,9 @@ public class ItemObject : Interactable
     {
         _itemData = item;
         SpriteRenderer.sprite = _itemData.Sprite;
+
+        var collider2D = Physics2D.OverlapCircle(transform.position, 0f, _groundLayer);
+        if(collider2D != null) Destroy(gameObject);
     }
 
     public void Throw(Vector2 direction)

@@ -130,6 +130,9 @@ MonoBehaviour:
   _itemData: {fileID: 0}
   throwForce: 10
   DespawnTime: 10
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!50 &-2267225406510521826
 Rigidbody2D:
   serializedVersion: 4
