@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6927058014834637008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.765, y: -0.088, z: 0}
+  m_LocalPosition: {x: 0.586, y: -0.214, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6927058015612289758}
@@ -467,7 +467,7 @@ MonoBehaviour:
   player: {fileID: 6927058015612289758}
   anim: {fileID: 2428626349130356478}
   attackPoint: {fileID: 6927058014834637023}
-  attackRange: 0.6
+  attackRange: 1.27
   attackDamage: 1
   enemyLayer:
     serializedVersion: 2

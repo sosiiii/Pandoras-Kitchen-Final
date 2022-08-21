@@ -435,6 +435,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5046962738398537999, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: attackRange
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058014834637023, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.586
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927058014834637023, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.214
+      objectReference: {fileID: 0}
     - target: {fileID: 6927058015612289744, guid: baf2d7fb9d1598e4dbf89aa6fc5088ca, type: 3}
       propertyPath: m_Name
       value: AllInOnePlayer WASD
