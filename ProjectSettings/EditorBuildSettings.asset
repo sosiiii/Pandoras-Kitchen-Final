@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/Settings.unity
     guid: 3db8bef3e75e030489594c8d684c4b18
   - enabled: 1
+    path: Assets/Scenes/Final Scenes/LevelSelectionNew.unity
+    guid: c8bea69c1e88f0340804985158cd3530
+  - enabled: 1
     path: Assets/Scenes/Final Scenes/Credits.unity
     guid: 5c5643378cfea3e4e88e0e7668fc7d3c
-  - enabled: 1
-    path: Assets/Scenes/Final Scenes/LevelSelection.unity
-    guid: 1529ac58149e9da46a2a84fac0814364
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Tutorial/TutorialUI.unity
     guid: 8515369ce87cae74eaf787185e49800e
