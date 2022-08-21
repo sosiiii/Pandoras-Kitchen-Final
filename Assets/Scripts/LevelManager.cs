@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
         {
             // when is time less then 0 then show score canvas
             gameEnded = true;
-            pauseSettings.Pause();
+            pauseSettings.PauseOnWin();
             gameCanvas.gameObject.SetActive(false);
             scoreCanvas.gameObject.SetActive(true);
         }

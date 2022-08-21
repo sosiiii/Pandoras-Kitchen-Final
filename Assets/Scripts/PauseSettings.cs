@@ -56,6 +56,20 @@ public class PauseSettings : MonoBehaviour
         }
     }
 
+    public void PauseOnWin()
+    {
+        Time.timeScale = 0f;
+        isGamePaused = true;
+
+        //Disabling Player Controls
+        PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+
+        foreach (var playerInput in playerInputs)
+        {
+            playerInput.enabled = false;
+        }
+    }
+
     public void Unpause()
     {
         Time.timeScale = timeScale;

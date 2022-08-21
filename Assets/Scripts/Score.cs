@@ -70,23 +70,10 @@ public class Score : MonoBehaviour
         else { starsImages[2].color = Color.black; }
     }
 
-    public IEnumerator ShowScoreResults()
+    public void ShowScoreResults()
     {
         if (score >= oneStarScore) {stars[0].GetComponent<Animator>().SetBool("FirstShowStar", true);}
-
-        if (score >= twoStarsScore)
-        {
-            yield return new WaitForSeconds(1f);
-            stars[1].GetComponent<Animator>().SetBool("SecondShowStar", true);
-
-            //unlock next level
-            winSystem.LevelIsWon();
-        }
-
-        if (score >= threeStarsScore)
-        {
-            yield return new WaitForSeconds(1f);
-            stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true);
-        }
+        if (score >= twoStarsScore) { stars[1].GetComponent<Animator>().SetBool("SecondShowStar", true); winSystem.LevelIsWon(); }
+        if (score >= threeStarsScore) { stars[2].GetComponent<Animator>().SetBool("ThirdShowStar", true); }
     }
 }

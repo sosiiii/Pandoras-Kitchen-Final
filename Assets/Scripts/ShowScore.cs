@@ -8,6 +8,6 @@ public class ShowScore : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(score.ShowScoreResults());
+        score.ShowScoreResults();
     }
 }
