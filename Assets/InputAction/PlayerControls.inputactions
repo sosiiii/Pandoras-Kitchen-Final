@@ -136,9 +136,9 @@
                     "name": "",
                     "id": "480bc939-d9b1-4cd5-95f3-11972c53d441",
                     "path": "<Keyboard>/y",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Doom",
                     "isComposite": false,
                     "isPartOfComposite": false

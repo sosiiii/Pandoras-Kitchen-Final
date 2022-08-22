@@ -6690,6 +6690,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281394244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2080103804, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+  m_PrefabInstance: {fileID: 3483422836887497408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6073406e45f01924e857b4417c833119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1447219970
 GameObject:
   m_ObjectHideFlags: 0
@@ -8263,6 +8274,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2080103803, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1281394244}
+    - target: {fileID: 2080103803, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EasterEgg
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953647965386448020, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -118.78296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953647966368527582, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -84.30005
+      objectReference: {fileID: 0}
     - target: {fileID: 4953647966416453236, guid: 330740797f5e3684bb4ec70f83dabf4a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

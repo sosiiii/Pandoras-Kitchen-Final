@@ -31,6 +31,7 @@ public class DoomMusicEasterEgg : MonoBehaviour
 
     public void EasterEgg(InputAction.CallbackContext context)
     {
+        Debug.Log("context");
         if (context.performed && shouldWork && started == true)
         {
             timer = startTimer;
