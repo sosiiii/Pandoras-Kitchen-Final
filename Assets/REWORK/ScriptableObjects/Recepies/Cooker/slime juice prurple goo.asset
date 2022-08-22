@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 086ed16c470314717b25ea1b9fa758b2, type: 2}
   - {fileID: 11400000, guid: 79ba662e0ccbb42329d53e10c2a49331, type: 2}
   <Result>k__BackingField: {fileID: 11400000, guid: ff366a480af9940b49fad5fe1185053c, type: 2}
-  <CraftingTime>k__BackingField: 5
-  <ScoreForOrder>k__BackingField: 40
+  <CraftingTime>k__BackingField: 70
+  <ScoreForOrder>k__BackingField: 52

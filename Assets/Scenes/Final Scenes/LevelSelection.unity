@@ -1510,7 +1510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220587, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220597, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_RootOrder
@@ -1558,6 +1558,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+--- !u!114 &354439004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8597122627708220585, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+  m_PrefabInstance: {fileID: 354439003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df976c5828ff4d4dba105616cd8a201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &483753902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9114,7 +9125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220587, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8597122627708220597, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
       propertyPath: m_RootOrder
@@ -9162,6 +9173,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+--- !u!114 &1591371340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8597122627708220585, guid: d3ef5d01e88abff40a94f89d0f173955, type: 3}
+  m_PrefabInstance: {fileID: 1591371339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df976c5828ff4d4dba105616cd8a201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1655539211
 GameObject:
   m_ObjectHideFlags: 0
@@ -9198,6 +9220,8 @@ MonoBehaviour:
   - {fileID: 1276411537}
   - {fileID: 1092869313}
   - {fileID: 2012467110}
+  - {fileID: 1591371340}
+  - {fileID: 354439004}
 --- !u!4 &1655539213
 Transform:
   m_ObjectHideFlags: 0
